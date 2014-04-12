@@ -27,6 +27,10 @@ class Site extends CI_Controller {
 		$this->load->view('mailbox');
 	}
 
+	public function data_table(){
+		$this->load->view('data');
+	}
+
 }
 
 /* End of file site.php */
