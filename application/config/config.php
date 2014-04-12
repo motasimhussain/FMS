@@ -11,7 +11,7 @@
 |	http://example.com/
 |
 | If this is not set then CodeIgniter will guess the protocol, domain and
-| path to your installation.
+| path to your installation. yo moma
 |
 */
 $config['base_url']	= 'http://192.168.15.2/fms';
