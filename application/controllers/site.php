@@ -14,6 +14,19 @@ class Site extends CI_Controller {
 		$this->load->view('includes/template', $data);
 	}
 
+	public function invoice(){
+		$data['main_content'] = 'invoice';
+		$this->load->view('includes/template', $data);
+	}
+
+	public function calendar(){
+		$this->load->view('calendar');
+	}
+
+	public function mailbox(){
+		$this->load->view('mailbox');
+	}
+
 }
 
 /* End of file site.php */
