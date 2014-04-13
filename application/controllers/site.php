@@ -10,7 +10,7 @@ class Site extends CI_Controller {
 		//Do your magic here
 
 		$this->data['dashboard'] = '';
-		$this->data['invoice'] = '';
+		$this->data['inv_form'] = '';
 		$this->data['calendar'] = '';
 		$this->data['mailbox'] = '';
 		$this->data['data_table'] = '';
@@ -24,9 +24,9 @@ class Site extends CI_Controller {
 		$this->load->view('includes/template', $this->data);
 	}
 
-	public function invoice(){
-		$this->data['invoice'] = ' active';
-		$this->data['main_content'] = 'invoice';
+	public function inv_form(){
+		$this->data['inv_form'] = ' active';
+		$this->data['main_content'] = 'inv_form';
 		$this->load->view('includes/template', $this->data);
 	}
 
