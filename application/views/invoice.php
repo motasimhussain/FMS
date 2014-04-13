@@ -1,7 +1,7 @@
                     <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul class="sidebar-menu">
                         <li>
-                            <a href="../../index.html">
+                            <a href="<?php echo base_url();?>index.php/site/index">
                                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                             </a>
                         </li>
@@ -54,17 +54,17 @@
                             </a>
                             <ul class="treeview-menu">
                                 <!-- <li><a href="../tables/simple.html"><i class="fa fa-angle-double-right"></i> Simple tables</a></li> -->
-                                <li><a href="../tables/data.html"><i class="fa fa-angle-double-right"></i> Data tables</a></li>
+                                <li><a href="<?php echo base_url();?>index.php/site/data_table"><i class="fa fa-angle-double-right"></i> Data tables</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="../calendar.html">
+                            <a href="<?php echo base_url();?>index.php/site/calendar">
                                 <i class="fa fa-calendar"></i> <span>Calendar</span>
                                 <small class="badge pull-right bg-red">3</small>
                             </a>
                         </li>
                         <li>
-                            <a href="../mailbox.html">
+                            <a href="<?php echo base_url();?>index.php/site/mailbox">
                                 <i class="fa fa-envelope"></i> <span>Mailbox</span>
                                 <small class="badge pull-right bg-yellow">12</small>
                             </a>

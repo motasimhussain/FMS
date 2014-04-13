@@ -20,15 +20,18 @@ class Site extends CI_Controller {
 	}
 
 	public function calendar(){
-		$this->load->view('calendar');
+		$data['main_content'] = 'calendar';
+		$this->load->view('includes/template2',$data);
 	}
 
 	public function mailbox(){
-		$this->load->view('mailbox');
+		$data['main_content'] = 'mailbox';
+		$this->load->view('includes/template2',$data);
 	}
 
 	public function data_table(){
-		$this->load->view('data');
+		$data['main_content'] = 'data';
+		$this->load->view('includes/template2',$data);
 	}
 
 }
