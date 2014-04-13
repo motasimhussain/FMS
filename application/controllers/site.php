@@ -26,8 +26,10 @@ class Site extends CI_Controller {
 	public function mailbox(){
 		$this->load->view('mailbox');
 	}
-
+	
+	
 }
 
 /* End of file site.php */
 /* Location: ./application/controllers/site.php */
+?>
