@@ -4,8 +4,7 @@ class Site extends CI_Controller {
 
 	public $data = array();
 
-	public function __construct()
-	{
+	public function __construct(){
 		parent::__construct();
 		//Do your magic here
 
@@ -17,18 +16,33 @@ class Site extends CI_Controller {
 
 	}
 
-	public function index()
-	{
+	public function index(){
 		$this->data['dashboard'] = ' active';
 		$this->data['main_content'] = 'index';
 		$this->load->view('includes/template', $this->data);
 	}
+
+	// this marks rthe start of the forms included in the Forms
 
 	public function inv_form(){
 		$this->data['inv_form'] = ' active';
 		$this->data['main_content'] = 'inv_form';
 		$this->load->view('includes/template', $this->data);
 	}
+
+	public function add_co(){
+		$this->data['inv_form'] = ' active';
+		$this->data['main_content'] = 'add_co';
+		$this->load->view('includes/template', $this->data);
+	}
+
+	public function add_pro(){
+		$this->data['inv_form'] = ' active';
+		$this->data['main_content'] = 'add_pro';
+		$this->load->view('includes/template', $this->data);
+	}
+
+	// this marks the end of the forms included in the Forms
 
 	public function calendar(){
 		$this->data['calendar'] = ' active';

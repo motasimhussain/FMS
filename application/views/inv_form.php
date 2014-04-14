@@ -28,11 +28,33 @@
                                 </div><!-- /.box-header -->
                                 <div class="box-body">
                                     <form role="form">
+
+                                        <!-- Select Basic -->
+                                      <div class="form-group">
+                                        
+                                        <label>Company Name</label>                                        
+                                        <select id="selectbasic" name="selectbasic" class="form-control">
+                                            <option value="">ABC Company</option>
+                                            <option value="">1234 Enterprises</option>
+                                            <option value="">XYZ Organization</option>
+                                            <option value="">JKL Printing Co.</option>
+                                        </select>
+                                        
+                                      </div>
+
                                         <!-- text input -->
+                                        
                                         <div class="form-group">
-                                            <label>S.No.</label>
-                                            <input type="text" class="form-control" placeholder="Enter ..."/>
+                                            <label>Date range:</label>
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-calendar"></i>
+                                                </div>
+
+                                                <input id="reservation" class="form-control pull-right" type="text">
+                                            </div>
                                         </div>
+
                                         <div class="form-group">
                                             <label>Description</label>
                                             <input type="text" class="form-control" placeholder="Enter ..." />
@@ -156,3 +178,6 @@
                     </div>   <!-- /.row -->
                 </section><!-- /.content -->
             </aside><!-- /.right-side -->
+
+
+            
