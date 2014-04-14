@@ -36,7 +36,7 @@
                                 <li><a href="pages/UI/timeline.html"><i class="fa fa-angle-double-right"></i> Timeline</a></li>
                             </ul>
                         </li> -->
-                        <li class="treeview">
+                        <li class="treeview <?php echo $forms ?>">
                             <a href="#">
                                 <i class="fa fa-edit"></i> <span>Forms</span>
                                 <i class="fa fa-angle-left pull-right"></i>

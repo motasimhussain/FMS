@@ -45,13 +45,10 @@
                                         <!-- text input -->
                                         
                                         <div class="form-group">
-                                            <label>Date range:</label>
-                                            <div class="input-group">
-                                                <div class="input-group-addon">
-                                                    <i class="fa fa-calendar"></i>
-                                                </div>
-
-                                                <input id="pickdate" class="form-control pull-right" type="text">
+                                            <div class="input-append date" id="dp3" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
+                                                <label>Date</label>
+                                                <input class="form-control" id="pickdate" size="16" type="text" value="12-02-2012">
+                                                <i class="icon-th"></i>
                                             </div>
                                         </div>
 

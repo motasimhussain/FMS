@@ -9,7 +9,8 @@ class Site extends CI_Controller {
 		//Do your magic here
 
 		$this->data['dashboard'] = '';
-		$this->data['inv_form'] = '';
+		//$this->data['inv_form'] = '';
+		$this->data['forms'] = '';
 		$this->data['calendar'] = '';
 		$this->data['mailbox'] = '';
 		$this->data['data_table'] = '';
@@ -22,22 +23,26 @@ class Site extends CI_Controller {
 		$this->load->view('includes/template', $this->data);
 	}
 
+	public function login(){
+		$this->load->view('login');
+	}
+
 	// this marks rthe start of the forms included in the Forms
 
 	public function inv_form(){
-		$this->data['inv_form'] = ' active';
+		$this->data['forms'] = ' active';
 		$this->data['main_content'] = 'inv_form';
 		$this->load->view('includes/template', $this->data);
 	}
 
 	public function add_co(){
-		$this->data['inv_form'] = ' active';
+		$this->data['forms'] = ' active';
 		$this->data['main_content'] = 'add_co';
 		$this->load->view('includes/template', $this->data);
 	}
 
 	public function add_pro(){
-		$this->data['inv_form'] = ' active';
+		$this->data['forms'] = ' active';
 		$this->data['main_content'] = 'add_pro';
 		$this->load->view('includes/template', $this->data);
 	}

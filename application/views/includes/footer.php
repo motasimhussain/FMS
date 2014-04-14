@@ -29,6 +29,8 @@
         <!-- iCheck -->
         <script src="<?=base_url(); ?>js/plugins/iCheck/icheck.min.js" type="text/javascript"></script>
 
+        <script src="<?=base_url(); ?>js/bootstrap-datepicker.js" type="text/javascript"></script>
+
         <!-- AdminLTE App -->
         <script src="<?=base_url(); ?>js/AdminLTE/app.js" type="text/javascript"></script>
         
@@ -41,7 +43,7 @@
                 //Datemask dd/mm/yyyy
                 
                 //Date range picker
-                $('#pickdate').daterangepicker();
+                $('#pickdate').datepicker();
                 //Date range picker with time picker
                 $('#reservationtime').daterangepicker({timePicker: true, timePickerIncrement: 30, format: 'MM/DD/YYYY h:mm A'});
                 //Date range as a button
@@ -58,9 +60,10 @@
                             startDate: moment().subtract('days', 29),
                             endDate: moment()
                         },
-                function(start, end) {
-                    $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
-                }
+                        
+                        function(start, end) {
+                            $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+                        }
                 );
 
                
