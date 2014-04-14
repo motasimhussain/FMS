@@ -51,7 +51,7 @@
                                                     <i class="fa fa-calendar"></i>
                                                 </div>
 
-                                                <input id="reservation" class="form-control pull-right" type="text">
+                                                <input id="pickdate" class="form-control pull-right" type="text">
                                             </div>
                                         </div>
 
