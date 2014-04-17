@@ -8,13 +8,20 @@ class Site extends CI_Controller {
 		parent::__construct();
 		//Do your magic here
 
-		$this->data['dashboard'] = '';
-		//$this->data['inv_form'] = '';
-		$this->data['forms'] = '';
-		$this->data['calendar'] = '';
-		$this->data['mailbox'] = '';
-		$this->data['data_table'] = '';
+		$logged_in = $this->session->userdata('is_logged_in');
 
+		if(!isset($logged_in) || $logged_in != true){
+			echo "you dont have permission to access the page!";
+			die();
+		}else{
+			$this->data['dashboard'] = '';
+			//$this->data['inv_form'] = '';
+			$this->data['forms'] = '';
+			$this->data['calendar'] = '';
+			$this->data['mailbox'] = '';
+			$this->data['data_table'] = '';
+		}
+		
 	}
 
 	public function index(){
@@ -23,11 +30,7 @@ class Site extends CI_Controller {
 		$this->load->view('includes/template', $this->data);
 	}
 
-	public function login(){
-		$this->load->view('login');
-	}
-
-	// this marks rthe start of the forms included in the Forms
+	// this marks the start of the forms included in the Forms //
 
 	public function inv_form(){
 		$this->data['forms'] = ' active';
@@ -47,7 +50,7 @@ class Site extends CI_Controller {
 		$this->load->view('includes/template', $this->data);
 	}
 
-	// this marks the end of the forms included in the Forms
+	// this marks the end of the forms included in the Forms //
 
 	public function calendar(){
 		$this->data['calendar'] = ' active';

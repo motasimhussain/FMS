@@ -22,10 +22,10 @@
 
         <div class="form-box" id="login-box">
             <div class="header">Sign In</div>
-            <form action="<?php echo base_url();?>/index.php/site/index" method="post">
+            <form action="<?php echo base_url();?>index.php/c_auth/login" method="post">
                 <div class="body bg-gray">
                     <div class="form-group">
-                        <input type="text" name="userid" class="form-control" placeholder="User ID"/>
+                        <input type="text" name="username" class="form-control" placeholder="User ID"/>
                     </div>
                     <div class="form-group">
                         <input type="password" name="password" class="form-control" placeholder="Password"/>
@@ -41,8 +41,8 @@
         </div>
 
 
-        <!-- jQuery 2.0.2 -->
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+        <!-- jQuery 2.1.0 -->
+        <script src="<?=base_url(); ?>js/jquery-2.1.0.min.js"></script>
         <!-- Bootstrap -->
         <script src="<?=base_url();?>/js/bootstrap.min.js" type="text/javascript"></script>        
 

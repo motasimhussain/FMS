@@ -224,8 +224,8 @@
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
 
-        <!-- jQuery 2.0.2 -->
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+        <!-- jQuery 2.1.0 -->
+        <script src="<?=base_url(); ?>js/jquery-2.1.0.min.js"></script>
         <!-- Bootstrap -->
         <script src="<?=base_url(); ?>js/bootstrap.min.js" type="text/javascript"></script>
         <!-- AdminLTE App -->

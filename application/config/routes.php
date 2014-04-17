@@ -38,7 +38,7 @@
 |
 */
 
-$route['default_controller'] = "site/login";
+$route['default_controller'] = "c_auth";
 $route['404_override'] = '';
 
 

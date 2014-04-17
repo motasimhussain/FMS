@@ -45,9 +45,9 @@
                                         <!-- text input -->
                                         
                                         <div class="form-group">
-                                            <div class="input-append date" id="dp3" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
+                                            <div class="input-append date" id="dp3" data-date="" data-date-format="dd-mm-yyyy">
                                                 <label>Date</label>
-                                                <input class="form-control" id="pickdate" size="16" type="text" value="12-02-2012">
+                                                <input class="form-control" id="pickdate" size="16" type="text" value="">
                                                 <i class="icon-th"></i>
                                             </div>
                                         </div>
