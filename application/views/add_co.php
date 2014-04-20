@@ -26,14 +26,14 @@
                                     <h3 class="box-title">Add Company</h3>
                                 </div><!-- /.box-header -->
                                 <div class="box-body">
-                                    <form class="form-horizontal">
+                                    <form action="<?php echo base_url(); ?>index.php/form_process/add_co" method="post" class="form-horizontal">
                                         <fieldset>
                                         
                                         <!-- Text input-->
                                         <div class="form-group">
-                                          <label class="col-md-4 control-label" for="textinput">Company Name</label>  
+                                          <label class="col-md-4 control-label" for="textinput">Company ID</label>  
                                           <div class="col-md-4">
-                                          <input id="textinput" name="textinput" placeholder="" class="form-control input-md" type="text">
+                                          <input id="textinput" name="c_id" placeholder="0000" class="form-control input-md" type="text" required>
                                             
                                           </div>
                                         </div>
@@ -42,7 +42,7 @@
                                         <div class="form-group">
                                           <label class="col-md-4 control-label" for="textinput">Company Description</label>  
                                           <div class="col-md-4">
-                                          <input id="textinput" name="textinput" placeholder="" class="form-control input-md" type="text">
+                                          <input id="textinput" name="c_desc" placeholder="abcd" class="form-control input-md" type="text" required>
                                             
                                           </div>
                                         </div>
@@ -51,7 +51,7 @@
                                         <div class="form-group">
                                           <label class="col-md-4 control-label" for="textinput">Company Address</label>  
                                           <div class="col-md-4">
-                                          <input id="textinput" name="textinput" placeholder="" class="form-control input-md" type="text">
+                                          <input id="textinput" name="c_address" placeholder="abcd123" class="form-control input-md" type="text" required>
                                             
                                           </div>
                                         </div>
@@ -60,7 +60,7 @@
                                         <div class="form-group">
                                           <label class="col-md-4 control-label" for="textinput">Dealer Name</label>  
                                           <div class="col-md-4">
-                                          <input id="textinput" name="textinput" placeholder="" class="form-control input-md" type="text">
+                                          <input id="textinput" name="c_dealer" placeholder="abcd" class="form-control input-md" type="text" required>
                                             
                                           </div>
                                         </div>
@@ -69,7 +69,7 @@
                                         <div class="form-group">
                                           <label class="col-md-4 control-label" for="singlebutton"></label>
                                           <div class="col-md-4">
-                                            <button id="singlebutton" name="singlebutton" class="btn btn-primary">Add</button>
+                                            <button id="singlebutton" name="singlebutton" class="btn btn-primary" type="sumbit">Add</button>
                                           </div>
                                         </div>
 
