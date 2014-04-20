@@ -19,6 +19,13 @@ class Form_process extends CI_Controller {
 			redirect('site/add_pro');
 		}
 	}
+	public function sales_inv()
+	{
+		$this->load->model('sales_inv');
+		if ($this->sales_inv->add()) {
+			redirect('site/inv_form');
+		}
+	}
 
 }
 

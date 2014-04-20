@@ -27,7 +27,7 @@
                                     <h3 class="box-title">Invoice Form</h3>
                                 </div><!-- /.box-header -->
                                 <div class="box-body">
-                                    <form role="form">
+                                    <form role="form" action="../form_process/sales_inv" method="POST">
 
                                       <div class="form-group">
                                         
