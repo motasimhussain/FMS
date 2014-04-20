@@ -20,6 +20,7 @@ class Site extends CI_Controller {
 			$this->data['calendar'] = '';
 			$this->data['mailbox'] = '';
 			$this->data['data_table'] = '';
+			$this->data['user'] = $this->session->userdata('user');
 		}
 		
 	}
