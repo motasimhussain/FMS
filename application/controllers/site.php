@@ -17,6 +17,7 @@ class Site extends CI_Controller {
 			$this->data['dashboard'] = '';
 			//$this->data['inv_form'] = '';
 			$this->data['forms'] = '';
+			$this->data['invoice'] = '';
 			$this->data['calendar'] = '';
 			$this->data['mailbox'] = '';
 			$this->data['data_table'] = '';
@@ -52,6 +53,16 @@ class Site extends CI_Controller {
 	}
 
 	// this marks the end of the forms included in the Forms //
+
+	//invoce start//
+
+	public function sales_inv(){
+		$this->data['invoice'] = ' active';
+		$this->data['main_content'] = 'sales_inv';
+		$this->load->view('includes/template', $this->data);
+	}
+
+	//invoice end //
 
 	public function calendar(){
 		$this->data['calendar'] = ' active';
