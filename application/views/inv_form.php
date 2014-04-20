@@ -29,6 +29,16 @@
                                 <div class="box-body">
                                     <form role="form">
 
+                                      <div class="form-group">
+                                        
+                                        <label>Generate Invoice For</label>                                        
+                                        <select id="selectbasic" name="selectbasic" class="form-control">
+                                            <option value="">PakJapan Chemicals</option>
+                                            <option value="">PakJapan Textiles</option>
+                                        </select>
+                                        
+                                      </div>  
+
                                         <!-- Select Basic -->
                                       <div class="form-group">
                                         
@@ -60,7 +70,7 @@
                                         <!-- textarea -->
                                         <div class="form-group">
                                             <label>Quatity</label>
-                                            <input class="form-control" rows="3" placeholder="Enter ..."></textarea>
+                                            <input class="form-control" rows="3" placeholder="Enter ..."/>
                                         </div>
                                         <!-- select -->
                                         <div class="form-group">
@@ -80,9 +90,22 @@
                                         </div>
 
 
+                                         <div class="form-group">
+
+  <label for="prependedcheckbox">Sales Tax</label>
+  <div>
+    <div class="input-group">
+      <span class="input-group-addon">     
+          <input type="checkbox" checked="unchecked">     
+      </span>
+      <input id="prependedcheckbox" name="prependedcheckbox" class="form-control" placeholder="placeholder" type="text">
+    </div>
+  </div>
+</div>
+
                                         <!-- input states -->
                                         <div class="form-group has-success">
-                                            <label class="control-label" for="inputSuccess"><i class="fa fa-check"></i>Amount</label>
+                                            <label class="control-label" for="inputSuccess">Amount</label>
                                             <input type="text" class="form-control" id="inputSuccess" placeholder="Enter ..."/>
                                         </div>
 

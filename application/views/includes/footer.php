@@ -21,7 +21,7 @@
         <!-- Bootstrap WYSIHTML5 -->
         <script src="<?=base_url(); ?>js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js" type="text/javascript"></script>
         <!-- iCheck -->
-        <script src="<?=base_url(); ?>js/plugins/iCheck/icheck.min.js" type="text/javascript"></script>
+       
 
         <script src="<?=base_url(); ?>js/bootstrap-datepicker.js" type="text/javascript"></script>
 
@@ -31,11 +31,10 @@
         <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 
 
-
         <script type="text/javascript">
             $(function() {
                 //Datemask dd/mm/yyyy
-                
+
                 //Date range picker
                 $('#pickdate').datepicker();
                 //Date range picker with time picker
@@ -60,7 +59,9 @@
                         }
                 );
 
-               
+
+  
+
             });
         </script>
         
