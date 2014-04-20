@@ -53,14 +53,14 @@
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="glyphicon glyphicon-user"></i>
-                                <span>User123 <i class="caret"></i></span>
+                                <span><?php echo $user; ?> <i class="caret"></i></span>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- User image -->
                                 <li class="user-header bg-light-blue">
                                     <img src="<?=base_url();?>img/avatar3.png" class="img-circle" alt="User Image" />
                                     <p>
-                                        User123 - Data Entry Operator
+                                        <?php echo $user; ?> - Data Entry Operator
                                         <small>Member since Nov. 2012</small>
                                     </p>
                                 </li>
@@ -68,7 +68,7 @@
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
                                     <div class="" style="text-align:center;">
-                                        <a href="<?php echo base_url(); ?>index.php/site/login" class="btn btn-success">Sign out</a>
+                                        <a href="<?php echo base_url(); ?>index.php/c_auth" class="btn btn-success">Sign out</a>
                                     </div>
                                 </li>
                             </ul>
@@ -88,7 +88,7 @@
                             <img src="<?=base_url();?>img/avatar3.png" class="img-circle" alt="User Image" />
                         </div>
                         <div class="pull-left info">
-                            <p>Hello, User123</p>
+                            <p>Hello, <?php echo $user; ?></p>
 
                             <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                         </div>

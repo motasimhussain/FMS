@@ -13,7 +13,7 @@ class C_auth extends CI_Controller {
 		if($this->auth->verify()){
 
 			$data = array(
-				'username' =>$this->input->post('username'),
+				'user' =>$this->input->post('username'),
 				'is_logged_in' => 'true'
 			);
 

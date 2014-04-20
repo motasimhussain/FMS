@@ -31,37 +31,44 @@
 
                                       <!-- Text input-->
                                       <div class="form-group">
-                                        <label class="col-md-4 control-label" for="textinput">Product #</label>  
+                                        <label class="col-md-4 control-label" for="item_code">Item Code</label>  
                                         <div class="col-md-4">
-                                        <input id="textinput" name="textinput" placeholder="" class="form-control input-md" type="text">
+                                        <input id="item_code" name="item_code" placeholder="Item Code" class="form-control input-md" type="text">
                                           
                                         </div>
                                       </div>
 
                                       <!-- Text input-->
                                       <div class="form-group">
-                                        <label class="col-md-4 control-label" for="textinput">Product Name</label>  
+                                        <label class="col-md-4 control-label" for="des">Product Description</label>  
                                         <div class="col-md-4">
-                                        <input id="textinput" name="textinput" placeholder="" class="form-control input-md" type="text">
+                                        <input id="des" name="des" placeholder="Product Description" class="form-control input-md" type="text">
                                           
                                         </div>
                                       </div>
 
                                       <!-- Text input-->
                                       <div class="form-group">
-                                        <label class="col-md-4 control-label" for="textinput">Product Description</label>  
+                                        <label class="col-md-4 control-label" for="cat">Category</label>  
                                         <div class="col-md-4">
-                                        <input id="textinput" name="textinput" placeholder="" class="form-control input-md" type="text">
+                                        <input id="cat" name="cat" placeholder="Categoty" class="form-control input-md" type="text">
                                           
                                         </div>
                                       </div>
 
                                       <!-- Text input-->
                                       <div class="form-group">
-                                        <label class="col-md-4 control-label" for="textinput">Unit Price</label>  
+                                        <label class="col-md-4 control-label" for="p_price">Unit Price(Purchasing)</label>  
                                         <div class="col-md-4">
-                                        <input id="textinput" name="textinput" placeholder="" class="form-control input-md" type="text">
-                                          
+                                        <input id="p_price" name="p_price" placeholder="Unit Price" class="form-control input-md" type="text">
+                                        </div>
+                                      </div>
+
+                                      <!-- Text input-->
+                                      <div class="form-group">
+                                        <label class="col-md-4 control-label" for="s_price">Unit Price(Selling)</label>
+                                        <div class="col-md-4">
+                                        <input id="s_price" name="s_price" placeholder="Unit Price" class="form-control input-md" type="text">
                                         </div>
                                       </div>
 
@@ -69,7 +76,7 @@
                                       <div class="form-group">
                                         <label class="col-md-4 control-label" for="selectbasic">Unit(Weight)</label>
                                         <div class="col-md-4">
-                                          <select id="selectbasic" name="selectbasic" class="form-control">
+                                          <select id="selectbasic" name="unit" class="form-control">
                                             <option value="">Kilogram</option>
                                             <option value="">Grams</option>
                                             <option value="">Liters</option>
