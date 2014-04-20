@@ -26,14 +26,14 @@
                                     <h3 class="box-title">Add Product</h3>
                                 </div><!-- /.box-header -->
                                 <div class="box-body">
-                                    <form class="form-horizontal">
+                                    <form class="form-horizontal" action="<?php echo base_url(); ?>index.php/form_process/add_pro" method="post">
                                       <fieldset>
 
                                       <!-- Text input-->
                                       <div class="form-group">
                                         <label class="col-md-4 control-label" for="item_code">Item Code</label>  
                                         <div class="col-md-4">
-                                        <input id="item_code" name="item_code" placeholder="Item Code" class="form-control input-md" type="text">
+                                        <input id="item_code" name="item_code" placeholder="Item Code" class="form-control input-md" type="text" required>
                                           
                                         </div>
                                       </div>
@@ -42,7 +42,7 @@
                                       <div class="form-group">
                                         <label class="col-md-4 control-label" for="des">Product Description</label>  
                                         <div class="col-md-4">
-                                        <input id="des" name="des" placeholder="Product Description" class="form-control input-md" type="text">
+                                        <input id="des" name="des" placeholder="Product Description" class="form-control input-md" type="text" required>
                                           
                                         </div>
                                       </div>
@@ -51,7 +51,7 @@
                                       <div class="form-group">
                                         <label class="col-md-4 control-label" for="cat">Category</label>  
                                         <div class="col-md-4">
-                                        <input id="cat" name="cat" placeholder="Categoty" class="form-control input-md" type="text">
+                                        <input id="cat" name="cat" placeholder="Categoty" class="form-control input-md" type="text" required>
                                           
                                         </div>
                                       </div>
@@ -60,7 +60,7 @@
                                       <div class="form-group">
                                         <label class="col-md-4 control-label" for="p_price">Unit Price(Purchasing)</label>  
                                         <div class="col-md-4">
-                                        <input id="p_price" name="p_price" placeholder="Unit Price" class="form-control input-md" type="text">
+                                        <input id="p_price" name="p_price" placeholder="Unit Price" class="form-control input-md" type="text" required>
                                         </div>
                                       </div>
 
@@ -68,7 +68,7 @@
                                       <div class="form-group">
                                         <label class="col-md-4 control-label" for="s_price">Unit Price(Selling)</label>
                                         <div class="col-md-4">
-                                        <input id="s_price" name="s_price" placeholder="Unit Price" class="form-control input-md" type="text">
+                                        <input id="s_price" name="s_price" placeholder="Unit Price" class="form-control input-md" type="text" required>
                                         </div>
                                       </div>
 
@@ -89,7 +89,7 @@
                                       <div class="form-group">
                                         <label class="col-md-4 control-label" for="singlebutton"></label>
                                         <div class="col-md-4">
-                                          <button id="singlebutton" name="singlebutton" class="btn btn-primary">Add</button>
+                                          <button id="singlebutton" name="singlebutton" class="btn btn-primary" type="sumbit">Add</button>
                                         </div>
                                       </div>
 
