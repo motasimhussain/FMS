@@ -44,7 +44,8 @@
                             <ul class="treeview-menu">
                                 <li><a href="<?php echo base_url();?>index.php/site/add_co"><i class="fa fa-angle-double-right"></i> Add Company</a></li>
                                 <li><a href="<?php echo base_url();?>index.php/site/add_pro"><i class="fa fa-angle-double-right"></i> Add Product</a></li>
-                                <li><a href="<?php echo base_url();?>index.php/site/inv_form"><i class="fa fa-angle-double-right"></i> Invoice Form</a></li>
+                                <li><a href="<?php echo base_url();?>index.php/site/sales_form"><i class="fa fa-angle-double-right"></i> Sales Form</a></li>
+                                <li><a href="<?php echo base_url();?>index.php/site/purchase_form"><i class="fa fa-angle-double-right"></i> Purchase Form</a></li>
                             </ul>
                         </li>
                         <li class="treeview <?php echo $invoice ?>">

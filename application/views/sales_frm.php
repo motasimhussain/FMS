@@ -3,7 +3,7 @@
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        Invoice Form
+                        Sales Form
                         <small>Preview</small>
                     </h1>
                     <ol class="breadcrumb">
