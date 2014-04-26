@@ -3,7 +3,7 @@
         <!-- Content Header (Page header) -->
 
         <section class="content-header">
-            <h1>Sales Invoice <small>Preview</small></h1>
+            <h1>Purchase Invoice <small>Preview</small></h1>
 
             <ol class="breadcrumb">
                 <li><a href="#">Home</a></li>
