@@ -31,18 +31,9 @@
                                         
                                         <!-- Text input-->
                                         <div class="form-group">
-                                          <label class="col-md-4 control-label" for="textinput">Company ID</label>  
+                                          <label class="col-md-4 control-label" for="textinput">Company Name</label>  
                                           <div class="col-md-4">
-                                          <input id="textinput" name="c_id" placeholder="0000" class="form-control input-md" type="text" required>
-                                            
-                                          </div>
-                                        </div>
-
-                                        <!-- Text input-->
-                                        <div class="form-group">
-                                          <label class="col-md-4 control-label" for="textinput">Company Description</label>  
-                                          <div class="col-md-4">
-                                          <input id="textinput" name="c_desc" placeholder="abcd" class="form-control input-md" type="text" required>
+                                          <input id="textinput" name="c_name" placeholder="Company Name" class="form-control input-md" type="text" required>
                                             
                                           </div>
                                         </div>
@@ -51,16 +42,34 @@
                                         <div class="form-group">
                                           <label class="col-md-4 control-label" for="textinput">Company Address</label>  
                                           <div class="col-md-4">
-                                          <input id="textinput" name="c_address" placeholder="abcd123" class="form-control input-md" type="text" required>
+                                          <input id="textinput" name="c_address" placeholder="Address" class="form-control input-md" type="text" required>
                                             
                                           </div>
                                         </div>
 
                                         <!-- Text input-->
                                         <div class="form-group">
-                                          <label class="col-md-4 control-label" for="textinput">Dealer Name</label>  
+                                          <label class="col-md-4 control-label" for="textinput">Tel/Fax #</label>  
                                           <div class="col-md-4">
-                                          <input id="textinput" name="c_dealer" placeholder="abcd" class="form-control input-md" type="text" required>
+                                          <input id="textinput" name="c_tel" placeholder="Tel/Fax" class="form-control input-md" type="text" required>
+                                            
+                                          </div>
+                                        </div>
+
+                                        <!-- Text input-->
+                                        <div class="form-group">
+                                          <label class="col-md-4 control-label" for="textinput">GST #</label>  
+                                          <div class="col-md-4">
+                                          <input id="textinput" name="c_gst" placeholder="GST #" class="form-control input-md" type="text" required>
+                                            
+                                          </div>
+                                        </div>
+
+                                        <!-- Text input-->
+                                        <div class="form-group">
+                                          <label class="col-md-4 control-label" for="textinput">NTN</label>  
+                                          <div class="col-md-4">
+                                          <input id="textinput" name="c_ntn" placeholder="NTN" class="form-control input-md" type="text" required>
                                             
                                           </div>
                                         </div>
@@ -74,7 +83,7 @@
                                         </div>
 
                                         </fieldset>
-                                        </form>
+                                    </form>
                                 </div><!-- /.box-body -->
                             </div><!-- /.box -->
                             </div>

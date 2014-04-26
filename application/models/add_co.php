@@ -5,10 +5,11 @@ class Add_co extends CI_Model {
 	function add(){
 		$data = array(
 
-			'id' => $this->input->post('c_id'),
-			'desc' => $this->input->post('c_desc'),
-			'address' => $this->input->post('c_address'),
-			'dealer_name' => $this->input->post('c_dealer')
+			'c_name' => $this->input->post('c_name'),
+			'c_address' => $this->input->post('c_address'),
+			'c_tel' => $this->input->post('c_tel'),
+			'c_gst' => $this->input->post('c_gst'),
+			'c_ntn' => $this->input->post('c_ntn')
 		);
 
 		$query = $this->db->insert('company',$data);
