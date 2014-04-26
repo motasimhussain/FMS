@@ -106,8 +106,40 @@
                                         <!-- input states -->
                                         <div class="form-group has-success">
                                             <label class="control-label" for="inputSuccess">Amount</label>
-                                            <input type="text" class="form-control" id="inputSuccess" placeholder="Enter ..."/>
+                                            <input type="text" class="form-control" id="amountNum" placeholder="Enter ..."/>
+                                            <input type="text" class="form-control" id="amountWords" placeholder="Currency In Words"/>
                                         </div>
+
+                                        <!-- Script to dynamically generate words from numbers -->
+
+                                        <script type="text/javascript">
+
+                                            var getNum = document.getElementById("amountNum");
+
+                                            getNum.onkeyup = function(){
+
+                                                console.log("triggered");
+
+                                                var num = getNum.value;
+
+                                                var a = ['','one ','two ','three ','four ', 'five ','six ','seven ','eight ','nine ','ten ','eleven ','twelve ','thirteen ','fourteen ','fifteen ','sixteen ','seventeen ','eighteen ','nineteen '];
+                                                var b = ['', '', 'twenty','thirty','forty','fifty', 'sixty','seventy','eighty','ninety'];
+
+                                                function inWords (num) {
+                                                    if ((num = num.toString()).length > 9) return 'overflow';
+                                                    n = ('000000000' + num).substr(-9).match(/^(\d{2})(\d{2})(\d{2})(\d{1})(\d{2})$/);
+                                                    if (!n) return; var str = '';
+                                                    str += (n[1] != 0) ? (a[Number(n[1])] || b[n[1][0]] + ' ' + a[n[1][1]]) + 'crore ' : '';
+                                                    str += (n[2] != 0) ? (a[Number(n[2])] || b[n[2][0]] + ' ' + a[n[2][1]]) + 'lakh ' : '';
+                                                    str += (n[3] != 0) ? (a[Number(n[3])] || b[n[3][0]] + ' ' + a[n[3][1]]) + 'thousand ' : '';
+                                                    str += (n[4] != 0) ? (a[Number(n[4])] || b[n[4][0]] + ' ' + a[n[4][1]]) + 'hundred ' : '';
+                                                    str += (n[5] != 0) ? ((str != '') ? 'and ' : '') + (a[Number(n[5])] || b[n[5][0]] + ' ' + a[n[5][1]]) + 'only ' : '';
+                                                    return str;
+                                                }
+
+                                                document.getElementById("amountWords").value = inWords(num);
+                                            }
+                                        </script>
 
                                         <div class="form-group">
                                             <input type="submit" class="btn" name="sub_invoice" value="Submit" />
