@@ -2,8 +2,11 @@
     <!-- Content Header (Page header) -->
 
     <section class="content-header">
-        <h1>Accounts Ledger <small>Preview</small></h1>
-
+        <form class="form-inline">
+          <label class="control-label" for="reservation">Pick Date</label>  
+          <input type="text" class="form-control getLedger" id="reservation" style="width:15em;">
+        </form>
+        
         <ol class="breadcrumb">
             <li><a href="#">Home</a></li>
 
@@ -12,6 +15,18 @@
             <li class="active">General Elements</li>
         </ol>
     </section><!-- Main content -->
+
+
+    <script type="text/javascript">
+        var getLedgerDate = document.getElementById('reservation');
+        getLedgerDate.onblur = function(){
+          console.log("wololo");
+
+          // ajax will go here //
+
+        }
+    </script>
+
 
     <section class="content">
         <div class="row">
@@ -216,6 +231,7 @@
               <td width=75 style='border:none'></td>
              </tr>
             </table>
+          </div>
 
     </section>
 </aside>

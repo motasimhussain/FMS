@@ -107,6 +107,10 @@
                                         <div class="form-group has-success">
                                             <label class="control-label" for="inputSuccess">Amount</label>
                                             <input type="text" class="form-control" id="amountNum" placeholder="Enter ..."/>
+                                        </div>
+
+                                        <div class="form-group has-success">
+                                            <label class="control-label" for="inputSuccess">Amount In Words</label>
                                             <input type="text" class="form-control" id="amountWords" placeholder="Currency In Words"/>
                                         </div>
 

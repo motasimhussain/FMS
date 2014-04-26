@@ -35,6 +35,12 @@ class Site extends CI_Controller {
 
 	// this marks the start of the forms included in the Forms //
 
+	public function add_work(){
+		$this->data['forms'] = ' active';
+		$this->data['main_content'] = 'add_work';
+		$this->load->view('includes/template', $this->data);
+	}
+
 	public function sales_form(){
 		$this->data['forms'] = ' active';
 		$this->data['main_content'] = 'sales_frm';

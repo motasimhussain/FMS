@@ -42,6 +42,7 @@
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
+                                <li><a href="<?php echo base_url();?>index.php/site/add_work"><i class="fa fa-angle-double-right"></i> Add Workplace</a></li>
                                 <li><a href="<?php echo base_url();?>index.php/site/add_co"><i class="fa fa-angle-double-right"></i> Add Company</a></li>
                                 <li><a href="<?php echo base_url();?>index.php/site/add_pro"><i class="fa fa-angle-double-right"></i> Add Product</a></li>
                                 <li><a href="<?php echo base_url();?>index.php/site/sales_form"><i class="fa fa-angle-double-right"></i> Sales Form</a></li>
@@ -65,7 +66,7 @@
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="<?php echo base_url();?>index.php/site/acc_ledger"><i class="fa fa-angle-double-right"></i> Acoounts Ledger</a></li>
+                                <li><a href="<?php echo base_url();?>index.php/site/acc_ledger"><i class="fa fa-angle-double-right"></i> Accounts Ledger</a></li>
                                 <!-- <li><a href="<?php echo base_url();?>index.php/site/add_pro"><i class="fa fa-angle-double-right"></i> Add Product</a></li>
                                 <li><a href="<?php echo base_url();?>index.php/site/inv_form"><i class="fa fa-angle-double-right"></i> Invoice Form</a></li> -->
                             </ul>

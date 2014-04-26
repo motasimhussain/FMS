@@ -3,7 +3,7 @@
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        Add Company
+                        Add Work Place
                         <small>Preview</small>
                     </h1>
                     <ol class="breadcrumb">
@@ -23,44 +23,53 @@
                         <!-- general form elements disabled -->
                             <div class="box box-warning">
                                 <div class="box-header">
-                                    <h3 class="box-title">Add Company</h3>
+                                    <h3 class="box-title">Add Work Place</h3>
                                 </div><!-- /.box-header -->
                                 <div class="box-body">
-                                    <form action="<?php echo base_url(); ?>index.php/form_process/add_co" method="post" class="form-horizontal">
+                                    <form action="<?php echo base_url(); ?>index.php/form_process/add_work" method="post" class="form-horizontal">
                                         <fieldset>
                                         
                                         <!-- Text input-->
                                         <div class="form-group">
-                                          <label class="col-md-4 control-label" for="textinput">Company ID</label>  
+                                          <label class="col-md-4 control-label" for="textinput">Workplace Name</label>  
                                           <div class="col-md-4">
-                                          <input id="textinput" name="c_id" placeholder="0000" class="form-control input-md" type="text" required>
+                                          <input id="textinput" name="w_name" placeholder="Workplace Name" class="form-control input-md" type="text" required>
                                             
                                           </div>
                                         </div>
 
                                         <!-- Text input-->
                                         <div class="form-group">
-                                          <label class="col-md-4 control-label" for="textinput">Company Description</label>  
+                                          <label class="col-md-4 control-label" for="textinput">Workplace Address</label>  
                                           <div class="col-md-4">
-                                          <input id="textinput" name="c_desc" placeholder="abcd" class="form-control input-md" type="text" required>
+                                          <input id="textinput" name="w_address" placeholder="Address" class="form-control input-md" type="text" required>
                                             
                                           </div>
                                         </div>
 
                                         <!-- Text input-->
                                         <div class="form-group">
-                                          <label class="col-md-4 control-label" for="textinput">Company Address</label>  
+                                          <label class="col-md-4 control-label" for="textinput">Tel/Fax #</label>  
                                           <div class="col-md-4">
-                                          <input id="textinput" name="c_address" placeholder="abcd123" class="form-control input-md" type="text" required>
+                                          <input id="textinput" name="w_tel" placeholder="Tel/Fax" class="form-control input-md" type="text" required>
                                             
                                           </div>
                                         </div>
 
                                         <!-- Text input-->
                                         <div class="form-group">
-                                          <label class="col-md-4 control-label" for="textinput">Dealer Name</label>  
+                                          <label class="col-md-4 control-label" for="textinput">GST #</label>  
                                           <div class="col-md-4">
-                                          <input id="textinput" name="c_dealer" placeholder="abcd" class="form-control input-md" type="text" required>
+                                          <input id="textinput" name="w_gst" placeholder="GST #" class="form-control input-md" type="text" required>
+                                            
+                                          </div>
+                                        </div>
+
+                                        <!-- Text input-->
+                                        <div class="form-group">
+                                          <label class="col-md-4 control-label" for="textinput">NTN</label>  
+                                          <div class="col-md-4">
+                                          <input id="textinput" name="w_ntn" placeholder="NTN" class="form-control input-md" type="text" required>
                                             
                                           </div>
                                         </div>
