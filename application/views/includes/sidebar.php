@@ -55,6 +55,17 @@
                             </a>
                             <ul class="treeview-menu">
                                 <li><a href="<?php echo base_url();?>index.php/site/sales_inv"><i class="fa fa-angle-double-right"></i> Sales Invoice</a></li>
+                                <li><a href="<?php echo base_url();?>index.php/site/purchase_inv"><i class="fa fa-angle-double-right"></i> Purchase Invoice</a></li>
+                                <!-- <li><a href="<?php echo base_url();?>index.php/site/inv_form"><i class="fa fa-angle-double-right"></i> Invoice Form</a></li> -->
+                            </ul>
+                        </li>
+                        <li class="treeview <?php echo $ledger ?>">
+                            <a href="#">
+                                <i class="fa fa-edit"></i> <span>Ledger</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="<?php echo base_url();?>index.php/site/acc_ledger"><i class="fa fa-angle-double-right"></i> Acoounts Ledger</a></li>
                                 <!-- <li><a href="<?php echo base_url();?>index.php/site/add_pro"><i class="fa fa-angle-double-right"></i> Add Product</a></li>
                                 <li><a href="<?php echo base_url();?>index.php/site/inv_form"><i class="fa fa-angle-double-right"></i> Invoice Form</a></li> -->
                             </ul>

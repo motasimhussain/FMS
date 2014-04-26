@@ -18,6 +18,7 @@ class Site extends CI_Controller {
 			//$this->data['inv_form'] = '';
 			$this->data['forms'] = '';
 			$this->data['invoice'] = '';
+			$this->data['ledger'] = '';
 			$this->data['calendar'] = '';
 			$this->data['mailbox'] = '';
 			$this->data['data_table'] = '';
@@ -67,8 +68,24 @@ class Site extends CI_Controller {
 		$this->data['main_content'] = 'sales_inv';
 		$this->load->view('includes/template', $this->data);
 	}
+	public function purchase_inv(){
+		$this->data['invoice'] = ' active';
+		$this->data['main_content'] = 'purchase_inv';
+		$this->load->view('includes/template', $this->data);
+	}
 
 	//invoice end //
+
+
+	//ledger start//
+
+	public function acc_ledger(){
+		$this->data['ledger'] = ' active';
+		$this->data['main_content'] = 'acc_ledger';
+		$this->load->view('includes/template', $this->data);
+	}
+
+	//ledger end //
 
 	public function calendar(){
 		$this->data['calendar'] = ' active';
