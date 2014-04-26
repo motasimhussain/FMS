@@ -1,9 +1,3 @@
-<html>
-<head>
-    <title></title>
-</head>
-
-<body>
     <aside class="right-side">
         <!-- Content Header (Page header) -->
 
@@ -289,5 +283,3 @@
 
         </section>
     </aside>
-</body>
-</html>
