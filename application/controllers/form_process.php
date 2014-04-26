@@ -33,6 +33,13 @@ class Form_process extends CI_Controller {
 		}
 	}
 
+	public function add_work(){
+		$this->load->model('add_work');
+		if ($this->add_work->add()) {
+			redirect('site/add_work');
+		}
+	}
+
 }
 
 /* End of file form_process.php */
