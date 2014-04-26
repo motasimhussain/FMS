@@ -1,9 +1,3 @@
-<html>
-<head>
-    <title></title>
-</head>
-
-<body>
     <aside class="right-side">
         <!-- Content Header (Page header) -->
 
@@ -287,8 +281,5 @@
  </tr>
 </table>
 
-<p >&nbsp;</p>
         </section>
-    </aside>
-</body>
-</html>
+    </aside> 
