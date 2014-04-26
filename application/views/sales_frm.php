@@ -92,16 +92,16 @@
 
                                          <div class="form-group">
 
-  <label for="prependedcheckbox">Sales Tax</label>
-  <div>
-    <div class="input-group">
-      <span class="input-group-addon">     
-          <input type="checkbox" checked="unchecked">     
-      </span>
-      <input id="prependedcheckbox" name="prependedcheckbox" class="form-control" placeholder="placeholder" type="text">
-    </div>
-  </div>
-</div>
+                                          <label for="prependedcheckbox">Sales Tax</label>
+                                          <div>
+                                            <div class="input-group">
+                                              <span class="input-group-addon">     
+                                                  <input type="checkbox" checked="unchecked">     
+                                              </span>
+                                              <input id="prependedcheckbox" name="prependedcheckbox" class="form-control" placeholder="placeholder" type="text">
+                                            </div>
+                                          </div>
+                                        </div>
 
                                         <!-- input states -->
                                         <div class="form-group has-success">
