@@ -24,6 +24,8 @@ class Site extends CI_Controller {
 			$this->data['data_table'] = '';
 			$this->data['user'] = $this->session->userdata('user');
 		}
+
+		$this->load->model('general_query');
 		
 	}
 
@@ -42,12 +44,39 @@ class Site extends CI_Controller {
 	}
 
 	public function sales_form(){
+		
+		if($this->general_query->get_wn()){
+			$this->data['select_workplace'] = $this->general_query->get_wn();
+		}else{
+			$this->data['select_workplace'] = 'no content';
+		}
+
+		if($this->general_query->get_cn()){
+			$this->data['select_company'] = $this->general_query->get_cn();
+		}else{
+			$this->data['select_company'] = 'no content';
+		}
+
+
 		$this->data['forms'] = ' active';
 		$this->data['main_content'] = 'sales_frm';
 		$this->load->view('includes/template', $this->data);
 	}
 
 	public function purchase_form(){
+
+		if($this->general_query->get_wn()){
+			$this->data['select_workplace'] = $this->general_query->get_wn();
+		}else{
+			$this->data['select_workplace'] = 'no content';
+		}
+
+		if($this->general_query->get_cn()){
+			$this->data['select_company'] = $this->general_query->get_cn();
+		}else{
+			$this->data['select_company'] = 'no content';
+		}
+
 		$this->data['forms'] = ' active';
 		$this->data['main_content'] = 'purchase_frm';
 		$this->load->view('includes/template', $this->data);

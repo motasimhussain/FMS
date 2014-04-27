@@ -40,6 +40,13 @@ class Form_process extends CI_Controller {
 		}
 	}
 
+	public function get_ledger(){
+		$this->load->model('get_ledger');
+		if ($this->get_ledger->get_entry()) {
+			redirect('site/acc_ledger');
+		}
+	}
+
 }
 
 /* End of file form_process.php */

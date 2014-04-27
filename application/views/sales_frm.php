@@ -33,8 +33,9 @@
                                         
                                         <label>Generate Invoice For</label>                                        
                                         <select id="selectbasic" name="selectbasic" class="form-control">
-                                            <option value="">PakJapan Chemicals</option>
-                                            <option value="">PakJapan Textiles</option>
+                                            <?php foreach($select_workplace as $row): ?>
+                                            <option value="<?php echo $row->id; ?>"><?php echo $row->w_name; ?></option>
+                                            <?php endforeach; ?>
                                         </select>
                                         
                                       </div>  
@@ -44,10 +45,9 @@
                                         
                                         <label>Company Name</label>                                        
                                         <select id="selectbasic" name="selectbasic" class="form-control">
-                                            <option value="">ABC Company</option>
-                                            <option value="">1234 Enterprises</option>
-                                            <option value="">XYZ Organization</option>
-                                            <option value="">JKL Printing Co.</option>
+                                            <?php foreach($select_company as $row): ?>
+                                            <option value="<?php echo $row->id; ?>"><?php echo $row->c_name; ?></option>
+                                            <?php endforeach; ?>
                                         </select>
                                         
                                       </div>

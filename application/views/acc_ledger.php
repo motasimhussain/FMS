@@ -2,9 +2,20 @@
     <!-- Content Header (Page header) -->
 
     <section class="content-header">
-        <form class="form-inline">
-          <label class="control-label" for="reservation">Pick Date</label>  
-          <input type="text" class="form-control getLedger" id="reservation" style="width:15em;">
+        <form class="form-inline" method="post" action="<?php echo base_url(); ?>index.php/form_process/get_ledger">
+          <span>
+            <label class="control-label" for="reservation">Pick Date</label>  
+            <input type="text" class="form-control getLedger" id="reservation" name="led_date" style="width:15em;">
+          </span>
+          <span style="padding-left:10px">
+            <label class="control-label" for="reservation">Pick Company</label>  
+            <input type="text" class="form-control" name="led_company" style="width:15em;">
+          </span>
+
+          <span style="padding-left:10px">
+            <button class="btn btn-success" value="submit">Get</button>
+          </span>
+          
         </form>
         
         <ol class="breadcrumb">
