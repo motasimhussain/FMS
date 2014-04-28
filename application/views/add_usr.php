@@ -65,6 +65,23 @@
     
   </div>
 </div>
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="fathername">Fathers Name</label>  
+  <div class="col-md-4">
+  <input id="fathername" name="fathername" placeholder="" class="form-control input-md" required="" type="text">
+  <span class="help-block"> </span>  
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="address">Address</label>  
+  <div class="col-md-4">
+  <input id="address" name="address" placeholder="" class="form-control input-md" required="" type="text">
+    
+  </div>
+</div>
 
 <!-- Text input-->
 <div class="form-group">
