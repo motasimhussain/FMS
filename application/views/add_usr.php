@@ -132,6 +132,13 @@
     <input id="add_pic" name="add_pic" class="input-file" type="file">
   </div>
 </div>
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="add_pic"></label>
+  <div class="col-md-4">
+    <button id="add_pic" name="add_pic_btn" class="btn btn-primary">Upload</button>
+  </div>
+</div>
 
 </fieldset>
 </form>
