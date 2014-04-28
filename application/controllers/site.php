@@ -140,6 +140,12 @@ class Site extends CI_Controller {
 		$this->load->view('includes/template2',$this->data);
 	}
 
+		public function add_usr(){
+		$this->data['add_usr'] = 'active';
+		$this->data['main_content'] = 'add_usr';
+		$this->load->view('includes/template',$this->data);
+	}
+
 }
 
 /* End of file site.php */
