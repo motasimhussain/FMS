@@ -70,7 +70,7 @@
                                         <!-- textarea -->
                                         <div class="form-group">
                                             <label>Quatity</label>
-                                            <input class="form-control" rows="3" placeholder="Enter ..."/>
+                                            <input class="form-control" id="qty" name="qty" rows="3" placeholder="Enter ..."/>
                                         </div>
                                         <!-- select -->
                                         <div class="form-group">
@@ -86,7 +86,7 @@
 
                                         <div class="form-group">
                                             <label>Price(per unit)</label>
-                                            <input class="form-control" rows="3" placeholder="Enter ..." ></textarea>
+                                            <input class="form-control" id="ppu" name="ppu" rows="3" placeholder="Enter ..." ></textarea>
                                         </div>
 
 
@@ -96,9 +96,9 @@
                                           <div>
                                             <div class="input-group">
                                               <span class="input-group-addon">     
-                                                  <input type="checkbox" checked="unchecked">     
+                                                  <input type="checkbox" checked="unchecked" id="sales_tax_check" name="sales_tax_check">     
                                               </span>
-                                              <input id="prependedcheckbox" name="prependedcheckbox" class="form-control" placeholder="placeholder" type="text">
+                                              <input id="sales_tax" name="sales_tax" class="form-control" value="0" type="text">
                                             </div>
                                           </div>
                                         </div>
@@ -106,25 +106,27 @@
                                         <!-- input states -->
                                         <div class="form-group has-success">
                                             <label class="control-label" for="inputSuccess">Amount</label>
-                                            <input type="text" class="form-control" id="amountNum" placeholder="Enter ..."/>
+                                            <input type="text" class="form-control" id="tot_amnt" name="tot_amnt" placeholder="Enter ..."/>
                                         </div>
 
                                         <div class="form-group has-success">
                                             <label class="control-label" for="inputSuccess">Amount In Words</label>
-                                            <input type="text" class="form-control" id="amountWords" placeholder="Currency In Words"/>
+                                            <input type="text" class="form-control" id="amnt_in_wrd" placeholder="Currency In Words"/>
                                         </div>
+
+                                       
 
                                         <!-- Script to dynamically generate words from numbers -->
 
                                         <script type="text/javascript">
 
-                                            var getNum = document.getElementById("amountNum");
+                                            var getNum = document.getElementById("tot_amnt");
 
-                                            getNum.onkeyup = function(){
+                                            function calc_tot(){
 
                                                 console.log("triggered");
 
-                                                var num = getNum.value;
+                                                var num = Math.floor(getNum.value);
 
                                                 var a = ['','one ','two ','three ','four ', 'five ','six ','seven ','eight ','nine ','ten ','eleven ','twelve ','thirteen ','fourteen ','fifteen ','sixteen ','seventeen ','eighteen ','nineteen '];
                                                 var b = ['', '', 'twenty','thirty','forty','fifty', 'sixty','seventy','eighty','ninety'];
@@ -141,9 +143,61 @@
                                                     return str;
                                                 }
 
-                                                document.getElementById("amountWords").value = inWords(num);
+                                                document.getElementById("amnt_in_wrd").value = inWords(num);
                                             }
                                         </script>
+
+                                        <script type="text/javascript">
+                                            var quantity = document.getElementById('qty');
+                                            var ppu = document.getElementById('ppu');
+                                            var tot_amnt = document.getElementById('tot_amnt');
+                                            var sales_tax_check = document.getElementById('sales_tax_check');
+                                            var sales_tax = document.getElementById('sales_tax');
+
+                                            ppu.onkeyup = function(){
+                                                var total = quantity.value * ppu.value;
+                                                if(total>0){
+                                                    if(sales_tax_check.checked){
+                                                        var tax = (total/100)*sales_tax.value;
+                                                        tot_amnt.value = total+tax;
+                                                    }else{
+                                                        tot_amnt.value = quantity.value * ppu.value;
+                                                    }
+
+                                                    calc_tot();
+                                                }
+                                            }
+
+                                            quantity.onkeyup = function(){
+                                                var total = quantity.value * ppu.value;
+                                                 if(total>0){
+                                                    if(sales_tax_check.checked){
+                                                        var tax = (total/100)*sales_tax.value;
+                                                        tot_amnt.value = total+tax;
+                                                    }else{
+                                                        tot_amnt.value = quantity.value * ppu.value;
+                                                    }
+
+                                                    calc_tot();
+                                                }
+                                            }
+
+                                            sales_tax.onkeyup = function(){
+                                                var total = quantity.value * ppu.value;
+                                                 if(total>0){
+                                                    if(sales_tax_check.checked){
+                                                        var tax = (total/100)*sales_tax.value;
+                                                        tot_amnt.value = total+tax;
+                                                    }else{
+                                                        tot_amnt.value = quantity.value * ppu.value;
+                                                    }
+
+                                                    calc_tot();
+                                                }
+                                            }
+
+                                        </script>
+
 
                                         <div class="form-group">
                                             <input type="submit" class="btn" name="sub_invoice" value="Submit" />

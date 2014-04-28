@@ -70,7 +70,7 @@
                                         <!-- textarea -->
                                         <div class="form-group">
                                             <label>Quatity</label>
-                                            <input class="form-control" rows="3" placeholder="Enter ..."/>
+                                            <input class="form-control" id="qty" name="qty" rows="3" placeholder="Enter ..."/>
                                         </div>
                                         <!-- select -->
                                         <div class="form-group">
@@ -86,28 +86,118 @@
 
                                         <div class="form-group">
                                             <label>Price(per unit)</label>
-                                            <input class="form-control" rows="3" placeholder="Enter ..." ></textarea>
+                                            <input class="form-control" id="ppu" name="ppu" rows="3" placeholder="Enter ..." ></textarea>
                                         </div>
 
 
-                                        <div class="form-group">
+                                         <div class="form-group">
 
-                                            <label for="prependedcheckbox">Sales Tax</label>
-                                            <div>
-                                                <div class="input-group">
-                                                    <span class="input-group-addon">     
-                                                        <input type="checkbox" checked="unchecked">     
-                                                    </span>
-                                                    <input id="prependedcheckbox" name="prependedcheckbox" class="form-control" placeholder="placeholder" type="text">
-                                                </div>
+                                          <label for="prependedcheckbox">Sales Tax</label>
+                                          <div>
+                                            <div class="input-group">
+                                              <span class="input-group-addon">     
+                                                  <input type="checkbox" checked="unchecked" id="sales_tax_check" name="sales_tax_check">     
+                                              </span>
+                                              <input id="sales_tax" name="sales_tax" class="form-control" value="0" type="text">
                                             </div>
+                                          </div>
                                         </div>
 
                                         <!-- input states -->
                                         <div class="form-group has-success">
                                             <label class="control-label" for="inputSuccess">Amount</label>
-                                            <input type="text" class="form-control" id="inputSuccess" placeholder="Enter ..."/>
+                                            <input type="text" class="form-control" id="tot_amnt" name="tot_amnt" placeholder="Enter ..."/>
                                         </div>
+
+                                        <div class="form-group has-success">
+                                            <label class="control-label" for="inputSuccess">Amount In Words</label>
+                                            <input type="text" class="form-control" id="amnt_in_wrd" placeholder="Currency In Words"/>
+                                        </div>
+
+                                       
+
+                                        <!-- Script to dynamically generate words from numbers -->
+
+                                        <script type="text/javascript">
+
+                                            var getNum = document.getElementById("tot_amnt");
+
+                                            function calc_tot(){
+
+                                                console.log("triggered");
+
+                                                var num = Math.floor(getNum.value);
+
+                                                var a = ['','one ','two ','three ','four ', 'five ','six ','seven ','eight ','nine ','ten ','eleven ','twelve ','thirteen ','fourteen ','fifteen ','sixteen ','seventeen ','eighteen ','nineteen '];
+                                                var b = ['', '', 'twenty','thirty','forty','fifty', 'sixty','seventy','eighty','ninety'];
+
+                                                function inWords (num) {
+                                                    if ((num = num.toString()).length > 9) return 'overflow';
+                                                    n = ('000000000' + num).substr(-9).match(/^(\d{2})(\d{2})(\d{2})(\d{1})(\d{2})$/);
+                                                    if (!n) return; var str = '';
+                                                    str += (n[1] != 0) ? (a[Number(n[1])] || b[n[1][0]] + ' ' + a[n[1][1]]) + 'crore ' : '';
+                                                    str += (n[2] != 0) ? (a[Number(n[2])] || b[n[2][0]] + ' ' + a[n[2][1]]) + 'lakh ' : '';
+                                                    str += (n[3] != 0) ? (a[Number(n[3])] || b[n[3][0]] + ' ' + a[n[3][1]]) + 'thousand ' : '';
+                                                    str += (n[4] != 0) ? (a[Number(n[4])] || b[n[4][0]] + ' ' + a[n[4][1]]) + 'hundred ' : '';
+                                                    str += (n[5] != 0) ? ((str != '') ? 'and ' : '') + (a[Number(n[5])] || b[n[5][0]] + ' ' + a[n[5][1]]) + 'only ' : '';
+                                                    return str;
+                                                }
+
+                                                document.getElementById("amnt_in_wrd").value = inWords(num);
+                                            }
+                                        </script>
+
+                                        <script type="text/javascript">
+                                            var quantity = document.getElementById('qty');
+                                            var ppu = document.getElementById('ppu');
+                                            var tot_amnt = document.getElementById('tot_amnt');
+                                            var sales_tax_check = document.getElementById('sales_tax_check');
+                                            var sales_tax = document.getElementById('sales_tax');
+
+                                            ppu.onkeyup = function(){
+                                                var total = quantity.value * ppu.value;
+                                                if(total>0){
+                                                    if(sales_tax_check.checked){
+                                                        var tax = (total/100)*sales_tax.value;
+                                                        tot_amnt.value = total+tax;
+                                                    }else{
+                                                        tot_amnt.value = quantity.value * ppu.value;
+                                                    }
+
+                                                    calc_tot();
+                                                }
+                                            }
+
+                                            quantity.onkeyup = function(){
+                                                var total = quantity.value * ppu.value;
+                                                 if(total>0){
+                                                    if(sales_tax_check.checked){
+                                                        var tax = (total/100)*sales_tax.value;
+                                                        tot_amnt.value = total+tax;
+                                                    }else{
+                                                        tot_amnt.value = quantity.value * ppu.value;
+                                                    }
+
+                                                    calc_tot();
+                                                }
+                                            }
+
+                                            sales_tax.onkeyup = function(){
+                                                var total = quantity.value * ppu.value;
+                                                 if(total>0){
+                                                    if(sales_tax_check.checked){
+                                                        var tax = (total/100)*sales_tax.value;
+                                                        tot_amnt.value = total+tax;
+                                                    }else{
+                                                        tot_amnt.value = quantity.value * ppu.value;
+                                                    }
+
+                                                    calc_tot();
+                                                }
+                                            }
+
+                                        </script>
+
 
                                         <div class="form-group">
                                             <input type="submit" class="btn" name="sub_invoice" value="Submit" />
