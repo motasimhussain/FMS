@@ -2,10 +2,13 @@
 
 class Upload extends CI_Controller {
 
+
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->helper(array('form', 'url'));
+		//$this->load->helper(array('form', 'url'));
+		$this->load->model('general_query');
+		$data = array();
 	}
 
 	function index()
@@ -15,17 +18,23 @@ class Upload extends CI_Controller {
 
 	function do_upload()
 	{
+		$user_id = $this->input->post('user_id');
+
 		$config['upload_path'] = 'uploads/';
 		$config['allowed_types'] = 'gif|jpg|png';
 		$config['max_size']	= '5000';
 		$config['max_width']  = '1680';
 		$config['max_height']  = '1050';
+		$config['overwrite'] = TRUE;
+		$config['file_name'] = $user_id;
 
 		$this->load->library('upload', $config);
 		$this->upload->initialize($config);
 
 
 		if($this->upload->do_upload()){
+			$data = $this->upload->data();
+			$this->general_query->update_usr_img($data['file_name']);
 			redirect('site/add_usr');
 		}else{
 			echo "oops something went wrong!";

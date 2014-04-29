@@ -52,7 +52,7 @@
                                       <div class="form-group">
                                         <label class="col-md-4 control-label" for="f_name">First name</label>  
                                         <div class="col-md-4">
-                                        <input id="f_name" name="name" placeholder="Enter First name" class="form-control input-md" type="text">
+                                        <input id="f_name" name="name" placeholder="Enter First name" class="form-control input-md" type="text" required>
                                           
                                         </div>
                                       </div>
@@ -61,7 +61,7 @@
                                       <div class="form-group">
                                         <label class="col-md-4 control-label" for="l_name">Last name</label>  
                                         <div class="col-md-4">
-                                        <input id="l_name" name="l_name" placeholder="Enter Last name" class="form-control input-md" type="text">
+                                        <input id="l_name" name="l_name" placeholder="Enter Last name" class="form-control input-md" type="text" required>
                                           
                                         </div>
                                       </div>
@@ -69,7 +69,7 @@
                                       <div class="form-group">
                                         <label class="col-md-4 control-label" for="fathername">Fathers Name</label>  
                                         <div class="col-md-4">
-                                        <input id="fathername" name="f_name" placeholder="" class="form-control input-md" required="" type="text">
+                                        <input id="fathername" name="f_name" placeholder="" class="form-control input-md" required type="text">
                                         <span class="help-block"> </span>  
                                         </div>
                                       </div>
@@ -78,7 +78,7 @@
                                       <div class="form-group">
                                         <label class="col-md-4 control-label" for="address">Address</label>  
                                         <div class="col-md-4">
-                                        <input id="address" name="address" placeholder="" class="form-control input-md" required="" type="text">
+                                        <input id="address" name="address" placeholder="" class="form-control input-md" required type="text">
                                           
                                         </div>
                                       </div>
@@ -128,14 +128,30 @@
 
                                       <!-- File Button --> 
                                       <div class="form-group">
-                                        <label class="col-md-4 control-label" for="userfile">Choose a picture:</label>
-                                        <div class="col-md-4">
-                                          <input type="file" id="userfile" name="userfile" size="20" class="input-file" />
-                                          <br />
+                                        <div class="row">
 
-                                          <input type="submit" value="upload" class="btn btn-success" />
+                                          <label class="col-md-4 control-label" for="userfile">Choose a picture:</label>
+
+                                          <div class="col-md-4">
+                                            <input type="file" id="userfile" name="userfile" size="20" class="input-file" />
+                                          </div>
 
                                         </div>
+
+                                        <div class="row">
+
+                                          <label class="col-md-4 control-label" for="selectUser">Image for user:</label>
+                                          <div class="col-md-4"> 
+                                            <select id="selectUser" name="user_id" class="form-control">
+                                              <?php foreach($names as $row): ?>
+                                              <option value="<?php echo $row->id; ?>"><?php echo $row->name; ?></option>
+                                              <?php endforeach; ?>
+                                            </select>
+                                          </div>
+                                          <input type="submit" value="upload" class="btn btn-success" />
+                                        </div>
+
+                                       
                                       </div>
 
                                     </fieldset>

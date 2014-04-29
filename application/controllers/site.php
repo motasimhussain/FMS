@@ -159,6 +159,13 @@ class Site extends CI_Controller {
 	//included in forms is hidden on non-admin login
 
 	public function add_usr(){
+
+		if($this->general_query->get_names()){
+			$this->data['names'] = $this->general_query->get_names();
+		}else{
+			$this->data['names'] = 'no content';
+		}
+
 		$this->data['forms'] = ' active';
 		$this->data['main_content'] = 'add_usr';
 		$this->load->view('includes/template',$this->data);
