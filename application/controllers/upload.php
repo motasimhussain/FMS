@@ -23,8 +23,8 @@ class Upload extends CI_Controller {
 		$config['upload_path'] = 'uploads/';
 		$config['allowed_types'] = 'gif|jpg|png';
 		$config['max_size']	= '5000';
-		$config['max_width']  = '1680';
-		$config['max_height']  = '1050';
+		$config['max_width']  = '4000';
+		$config['max_height']  = '4000';
 		$config['overwrite'] = TRUE;
 		$config['file_name'] = $user_id;
 
@@ -37,7 +37,8 @@ class Upload extends CI_Controller {
 			$this->general_query->update_usr_img($data['file_name']);
 			redirect('site/add_usr');
 		}else{
-			echo "oops something went wrong!";
+			$error = array('error' => $this->upload->display_errors());
+			print_r($error);
 		}
 
 		// if ( ! $this->upload->do_upload())

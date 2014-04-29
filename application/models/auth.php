@@ -14,12 +14,14 @@ class Auth extends CI_Model {
 				if($row->is_admin == 1){
 
 					$data = array(
-						'is_admin' => 'true'
+						'is_admin' => 'true',
+						'pic' => $row->pic
 					);
 					$this->session->set_userdata($data);
 				}else{
 					$data = array(
-						'is_admin' => 'false'
+						'is_admin' => 'false',
+						'pic' => $row->pic
 					);
 					$this->session->set_userdata($data);
 				}

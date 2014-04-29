@@ -35,6 +35,17 @@ class General_query extends CI_Model {
 		}
 	}
 
+	function get_pic(){
+		$this->db->select('pic');
+		$query = $this->db->get('user');
+		if($query->num_rows() > 0){
+			foreach ($query->result() as $row) {
+				$data[] = $row;
+			}
+			return $data;
+		}
+	}
+
 	function update_usr_img($data){
 		$data = array(
 			'pic' => base_url()."uploads/".$data

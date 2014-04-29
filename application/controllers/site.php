@@ -23,16 +23,18 @@ class Site extends CI_Controller {
 			$this->data['mailbox'] = '';
 			$this->data['data_table'] = '';
 			$this->data['user'] = $this->session->userdata('user');
+			$this->data['user_pic'] = $this->session->userdata('pic');
 
 			$is_admin = $this->session->userdata('is_admin');
 
 
-
+			//show or hide add user tab if the user is admin or not. //
 			if($is_admin == 'true') {
 			$this->data['hide_usr'] = 'display:block';
 			}else{
 				$this->data['hide_usr'] = 'display:none';
 			}
+
 		}
 
 		$this->load->model('general_query');
