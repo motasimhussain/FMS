@@ -119,21 +119,26 @@
 
                                     </fieldset>
                                   </form>
-                                  <form class="form-horizontal">
-                                  <fieldset>
 
-                                  <!-- Form Name -->
-                                  <legend>Add User Display Picture</legend>
+                                  <?php echo form_open_multipart('upload/do_upload');?>
+                                    <fieldset>
 
-                                  <!-- File Button --> 
-                                  <div class="form-group">
-                                    <label class="col-md-4 control-label" for="add_pic">Choose a picture:</label>
-                                    <div class="col-md-4">
-                                      <input id="add_pic" name="add_pic" class="input-file" type="file">
-                                    </div>
-                                  </div>
+                                    <!-- Form Name -->
+                                      <legend>Add User Display Picture</legend>
 
-                                  </fieldset>
+                                      <!-- File Button --> 
+                                      <div class="form-group">
+                                        <label class="col-md-4 control-label" for="userfile">Choose a picture:</label>
+                                        <div class="col-md-4">
+                                          <input type="file" id="userfile" name="userfile" size="20" class="input-file" />
+                                          <br />
+
+                                          <input type="submit" value="upload" class="btn btn-success" />
+
+                                        </div>
+                                      </div>
+
+                                    </fieldset>
                                   </form>
 
 
