@@ -10,7 +10,7 @@ class Site extends CI_Controller {
 
 		$logged_in = $this->session->userdata('is_logged_in');
 
-		if(!isset($logged_in) || $logged_in != true){
+		if(!isset($logged_in) || $logged_in != 'true'){
 			echo "you dont have permission to access the page!";
 			die();
 		}else{
@@ -23,6 +23,16 @@ class Site extends CI_Controller {
 			$this->data['mailbox'] = '';
 			$this->data['data_table'] = '';
 			$this->data['user'] = $this->session->userdata('user');
+
+			$is_admin = $this->session->userdata('is_admin');
+
+
+
+			if($is_admin == 'true') {
+			$this->data['hide_usr'] = 'display:block';
+			}else{
+				$this->data['hide_usr'] = 'display:none';
+			}
 		}
 
 		$this->load->model('general_query');
@@ -33,6 +43,12 @@ class Site extends CI_Controller {
 		$this->data['dashboard'] = ' active';
 		$this->data['main_content'] = 'index';
 		$this->load->view('includes/template', $this->data);
+
+		if ($this->session->userdata('is_admin') == true) {
+			$this->data['hide_usr'] = 'display:block';
+		}else{
+			$this->data['hide_usr'] = 'display:none';
+		}
 	}
 
 	// this marks the start of the forms included in the Forms //
@@ -140,8 +156,10 @@ class Site extends CI_Controller {
 		$this->load->view('includes/template2',$this->data);
 	}
 
-		public function add_usr(){
-		$this->data['add_usr'] = 'active';
+	//included in forms is hidden on non-admin login
+
+	public function add_usr(){
+		$this->data['forms'] = ' active';
 		$this->data['main_content'] = 'add_usr';
 		$this->load->view('includes/template',$this->data);
 	}

@@ -9,6 +9,22 @@ class Auth extends CI_Model {
 
 		$query = $this->db->get('user');
 		if($query->num_rows == 1){
+
+			foreach ($query->result() as $row) {
+				if($row->is_admin == 1){
+
+					$data = array(
+						'is_admin' => 'true'
+					);
+					$this->session->set_userdata($data);
+				}else{
+					$data = array(
+						'is_admin' => 'false'
+					);
+					$this->session->set_userdata($data);
+				}
+			}
+
 			return true;
 		}else {return false;}
 	}
