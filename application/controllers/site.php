@@ -10,7 +10,7 @@ class Site extends CI_Controller {
 
 		$logged_in = $this->session->userdata('is_logged_in');
 
-		if(!isset($logged_in) || $logged_in != true){
+		if(!isset($logged_in) || $logged_in != 'true'){
 			echo "you dont have permission to access the page!";
 			die();
 		}else{
@@ -22,7 +22,20 @@ class Site extends CI_Controller {
 			$this->data['calendar'] = '';
 			$this->data['mailbox'] = '';
 			$this->data['data_table'] = '';
+			$this->data['scan_doc'] = '';
 			$this->data['user'] = $this->session->userdata('user');
+			$this->data['user_pic'] = $this->session->userdata('pic');
+
+			$is_admin = $this->session->userdata('is_admin');
+
+
+			//show or hide add user tab if the user is admin or not. //
+			if($is_admin == 'true') {
+			$this->data['hide_usr'] = 'display:block';
+			}else{
+				$this->data['hide_usr'] = 'display:none';
+			}
+
 		}
 
 		$this->load->model('general_query');
@@ -33,6 +46,12 @@ class Site extends CI_Controller {
 		$this->data['dashboard'] = ' active';
 		$this->data['main_content'] = 'index';
 		$this->load->view('includes/template', $this->data);
+
+		if ($this->session->userdata('is_admin') == true) {
+			$this->data['hide_usr'] = 'display:block';
+		}else{
+			$this->data['hide_usr'] = 'display:none';
+		}
 	}
 
 	// this marks the start of the forms included in the Forms //
@@ -140,10 +159,45 @@ class Site extends CI_Controller {
 		$this->load->view('includes/template2',$this->data);
 	}
 
-		public function add_usr(){
-		$this->data['add_usr'] = 'active';
-		$this->data['main_content'] = 'add_usr';
-		$this->load->view('includes/template',$this->data);
+	//included in forms is hidden on non-admin login
+
+	public function add_usr(){
+		$is_admin = $this->session->userdata('is_admin');
+
+		if($this->general_query->get_names()){
+			$this->data['names'] = $this->general_query->get_names();
+		}else{
+			$this->data['names'] = 'no content';
+		}
+
+		if($is_admin == 'true') {
+			$this->data['forms'] = ' active';
+			$this->data['main_content'] = 'add_usr';
+			$this->load->view('includes/template',$this->data);
+		}else{
+			return;
+		}
+		
+	}
+
+
+	//scan documents
+
+	public function scan_doc(){
+		if($this->general_query->get_wn()){
+			$this->data['select_workplace'] = $this->general_query->get_wn();
+		}else{
+			$this->data['select_workplace'] = 'no content';
+		}
+
+		if($this->general_query->get_cn()){
+			$this->data['select_company'] = $this->general_query->get_cn();
+		}else{
+			$this->data['select_company'] = 'no content';
+		}
+		$this->data['scan_doc'] = ' active';
+		$this->data['main_content'] = 'scan_doc';
+		$this->load->view('includes/template', $this->data);
 	}
 
 }

@@ -99,6 +99,7 @@
                                                   <input type="checkbox" checked="unchecked" id="sales_tax_check" name="sales_tax_check">     
                                               </span>
                                               <input id="sales_tax" name="sales_tax" class="form-control" value="0" type="text">
+                                              <span class="input-group-addon">%</span>
                                             </div>
                                           </div>
                                         </div>

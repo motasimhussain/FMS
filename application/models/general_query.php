@@ -24,6 +24,37 @@ class General_query extends CI_Model {
 		}
 	}
 
+	function get_names(){
+		$this->db->select('id,name');
+		$query = $this->db->get('user');
+		if($query->num_rows() > 0){
+			foreach ($query->result() as $row) {
+				$data[] = $row;
+			}
+			return $data;
+		}
+	}
+
+	function get_pic(){
+		$this->db->select('pic');
+		$query = $this->db->get('user');
+		if($query->num_rows() > 0){
+			foreach ($query->result() as $row) {
+				$data[] = $row;
+			}
+			return $data;
+		}
+	}
+
+	function update_usr_img($data){
+		$data = array(
+			'pic' => base_url()."uploads/".$data
+		);
+
+		$this->db->where('id',$this->input->post('user_id'));
+		$this->db->update('user',$data);
+	}
+
 }
 
 /* End of file general_query.php */

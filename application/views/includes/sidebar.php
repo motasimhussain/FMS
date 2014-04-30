@@ -42,7 +42,7 @@
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="<?php echo base_url();?>index.php/site/add_usr"><i class="fa fa-angle-double-right"></i>Add User</a></li>
+                                <li style="<?php echo $hide_usr; ?>"><a href="<?php echo base_url();?>index.php/site/add_usr"><i class="fa fa-angle-double-right"></i> Add User</a></li>
                                 <li><a href="<?php echo base_url();?>index.php/site/add_work"><i class="fa fa-angle-double-right"></i> Add Workplace</a></li>
                                 <li><a href="<?php echo base_url();?>index.php/site/add_co"><i class="fa fa-angle-double-right"></i> Add Company</a></li>
                                 <li><a href="<?php echo base_url();?>index.php/site/add_pro"><i class="fa fa-angle-double-right"></i> Add Product</a></li>
@@ -82,6 +82,13 @@
                                 <li><a href="<?php echo base_url();?>index.php/site/data_table"><i class="fa fa-angle-double-right"></i> Data tables</a></li>
                             </ul>
                         </li>
+
+                        <li class="<?php echo $scan_doc; ?>">
+                            <a href="<?php echo base_url();?>index.php/site/scan_doc">
+                                <i class="fa fa-dashboard"></i> <span>Scan Documents</span>
+                            </a>
+                        </li>
+
                         <li class="<?php echo $calendar ?>">
                             <a href="<?php echo base_url();?>index.php/site/calendar">
                                 <i class="fa fa-calendar"></i> <span>Calendar</span>

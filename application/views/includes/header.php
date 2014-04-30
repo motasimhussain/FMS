@@ -58,7 +58,7 @@
                             <ul class="dropdown-menu">
                                 <!-- User image -->
                                 <li class="user-header bg-light-blue">
-                                    <img src="<?=base_url();?>img/avatar3.png" class="img-circle" alt="User Image" />
+                                    <img src="<?php echo $user_pic ?>" class="img-circle" alt="User Image" />
                                     <p>
                                         <?php echo $user; ?> - Data Entry Operator
                                         <small>Member since Nov. 2012</small>
@@ -68,7 +68,7 @@
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
                                     <div class="" style="text-align:center;">
-                                        <a href="<?php echo base_url(); ?>index.php/c_auth" class="btn btn-success">Sign out</a>
+                                        <a href="<?php echo base_url(); ?>index.php/logout" class="btn btn-success">Sign out</a>
                                     </div>
                                 </li>
                             </ul>
@@ -85,7 +85,7 @@
                     <!-- Sidebar user panel -->
                     <div class="user-panel">
                         <div class="pull-left image">
-                            <img src="<?=base_url();?>img/avatar3.png" class="img-circle" alt="User Image" />
+                            <img src="<?php echo $user_pic ?>" class="img-circle" alt="User Image" />
                         </div>
                         <div class="pull-left info">
                             <p>Hello, <?php echo $user; ?></p>
