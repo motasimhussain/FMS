@@ -19,7 +19,7 @@
                         <!-- left column -->
                         </div><!--/.col (left) -->
                         <!-- right column -->
-                        <div class="col-md-4">
+                    <!-- <div class="col-md-4"> -->
 
                         <!-- general form elements disabled -->
                             <div class="box box-warning">
@@ -27,61 +27,66 @@
                                     <h3 class="box-title">Scan Documents</h3>
                                 </div><!-- /.box-header -->
                                 <div class="box-body">
-                                    <?php echo form_open_multipart('upload/do_upload');?>
+                                <?php $tags =  array('class' => 'form-horizontal'); ?>
+                                    <?php echo form_open_multipart('scan_upload/do_upload',$tags);?>
+<fieldset>
 
-                                    <div class="form-group">
-                                        
-                                        <label>Scan Documents For</label>                                        
-                                        <select id="selectbasic" name="selectbasic" class="form-control">
-                                            <?php foreach($select_workplace as $row): ?>
-                                            <option value="<?php echo $row->id; ?>"><?php echo $row->w_name; ?></option>
-                                            <?php endforeach; ?>
-                                        </select>
-                                        
-                                    </div>  
+<!-- Form Name -->
 
-                                        <!-- Select Basic -->
-                                    <div class="form-group">
-                                        
-                                        <label>Company Name</label>                                        
-                                        <select id="selectbasic" name="selectbasic" class="form-control">
-                                            <?php foreach($select_company as $row): ?>
-                                            <option value="<?php echo $row->id; ?>"><?php echo $row->c_name; ?></option>
-                                            <?php endforeach; ?>
-                                        </select>
-                                        
-                                    </div>
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="docfor">Document for:</label>
+  <div class="col-md-4">
+      <select id="docfor" name="docfor" class="form-control">
+<?php foreach($select_workplace as $row): ?>
+<option value="<?php echo $row->id; ?>"><?php echo $row->w_name; ?></option>
+<?php endforeach; ?>
+    </select>
+  </div>
+</div>
 
-                                    <div class="form-group">
-                                        
-                                        <label>Description</label>  
-                                        <textarea class="form-control" rows="3"></textarea>
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="coname">Company Name:</label>
+  <div class="col-md-4">
+    <select id="coname" name="coname" class="form-control">
+<?php foreach($select_company as $row): ?>
+<option value="<?php echo $row->id; ?>"><?php echo $row->c_name; ?></option>
+<?php endforeach; ?>
+    </select>
+  </div>
+</div>
 
-                                    </div>
+<!-- Textarea -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="desc">Description:</label>
+  <div class="col-md-4">                     
+    <textarea class="form-control" id="desc" name="desc"></textarea>
+  </div>
+</div>
 
-                                    <legend>Add User Display Picture</legend>
+<!-- File Button --> 
+<div class="form-group">
+  <label class="col-md-4 control-label" for="scandoc">Select Document</label>
+  <div class="col-md-4">
+    <input id="scandoc" name="scandoc[]" class="input-file" type="file">
+        <input id="scandoc" name="scandoc[]" class="input-file" type="file">
+    <input id="scandoc" name="scandoc[]" class="input-file" type="file">
 
-                                      <!-- File Button --> 
-                                        <div class="form-group">
-                                            <div class="row">
+  </div>
+</div>
 
-                                              <label class="col-md-4 control-label" for="userfile">Choose a picture:</label>
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="docupload"></label>
+  <div class="col-md-4">
+    <button id="docupload" name="docupload" class="btn btn-primary">Upload</button>
+  </div>
+</div>
 
-                                              <div class="col-md-4">
-                                                <input type="file" id="userfile" name="userfile" size="20" class="input-file" required />
-                                              </div>
+</fieldset>
+</form>
 
-                                            </div>
-                                       
-                                      </div>
-
-                                       
-
-                                    <div class="form-group">
-                                        <input type="submit" class="btn" name="sub_invoice" value="Submit" />
-                                    </div>
-
-                                    </form>
                                 </div><!-- /.box-body -->
                             </div>
                         </div>
