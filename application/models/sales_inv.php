@@ -5,15 +5,16 @@ class Sales_inv extends CI_Model {
 	function add(){
 		$data = array(
 
-			'inv_for' => $this->input->post('item_code'),
-			'cmp_name' => $this->input->post('des'),
-			'date' => $this->input->post('cat'),
-			'desc' => $this->input->post('p_price'),
-			'qunty' => $this->input->post('s_price'),
-			'wght' => $this->input->post('unit'),
-			'price' => $this->input->post('unit'),
-			'sales_tax' => $this->input->post('unit'),
-			'amount' => $this->input->post('unit')
+			'inv_for' => $this->input->post('inv_for'),
+			'cmp_name' => $this->input->post('cmp_name'),
+			'date' => $this->input->post('date'),
+			'descr' => $this->input->post('desc'),
+			'qunty' => $this->input->post('qunty'),
+			'wght' => $this->input->post('wght'),
+			'price' => $this->input->post('price'),
+			'sales_tax' => $this->input->post('sales_tax'),
+			'amnt' => $this->input->post('amnt'),
+			'amnt_in_wrd' => $this->input->post('amnt_wrd')
 		);
 
 

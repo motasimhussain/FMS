@@ -19,7 +19,6 @@
                         <!-- left column -->
                         </div><!--/.col (left) -->
                         <!-- right column -->
-                                                <div class="col-md-4">
 
                         <!-- general form elements disabled -->
                             <div class="box box-warning">
@@ -27,101 +26,178 @@
                                     <h3 class="box-title">Invoice Form</h3>
                                 </div><!-- /.box-header -->
                                 <div class="box-body">
-                                    <form role="form" action="../form_process/sales_inv" method="POST">
+                                   
 
-                                      <div class="form-group">
-                                        
-                                        <label>Generate Invoice For</label>                                        
-                                        <select id="selectbasic" name="selectbasic" class="form-control">
-                                            <?php foreach($select_workplace as $row): ?>
+
+
+
+
+
+
+
+
+
+
+
+<form class="form-horizontal">
+<fieldset>
+
+<!-- Form Name -->
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="inv_for">Invoice for:</label>
+  <div class="col-md-4">
+    <select id="inv_for" name="inv_for" class="form-control">
+     <?php foreach($select_workplace as $row): ?>
                                             <option value="<?php echo $row->id; ?>"><?php echo $row->w_name; ?></option>
                                             <?php endforeach; ?>
-                                        </select>
-                                        
-                                      </div>  
+    </select>
+  </div>
+</div>
 
-                                        <!-- Select Basic -->
-                                      <div class="form-group">
-                                        
-                                        <label>Company Name</label>                                        
-                                        <select id="selectbasic" name="selectbasic" class="form-control">
-                                            <?php foreach($select_company as $row): ?>
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="coname">Company Name:</label>
+  <div class="col-md-4">
+    <select id="coname" name="coname" class="form-control">
+      <?php foreach($select_company as $row): ?>
                                             <option value="<?php echo $row->id; ?>"><?php echo $row->c_name; ?></option>
                                             <?php endforeach; ?>
-                                        </select>
-                                        
-                                      </div>
+    </select>
+  </div>
+</div>
 
-                                        <!-- text input -->
-                                        
-                                        <div class="form-group">
-                                            <div class="input-append date" id="dp3" data-date="" data-date-format="dd-mm-yyyy">
-                                                <label>Date</label>
-                                                <input class="form-control" id="pickdate" size="16" type="text" value="">
-                                                <i class="icon-th"></i>
-                                            </div>
-                                        </div>
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="ref_num">Ref #:</label>  
+  <div class="col-md-4">
+  <input id="ref_num" name="ref_num" placeholder="" class="form-control input-md" required="" type="text">
+    
+  </div>
+</div>
 
-                                        <div class="form-group">
-                                            <label>Description</label>
-                                            <input type="text" class="form-control" placeholder="Enter ..." />
-                                        </div>
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Date:</label>  
+  <div class="col-md-4 input-append date" id="dp3" data-date="" data-date-format="dd-mm-yyyy">
+  <input id="pickdate" name="date" placeholder="" class="form-control input-md" type="text">
+  </div>
+</div>
 
-                                        <!-- textarea -->
-                                        <div class="form-group">
-                                            <label>Quatity</label>
-                                            <input class="form-control" id="qty" name="qty" rows="3" placeholder="Enter ..."/>
-                                        </div>
-                                        <!-- select -->
-                                        <div class="form-group">
-                                            <label>Unit(Weight)</label>
-                                            <select class="form-control">
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="bill_num">Bill #:</label>  
+  <div class="col-md-4">
+  <input id="bill_num" name="bill_num" placeholder="" class="form-control input-md" required="" type="text">
+    
+  </div>
+</div>
+
+<!-- Textarea -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="desc">Description:</label>
+  <div class="col-md-4">                     
+    <textarea class="form-control" id="desc" name="desc"></textarea>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="wght">Unit Weight:</label>  
+  <div class="col-md-4">
+ <select id="wght" name="wght" placeholder="" class="form-control input-md" required=""  class="form-control">
                                                 <option>Kilograms</option>
                                                 <option>Grams</option>
                                                 <option>Tons</option>
                                                 <option>Milligrams</option>
                                                 <option>Pounds</option>
-                                            </select>
-                                        </div>
+                                            </select>    
+  </div>
+</div>
 
-                                        <div class="form-group">
-                                            <label>Price(per unit)</label>
-                                            <input class="form-control" id="ppu" name="ppu" rows="3" placeholder="Enter ..." ></textarea>
-                                        </div>
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="qunty">Quantity:</label>  
+  <div class="col-md-4">
+  <input id="qunty" name="qunty" placeholder="" class="form-control input-md" required="" type="text">
+    
+  </div>
+</div>
 
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="price">Unit Price</label>  
+  <div class="col-md-4">
+  <input id="price" name="price" placeholder="" class="form-control input-md" required="" type="text">
+    
+  </div>
+</div>
 
-                                         <div class="form-group">
+<!-- Prepended checkbox -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="sales_tax">Sales Tax:</label>
+  <div class="col-md-4">
+    <div class="input-group">
+      <span class="input-group-addon">     
+          <input type="checkbox" id="sales_tax_check">     
+      </span>
+      <input id="sales_tax" name="sales_tax" class="form-control" placeholder="" type="text">
+                                                  <span class="input-group-addon">%</span>
 
-                                          <label for="prependedcheckbox">Sales Tax</label>
-                                          <div>
-                                            <div class="input-group">
-                                              <span class="input-group-addon">     
-                                                  <input type="checkbox" checked="unchecked" id="sales_tax_check" name="sales_tax_check">     
-                                              </span>
-                                              <input id="sales_tax" name="sales_tax" class="form-control" value="0" type="text">
-                                              <span class="input-group-addon">%</span>
-                                            </div>
-                                          </div>
-                                        </div>
+    </div>
+    
+  </div>
+</div>
 
-                                        <!-- input states -->
-                                        <div class="form-group has-success">
-                                            <label class="control-label" for="inputSuccess">Amount</label>
-                                            <input type="text" class="form-control" id="tot_amnt" name="tot_amnt" placeholder="Enter ..."/>
-                                        </div>
+<!-- Prepended checkbox -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="fed_tax">F.E.D Tax:</label>
+  <div class="col-md-4">
+    <div class="input-group">
+      <span class="input-group-addon">     
+          <input type="checkbox" id="fed_tax_check">     
+      </span>
+      <input id="fed_tax" name="fed_tax" class="form-control" placeholder="" type="text">
+                                                    <span class="input-group-addon">%</span>
 
-                                        <div class="form-group has-success">
-                                            <label class="control-label" for="inputSuccess">Amount In Words</label>
-                                            <input type="text" class="form-control" id="amnt_in_wrd" placeholder="Currency In Words"/>
-                                        </div>
+    </div>
+    
+  </div>
+</div>
 
-                                       
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="amnt">Amount</label>  
+  <div class="col-md-4">
+  <input id="amnt" name="amnt" placeholder="" class="form-control input-md" type="text">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="amnt_wrd">Amount in Words</label>  
+  <div class="col-md-4">
+  <input id="amnt_wrd" name="amnt_wrd" placeholder="" class="form-control input-md" type="text">
+    
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="gen_inv"></label>
+  <div class="col-md-4">
+    <button id="gen_inv" name="gen_inv" class="btn btn-primary">Save</button>
+  </div>
+</div>
+
+</fieldset>
 
                                         <!-- Script to dynamically generate words from numbers -->
 
                                         <script type="text/javascript">
 
-                                            var getNum = document.getElementById("tot_amnt");
+                                            var getNum = document.getElementById("amnt");
 
                                             function calc_tot(){
 
@@ -144,21 +220,21 @@
                                                     return str;
                                                 }
 
-                                                document.getElementById("amnt_in_wrd").value = inWords(num);
+                                                document.getElementById("amnt_wrd").value = inWords(num);
                                             }
                                         </script>
 
                                         <script type="text/javascript">
-                                            var quantity = document.getElementById('qty');
-                                            var ppu = document.getElementById('ppu');
-                                            var tot_amnt = document.getElementById('tot_amnt');
+                                            var quantity = document.getElementById('qunty');
+                                            var ppu = document.getElementById('price');
+                                            var tot_amnt = document.getElementById('amnt');
                                             var sales_tax_check = document.getElementById('sales_tax_check');
                                             var sales_tax = document.getElementById('sales_tax');
 
                                             ppu.onkeyup = function(){
                                                 var total = quantity.value * ppu.value;
                                                 if(total>0){
-                                                    if(sales_tax_check.checked){
+                                                    if(sales_tax_check.checked){    
                                                         var tax = (total/100)*sales_tax.value;
                                                         tot_amnt.value = total+tax;
                                                     }else{
@@ -198,17 +274,17 @@
                                             }
 
                                         </script>
+</form>
 
 
-                                        <div class="form-group">
-                                            <input type="submit" class="btn" name="sub_invoice" value="Submit" />
-                                        </div>
 
-                                    </form>
+
+
+
+
+                                    
                                 </div><!-- /.box-body -->
                             </div><!-- /.box -->
-                            </div>
-                        <div class="col-md-8">
                             <div class="box">
                                 <div class="box-header">
                                     <h3 class="box-title">Hover Data Table</h3>                                    
@@ -284,7 +360,6 @@
                                                 <td class=" ">A</td>
                                             </tr></tbody></table><div class="row"><div class="col-xs-6"><div class="dataTables_info" id="example2_info">Showing 1 to 10 of 57 entries</div></div><div class="col-xs-6"><div class="dataTables_paginate paging_bootstrap"><ul class="pagination"><li class="prev disabled"><a href="#">← Previous</a></li><li class="active"><a href="#">1</a></li><li><a href="#">2</a></li><li><a href="#">3</a></li><li><a href="#">4</a></li><li><a href="#">5</a></li><li class="next"><a href="#">Next → </a></li></ul></div></div></div></div>
                                 </div><!-- /.box-body -->
-                            </div>
                             </div>
                     </div>   <!-- /.row -->
                 </section><!-- /.content -->
