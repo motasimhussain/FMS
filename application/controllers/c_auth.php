@@ -2,6 +2,7 @@
 
 class C_auth extends CI_Controller {
 
+
 	public function index()
 	{
 		$this->load->view('login');

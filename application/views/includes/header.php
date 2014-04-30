@@ -68,7 +68,7 @@
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
                                     <div class="" style="text-align:center;">
-                                        <a href="<?php echo base_url(); ?>index.php/c_auth" class="btn btn-success">Sign out</a>
+                                        <a href="<?php echo base_url(); ?>index.php/logout" class="btn btn-success">Sign out</a>
                                     </div>
                                 </li>
                             </ul>
