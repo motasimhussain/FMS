@@ -22,6 +22,7 @@ class Site extends CI_Controller {
 			$this->data['calendar'] = '';
 			$this->data['mailbox'] = '';
 			$this->data['data_table'] = '';
+			$this->data['scan_doc'] = '';
 			$this->data['user'] = $this->session->userdata('user');
 			$this->data['user_pic'] = $this->session->userdata('pic');
 
@@ -177,6 +178,26 @@ class Site extends CI_Controller {
 			return;
 		}
 		
+	}
+
+
+	//scan documents
+
+	public function scan_doc(){
+		if($this->general_query->get_wn()){
+			$this->data['select_workplace'] = $this->general_query->get_wn();
+		}else{
+			$this->data['select_workplace'] = 'no content';
+		}
+
+		if($this->general_query->get_cn()){
+			$this->data['select_company'] = $this->general_query->get_cn();
+		}else{
+			$this->data['select_company'] = 'no content';
+		}
+		$this->data['scan_doc'] = ' active';
+		$this->data['main_content'] = 'scan_doc';
+		$this->load->view('includes/template', $this->data);
 	}
 
 }

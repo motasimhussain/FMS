@@ -133,7 +133,7 @@
                                           <label class="col-md-4 control-label" for="userfile">Choose a picture:</label>
 
                                           <div class="col-md-4">
-                                            <input type="file" id="userfile" name="userfile" size="20" class="input-file" />
+                                            <input type="file" id="userfile" name="userfile" size="20" class="input-file" required/>
                                           </div>
 
                                         </div>

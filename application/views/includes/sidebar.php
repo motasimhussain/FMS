@@ -82,6 +82,13 @@
                                 <li><a href="<?php echo base_url();?>index.php/site/data_table"><i class="fa fa-angle-double-right"></i> Data tables</a></li>
                             </ul>
                         </li>
+
+                        <li class="<?php echo $scan_doc; ?>">
+                            <a href="<?php echo base_url();?>index.php/site/scan_doc">
+                                <i class="fa fa-dashboard"></i> <span>Scan Documents</span>
+                            </a>
+                        </li>
+
                         <li class="<?php echo $calendar ?>">
                             <a href="<?php echo base_url();?>index.php/site/calendar">
                                 <i class="fa fa-calendar"></i> <span>Calendar</span>
