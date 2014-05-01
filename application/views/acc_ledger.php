@@ -3,28 +3,72 @@
 
     <section class="content-header">
         <form class="form-inline" method="post" action="<?php echo base_url(); ?>index.php/form_process/get_ledger">
-          <span>
+          <!-- <span>
             <label class="control-label" for="reservation">Pick Date</label>  
             <input type="text" class="form-control getLedger" id="reservation" name="led_date" style="width:15em;">
           </span>
           <span style="padding-left:10px">
-            <label class="control-label" for="reservation">Pick Company</label>  
-            <input type="text" class="form-control" name="led_company" style="width:15em;">
+            <label class="control-label" for="led_for">Pick Workplace</label>  
+            <select id="led_for" name="led_for" class="form-control" style="width:15em;">
+                <?php foreach($select_workplace as $row): ?>
+                <option value="<?php echo $row->id; ?>"><?php echo $row->w_name; ?></option>
+                <?php endforeach; ?>
+            </select>
+          </span>
+
+          <span style="padding-left:10px">
+            <label class="control-label" for="coname">Pick Company</label>  
+            <select id="coname" name="coname" class="form-control" style="width:15em;">
+                <?php foreach($select_company as $row): ?>
+                  <option value="<?php echo $row->id; ?>"><?php echo $row->c_name; ?></option>
+                <?php endforeach; ?>
+            </select>
           </span>
 
           <span style="padding-left:10px">
             <button class="btn btn-success" value="submit">Get</button>
-          </span>
+          </span> -->
+
+          <ul class="list-inline">
+
+            <li>
+              <label class="control-label" for="reservation">Pick Date</label>  
+              <input type="text" class="form-control getLedger" id="reservation" name="led_date" style="width:15em;">
+            </li>
+
+            <li>
+              <label class="control-label" for="led_for">Pick Workplace</label>  
+              <select id="led_for" name="led_for" class="form-control" style="width:15em;">
+                <?php foreach($select_workplace as $row): ?>
+                  <option value="<?php echo $row->id; ?>"><?php echo $row->w_name; ?></option>
+                <?php endforeach; ?>
+              </select>
+            </li>
+
+            <li>
+              <label class="control-label" for="coname">Pick Company</label>  
+              <select id="coname" name="coname" class="form-control" style="width:15em;">
+                <?php foreach($select_company as $row): ?>
+                  <option value="<?php echo $row->id; ?>"><?php echo $row->c_name; ?></option>
+                <?php endforeach; ?>
+              </select>
+            </li>
+
+            <li>
+              <button class="btn btn-success" value="submit">Get</button>
+            </li>
+            
+          </ul>
           
         </form>
         
-        <ol class="breadcrumb">
+        <!-- <ol class="breadcrumb">
             <li><a href="#">Home</a></li>
 
             <li><a href="#">Forms</a></li>
 
             <li class="active">General Elements</li>
-        </ol>
+        </ol> -->
     </section><!-- Main content -->
 
 
