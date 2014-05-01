@@ -1,6 +1,6 @@
 Create View sales_inv 
 AS SELECT
- w_name, w_tel, w_gst, w_ntn, c_name, c_address, serial, inv_for, cmp_name, bill_num, ref_num, qunty, price, wght, amnt,sales_tax_tot, amnt_in_wrd, tot_amnt,sale_sess 
+ w_name, w_tel, w_gst, w_ntn, c_name, c_address, serial, inv_for, cmp_name, bill_num, ref_num, dscr, qunty, price, wght, amnt,sales_tax_tot, amnt_in_wrd, tot_amnt,sale_sess 
  FROM
  workplace a
         inner join
