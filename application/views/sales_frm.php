@@ -1,6 +1,3 @@
-
-
-
 <!-- Right side column. Contains the navbar and content of the page -->
 <aside class="right-side">
     <!-- Content Header (Page header) -->
@@ -34,7 +31,6 @@
                                 <!-- Select Basic -->
                                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                                     
-
                                     <div class="form-group">
                                         <label class="col-md-4 control-label" for="inv_for">Invoice for:</label>
                                         <div class="col-md-7">
@@ -65,14 +61,14 @@
                                                 <?php endforeach; ?>
                                             </select>
                                         </div>
-                                        </div>                  
-                                        <div class="form-group">
+                                    </div>
+                                    <div class="form-group">
                                         <label class="col-md-4 control-label" for="serial">Serial #:</label>
                                         <div class="col-md-7">
-                                                <input id="serial" name="serial" placeholder="" class="form-control input-md" required="" type="text" value="SO0000">
-                                                
-                                            </div>
-                                    </div>              <!-- Text input-->
+                                            <input id="serial" name="serial" placeholder="" class="form-control input-md" required="" type="text" value="SO0000">
+                                            
+                                        </div>
+                                        </div>              <!-- Text input-->
                                         <div class="form-group">
                                             <label class="col-md-4 control-label" for="ref_num">Ref #:</label>
                                             <div class="col-md-7">
@@ -81,7 +77,7 @@
                                             </div>
                                         </div>
                                         <!-- Text input-->
-  
+                                        
                                         <!-- Text input-->
                                         <div class="form-group">
                                             <label class="col-md-4 control-label" for="bill_num">Bill #:</label>
@@ -96,7 +92,7 @@
                                                 <input id="pickdate" name="date" placeholder="" class="form-control input-md" type="text">
                                             </div>
                                         </div>
-  
+                                        
                                         <!-- Textarea -->
                                         <div class="form-group">
                                             <label class="col-md-4 control-label" for="desc">Description:</label>
@@ -182,11 +178,10 @@
                                         </div>
                                         <!-- Button -->
                                     </div>
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label" for="gen_inv"></label>
-                                        <div class="col-md-11">
-                                            <button id="gen_inv" name="gen_inv" class="btn btn-primary pull-right">Save</button>
-                                        </div>
+                                        </fieldset>
+                                    <fieldset>
+                                        <div class="col-md-12">
+                                            <button id="save_inv" name="save_inv" class="btn btn-primary pull-right">Save</button>
                                     </div>
                                 </fieldset>
                                 <!-- Script to dynamically generate words from numbers -->
@@ -256,120 +251,113 @@
                                 </script>
                             </form>
                             
-                            </div><!-- /.box-body -->
-                            </div><!-- /.box -->
+                    </div><!-- /.box-body -->
+            </div><!-- /.box -->
+
+
+
+
+
+
+
+
                             <div class="box">
                                 <div class="box-header">
                                     <h3 class="box-title">Current Sales</h3>
                                     </div><!-- /.box-header -->
                                     <div class="box-body table-responsive">
                                         <div role="grid" class="dataTables_wrapper form-inline" id="example2_wrapper">
-                                        <div class="row">
-                                        <div class="col-xs-6">
-                                            
-                                        </div>
-                                        <div class="col-xs-6">
-                                            
-                                        </div>
-                                        </div>
-                                        <table class="table table-bordered table-hover dataTable" id="example2" aria-describedby="example2_info">
-                                        <thead>
-                                            <tr role="row">
-                                            <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="">
-                                            Serial #:
-                                            </th>
-                                            <th class="sorting" role="columnheader" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="">
-                                            Reference #:
-                                            </th>
-                                            <th class="sorting" role="columnheader" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="">
-                                            Bill #:
-                                            </th>
-                                            <th class="sorting" role="columnheader" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="">
-                                            Date:
-                                            </th>
-                                            <th class="sorting" role="columnheader" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="">
-                                            Description:
-                                            </th>
-                                            <th class="sorting" role="columnheader" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="">
-                                            Quatity:
-                                            </th>
-                                            <th class="sorting" role="columnheader" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="">
-                                            Weight:
-                                            </th>
-                                            <th class="sorting" role="columnheader" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="">
-                                            Price:
-                                            </th>
-                                            <th class="sorting" role="columnheader" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="">
-                                            Sales Tax:
-                                            </th>
-                                            <th class="sorting" role="columnheader" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="">
-                                            FED Tax:
-                                            </th>
-                                            <th class="sorting" role="columnheader" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="">
-                                            Amount:
-                                            </th>
-
-                                            </tr>
-                                        </thead>
-                                        
-                                       
-                                        <tbody role="alert" aria-live="polite" aria-relevant="all"><tr class="odd">
-                                            <?php
-
-                                            if($sale_table != 'No Sales'){
-                                             foreach($sale_table as $row) {
-                                            
-                                            ?>
-                                            <tr class="even">
-                                            <td class="  sorting_1"><?php echo $row->serial;?></td>
-                                            <td class=" "><?php echo $row->ref_num;?></td>
-                                            <td class=" "><?php echo $row->bill_num;?></td>
-                                            <td class=" "><?php echo $row->date;?></td>
-                                            <td class=" "><?php echo $row->dscr;?></td>
-                                            <td class=" "><?php echo $row->qunty;?></td>
-                                            <td class=" "><?php echo $row->wght;?></td>
-                                            <td class=" "><?php echo $row->price;?></td>
-                                            <td class=" "><?php echo $row->sales_tax;?></td>
-                                            <td class=" "><?php echo $row->fed_tax;?></td>
-                                            <td class=" "><?php echo $row->amnt;?></td>
-                                            </tr>
-                                            <?php 
-                                            }
-
-                                            }
-
-                                            ?>
-                                            </tbody>
-                                            </table>
                                             <div class="row">
-                                            <div class="col-xs-6">
-                                            <div class="dataTables_info" id="example2_info">
-                                            Showing 1 to 10 of 57 entries
+                                                
                                             </div>
+                                            <table class="table table-bordered table-hover dataTable" id="example2" aria-describedby="example2_info">
+                                                <thead>
+                                                    <tr role="row">
+                                                        <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="">
+                                                            Serial #:
+                                                        </th>
+                                                        <th class="sorting" role="columnheader" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="">
+                                                            Reference #:
+                                                        </th>
+                                                        <th class="sorting" role="columnheader" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="">
+                                                            Bill #:
+                                                        </th>
+                                                        <th class="sorting" role="columnheader" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="">
+                                                            Date:
+                                                        </th>
+                                                        <th class="sorting" role="columnheader" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="">
+                                                            Description:
+                                                        </th>
+                                                        <th class="sorting" role="columnheader" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="">
+                                                            Quatity:
+                                                        </th>
+                                                        <th class="sorting" role="columnheader" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="">
+                                                            Weight:
+                                                        </th>
+                                                        <th class="sorting" role="columnheader" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="">
+                                                            Price:
+                                                        </th>
+                                                        <th class="sorting" role="columnheader" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="">
+                                                            Sales Tax:
+                                                        </th>
+                                                        <th class="sorting" role="columnheader" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="">
+                                                            FED Tax:
+                                                        </th>
+                                                        <th class="sorting" role="columnheader" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="">
+                                                            Amount:
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                
+                                                <tbody role="alert" aria-live="polite" aria-relevant="all"><tr class="odd">
+                                                    <?php
+                                                    if($sale_table != 'No Sales'){
+                                                    foreach($sale_table as $row):
+                                                    
+                                                    
+                                                    ?>
+                                                    <tr class="even">
+                                                        <td class="  sorting_1"><?php echo $row->serial;?></td>
+                                                        <td class=" "><?php echo $row->ref_num;?></td>
+                                                        <td class=" "><?php echo $row->bill_num;?></td>
+                                                        <td class=" "><?php echo $row->date;?></td>
+                                                        <td class=" "><?php echo $row->dscr;?></td>
+                                                        <td class=" "><?php echo $row->qunty;?></td>
+                                                        <td class=" "><?php echo $row->wght;?></td>
+                                                        <td class=" "><?php echo $row->price;?></td>
+                                                        <td class=" "><?php echo $row->sales_tax;?></td>
+                                                        <td class=" "><?php echo $row->fed_tax;?></td>
+                                                        <td class=" "><?php echo $row->amnt;?></td>
+                                                    </tr>
+                                                    <?php
+                                                    $sale_sess = $row->sale_sess;
+                                                    endforeach;
+                                                    }  else{
+                                                     $sale_sess = '0';
+                                                  ?>
+                                                    <tr class="even">
+                                                        <td colspan="11" class="text-center">No Sales</td>
+                                                    </tr>
+                                                    <?php
+                                                    }
+                                                    ?>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <br>
+                                        <form method="post" action="<?php echo base_url(); ?>index.php/site/gen_sales_inv">
+ 
+                                        <fieldset>
+                                            <div class="form-group">
+                                            <input type="hidden" name = "sale_sess" value="<?php echo $sale_sess; ?>">
+                                                <div class="col-md-12">
+                                                    <button id="gen_inv" name="gen_inv" class="btn btn-primary pull-right">Generate Invoice</button>
+                                                </div>
                                             </div>
-                                            <div class="col-xs-6">
-                                            <div class="dataTables_paginate paging_bootstrap">
-                                            <ul class="pagination">
-                                            <li class="prev disabled">
-                                            <a href="#">← Previous</a>
-                                            </li>
-                                            <li class="active">
-                                            <a href="#">1</a>
-                                            </li>
-                                            <li>
-                                            <a href="#">2</a>
-                                            </li>
-                                            <li><a href="#">3</a></li>
-                                            <li><a href="#">4</a></li>
-                                            <li><a href="#">5</a></li>
-                                            <li class="next"><a href="#">Next → </a></li>
-                                            </ul>
-                                            </div>
-                                            </div>
-                                            </div>
-                                            </div>
-                                            </div><!-- /.box-body -->
-                                            </div>
-                                            </div>   <!-- /.row -->
-                                            </section><!-- /.content -->
-                                            </aside><!-- /.right-side -->
+                                        </fieldset>
+                                        </form>
+                                    </div>
+                                    
+                                </div>
+                                </section><!-- /.content -->
+                                </aside><!-- /.right-side -->

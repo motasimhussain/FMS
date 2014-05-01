@@ -14,6 +14,17 @@ class General_query extends CI_Model {
 		}
 	}
 
+	function get_sales_view(){
+		$this->db->where('sale_sess', $this->input->post('sale_sess'));
+		$query = $this->db->get('sales_inv');
+		if($query->num_rows() > 0){
+			foreach ($query->result() as $row) {
+				$data[] = $row;
+			}
+			return $data;
+		}
+	}
+
 	function get_wn(){
 		$this->db->select('id,w_name');
 		$query = $this->db->get('workplace');

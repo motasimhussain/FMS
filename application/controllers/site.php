@@ -122,10 +122,14 @@ class Site extends CI_Controller {
 
 	//invoce start//
 
-	public function sales_inv(){
-		$this->data['invoice'] = ' active';
-		$this->data['main_content'] = 'sales_inv';
-		$this->load->view('includes/template', $this->data);
+	public function gen_sales_inv(){
+		$this->load->model('general_query');
+		if ($this->general_query->get_sales_view()) {
+			$this->data['gen_inv'] = $this->general_query->get_sales_view();
+			$this->data['invoice'] = ' active';
+			$this->data['main_content'] = 'sales_inv';
+			$this->load->view('includes/template', $this->data);	
+		}
 	}
 	public function purchase_inv(){
 		$this->data['invoice'] = ' active';

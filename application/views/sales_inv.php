@@ -21,7 +21,7 @@
            <div style="padding-right:70px;padding-left:70px;">
                <h1 class="text-center" >INVOICE</h1>
 
- <h2 class="text-center">$invoce_for</h2>
+ <h2 class="text-center"></h2>
 <br>
 
 <table class="table" class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
@@ -163,7 +163,7 @@
   <td width=100 colspan=2 valign=top style='font-size:14px;width:75.15pt;border:solid windowtext 1.0pt;
   border-left:none;padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'>Date</p>
+  normal'>Description</p>
   </td>
   <td width=100 colspan=2 valign=top style='font-size:14px;width:75.15pt;border:solid windowtext 1.0pt;
   border-left:none;padding:0in 5.4pt 0in 5.4pt'>
@@ -173,12 +173,12 @@
   <td width=100 colspan=2 valign=top style='font-size:14px;width:75.15pt;border:solid windowtext 1.0pt;
   border-left:none;padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'>Description</p>
+  normal'>Weight</p>
   </td>
   <td width=100 valign=top style='font-size:14px;width:75.15pt;border:solid windowtext 1.0pt;
   border-left:none;padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'>Unit(Weight)</p>
+  normal'>Unit Price</p>
   </td>
   <td width=100 valign=top style='font-size:14px;width:75.2pt;border:solid windowtext 1.0pt;
   border-left:none;padding:0in 5.4pt 0in 5.4pt'>
@@ -186,39 +186,41 @@
   normal'>Amount</p>
   </td>
  </tr>
+ <?php foreach ($gen_inv as $row):?>
  <tr>
   <td width=100 valign=top style='font-size:14px;width:75.15pt;border-top:none;border-left:
   solid windowtext 1.0pt;border-bottom:none;border-right:solid windowtext 1.0pt;
   padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'>$sno</p>
+  normal'>1</p>
   </td>
   <td width=100 colspan=2 valign=top style='font-size:14px;width:75.15pt;border:none;
   border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'>$date</p>
+  normal'><?php echo $row->dscr; ?></p>
   </td>
   <td width=100 colspan=2 valign=top style='font-size:14px;width:75.15pt;border:none;
   border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'>$qnty</p>
+  normal'><?php echo $row->qunty; ?></p>
   </td>
   <td width=100 colspan=2 valign=top style='font-size:14px;width:75.15pt;border:none;
   border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'>$desc</p>
+  normal'><?php echo $row->wght; ?></p>
   </td>
   <td width=100 valign=top style='font-size:14px;width:75.15pt;border:none;border-right:solid windowtext 1.0pt;
   padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'>$unit</p>
+  normal'><?php echo $row->price; ?></p>
   </td>
   <td width=100 valign=top style='font-size:14px;width:75.2pt;border:none;border-right:solid windowtext 1.0pt;
   padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'>$amnt</p>
+  normal'><?php echo $row->amnt; ?></p>
   </td>
  </tr>
+<?php endforeach; ?>
  <tr>
   <td width=200 colspan=3 valign=top style='font-size:14px;width:150.3pt;border:solid windowtext 1.0pt;
   padding:0in 5.4pt 0in 5.4pt'>
