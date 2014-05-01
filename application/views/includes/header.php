@@ -1,4 +1,10 @@
+<?php 
+if (uri_string() != 'site/sales_frm' && ($this->session->userdata('sale_id')))
+    $this->session->unset_userdata('sale_id');
+?>
+
 <!DOCTYPE html>
+
 <html>
     <head>
         <meta charset="UTF-8">
@@ -29,7 +35,7 @@
         <![endif]-->
       
     </head>
-    <body class="skin-blue fixed">
+    <body class="skin-blue fixed" >
         <!-- header logo: style can be found in header.less -->
         <header class="header">
             <a href="<?php echo base_url();?>index.php/site/index" class="logo">

@@ -1,6 +1,17 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class General_query extends CI_Model {
+	
+	function get_sale_rec(){
+		$this->db->where('sale_sess', $this->session->userdata('sale_id'));
+		$query = $this->db->get('sales');
+		if($query->num_rows() > 0){
+			foreach ($query->result() as $row) {
+				$data[] = $row;
+			}
+			return $data;
+		}
+	}
 
 	function get_wn(){
 		$this->db->select('id,w_name');

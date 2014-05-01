@@ -3,12 +3,19 @@
 class Sales_frm extends CI_Model {
 
 	function add(){
+		if(!$this->session->userdata('sale_id'))
+		{
+			$data = array('sale_id' => time());
+			$this->session->set_userdata($data); 
+			echo $this->session->userdata('sale_id');
+
+		}
 		$data = array(
 
 			'inv_for' => $this->input->post('inv_for'),
 			'cmp_name' => $this->input->post('cmp_name'),
 			'acc' => $this->input->post('acc'),
-			'serial' => $this->input->post('seril'),
+//serial' => $this->input->post('serial'),
 			'ref_num' => $this->input->post('ref_num'),
 			'bill_num' => $this->input->post('bill_num'),
 			'date' => $this->input->post('date'),
@@ -19,7 +26,8 @@ class Sales_frm extends CI_Model {
 			'sales_tax' => $this->input->post('sales_tax'),
 			'fed_tax' => $this->input->post('fed_tax'),
 			'amnt' => $this->input->post('amnt'),
-			'amnt_in_wrd' => $this->input->post('amnt_wrd')
+			'amnt_in_wrd' => $this->input->post('amnt_wrd'),
+			'sale_sess' => $this->session->userdata('sale_id')
 		);
 
 

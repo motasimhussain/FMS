@@ -63,7 +63,9 @@ class Site extends CI_Controller {
 	}
 
 	public function sales_frm(){
-		
+
+		$this->data['sale_table'] =  $this->general_query->get_sale_rec();
+
 		if($this->general_query->get_wn()){
 			$this->data['select_workplace'] = $this->general_query->get_wn();
 		}else{
