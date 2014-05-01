@@ -179,7 +179,7 @@
   normal'>Amount</p>
   </td>
  </tr>
- <?php foreach ($gen_inv as $row):?>
+ <?php foreach ($gen_inv as $row): ?>
  <tr>
   <td width=100 valign=top style='font-size:14px;width:75.15pt;border-top:none;border-left:
   solid windowtext 1.0pt;border-bottom:none;border-right:solid windowtext 1.0pt;
@@ -214,6 +214,44 @@
   </td>
  </tr>
 <?php endforeach; ?>
+  <tr  height='
+    <?php 
+      $num = sizeof($gen_inv);
+      echo (350-($num*10)); 
+    ?> '>
+
+  <td width=100 valign=top style='font-size:14px;width:75.15pt;border-top:none;border-left:
+  solid windowtext 1.0pt;border-bottom:none;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'></p>
+  </td>
+  <td width=100 colspan=2 valign=top style='font-size:14px;width:75.15pt;border:none;
+  border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'></p>
+  </td>
+  <td width=100 colspan=2 valign=top style='font-size:14px;width:75.15pt;border:none;
+  border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'></p>
+  </td>
+  <td width=100 colspan=2 valign=top style='font-size:14px;width:75.15pt;border:none;
+  border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'></p>
+  </td>
+  <td width=100 valign=top style='font-size:14px;width:75.15pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'></p>
+  </td>
+  <td width=100 valign=top style='font-size:14px;width:75.2pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'></p>
+  </td>
+  </tr>
  <tr>
   <td  colspan=7 valign=top style='font-size:14px;width:150.3pt;border:solid windowtext 1.0pt;
   padding:0in 5.4pt 0in 5.4pt'>
@@ -249,7 +287,7 @@
   <td width=181 colspan=2 valign=top style='font-size:14px;width:136.0pt;border:none;
   border-bottom:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'>$prep_by</p>
+  normal'></p>
   </td>
   <td width=95 colspan=2 valign=top style='font-size:14px;width:71.0pt;border:none;border-bottom:
   solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
@@ -260,7 +298,7 @@
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'>$chk_by</p>
+  normal'></p>
   </td>
  </tr>
  <tr height=0>
