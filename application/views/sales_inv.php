@@ -1,3 +1,4 @@
+ <?php $row2=$top_tables->row(0); ?>
     <aside class="right-side">
         <!-- Content Header (Page header) -->
 
@@ -15,36 +16,28 @@
 
         <section class="content">
             <div class="row">
-                <!-- left column -->
+                <!-- left column --> 
             </div><!--/.col (left) -->
 
            <div style="padding-right:70px;padding-left:70px;">
                <h1 class="text-center" >INVOICE</h1>
 
- <h2 class="text-center"></h2>
+ <h2 class="text-center"><?php echo $row2->w_name;?></h2>
 <br>
 
 <table class="table" class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
  style='font-size:14px;border-collapse:collapse;border:none'>
 
  <tr>
-  <td width=48 valign=top style='font-size:14px;width:.5in;border:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'>Tel #:</p>
-  </td>
-  <td width=114 valign=top style='font-size:14px;width:85.5pt;border:none;border-bottom:solid windowtext 1.0pt;
+  <td width=162 colspan=1 valign=top style='font-size:14px;width:121.5pt;border:none;
   padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'>$cmp_tel</p>
+  normal'>Tel / Fax #:</p>
   </td>
-  <td width=54 valign=top style='font-size:14px;width:40.5pt;border:none;padding:0in 5.4pt 0in 5.4pt'>
+  <td width=268 colspan=2 valign=top style='font-size:14px;width:201.25pt;border:none;
+  padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'>Fax #:</p>
-  </td>
-  <td width=214 valign=top style='font-size:14px;width:160.75pt;border:none;border-bottom:
-  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'>$cmp_fax</p>
+  normal'><?php echo $row2->w_tel;?></p>
   </td>
   <td width=63 valign=top style='font-size:14px;width:47.25pt;border:none;padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
@@ -53,19 +46,19 @@
   <td width=108 valign=top style='font-size:14px;width:80.95pt;border:none;border-bottom:solid windowtext 1.0pt;
   padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'>$serial</p>
+  normal'><?php echo $row2->serial;?></p>
   </td>
  </tr>
  <tr>
-  <td width=162 colspan=2 valign=top style='font-size:14px;width:121.5pt;border:none;
+  <td width=162 colspan=1 valign=top style='font-size:14px;width:121.5pt;border:none;
   padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'>Sales Tax Registration #:</p>
   </td>
   <td width=268 colspan=2 valign=top style='font-size:14px;width:201.25pt;border:none;
-  border-bottom:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'>$str_num</p>
+  normal'><?php echo $row2->w_gst;?></p>
   </td>
   <td width=63 valign=top style='font-size:14px;width:47.25pt;border:none;padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
@@ -74,19 +67,19 @@
   <td width=108 valign=top style='font-size:14px;width:80.95pt;border:none;border-bottom:solid windowtext 1.0pt;
   padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'>$date</p>
+  normal'><?php echo date('d-m-Y');?></p>
   </td>
  </tr>
  <tr>
-  <td width=162 colspan=2 valign=top style='font-size:14px;width:121.5pt;border:none;
+  <td width=162 colspan=1 valign=top style='font-size:14px;width:121.5pt;border:none;
   padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'>NTN #:</p>
   </td>
   <td width=268 colspan=2 valign=top style='font-size:14px;width:201.25pt;border:none;
-  border-bottom:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'>$ntn_num</p>
+  normal'><?php echo $row2->w_ntn;?></p>
   </td>
   <td width=63 valign=top style='font-size:14px;width:47.25pt;border:none;padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
@@ -95,7 +88,7 @@
   <td width=108 valign=top style='font-size:14px;width:80.95pt;border:none;border-bottom:solid windowtext 1.0pt;
   padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'>$bill_num</p>
+  normal'><?php echo $row2->bill_num;?></p>
   </td>
  </tr>
 </table>
@@ -112,7 +105,7 @@
   <td width=500 valign=top style='font-size:14px;width:374.7pt;border:none;border-bottom:solid windowtext 1.0pt;
   padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'>$cmp_name</p>
+  normal'><?php echo $row2->c_name;?></p>
   </td>
  </tr>
  <tr>
@@ -123,7 +116,7 @@
   <td width=500 valign=top style='font-size:14px;width:374.7pt;border:none;border-bottom:solid windowtext 1.0pt;
   padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'>$cmp_add</p>
+  normal'><?php echo $row2->c_address;?></p>
   </td>
  </tr>
  <tr>
@@ -145,7 +138,7 @@
   <td width=500 valign=top style='font-size:14px;width:374.7pt;border:none;border-bottom:solid windowtext 1.0pt;
   padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'>$ref_num</p>
+  normal'><?php echo $row2->ref_num;?></p>
   </td>
  </tr>
 </table>
@@ -222,20 +215,20 @@
  </tr>
 <?php endforeach; ?>
  <tr>
-  <td width=200 colspan=3 valign=top style='font-size:14px;width:150.3pt;border:solid windowtext 1.0pt;
+  <td  colspan=7 valign=top style='font-size:14px;width:150.3pt;border:solid windowtext 1.0pt;
   padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'>$amnt_in_wrds</p>
+  normal'><?php echo $row2->amnt_in_wrd;?></p>
   </td>
-  <td width=200 colspan=4 valign=top style='font-size:14px;width:150.3pt;border:solid windowtext 1.0pt;
+  <td  colspan=0 valign=top style='font-size:14px;width:150.3pt;border:solid windowtext 1.0pt;
   border-left:none;padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'>Total Amount:</p>
   </td>
-  <td width=200 colspan=2 valign=top style='font-size:14px;width:150.35pt;border:solid windowtext 1.0pt;
+  <td  colspan=0 valign=top style='font-size:14px;width:150.35pt;border:solid windowtext 1.0pt;
   border-left:none;padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'>$tot_amnt</p>
+  normal'><?php echo $row2->tot_amnt;?></p>
   </td>
  </tr>
  <tr>
@@ -243,7 +236,7 @@
   border-left:solid windowtext 1.0pt;border-bottom:none;border-right:solid windowtext 1.0pt;
   padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'>For $inv_for</p>
+  normal'>For <?php echo $row2->w_name;?></p>
   </td>
  </tr>
  <tr>
