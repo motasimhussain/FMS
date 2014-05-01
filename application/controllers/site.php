@@ -62,7 +62,7 @@ class Site extends CI_Controller {
 		$this->load->view('includes/template', $this->data);
 	}
 
-	public function sales_form(){
+	public function sales_frm(){
 		
 		if($this->general_query->get_wn()){
 			$this->data['select_workplace'] = $this->general_query->get_wn();
@@ -82,7 +82,7 @@ class Site extends CI_Controller {
 		$this->load->view('includes/template', $this->data);
 	}
 
-	public function purchase_form(){
+	public function purchase_frm(){
 
 		if($this->general_query->get_wn()){
 			$this->data['select_workplace'] = $this->general_query->get_wn();
