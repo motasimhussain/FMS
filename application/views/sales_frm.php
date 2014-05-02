@@ -142,10 +142,19 @@
                                                     </span>
                                                     <input id="sales_tax" name="sales_tax" class="form-control" placeholder="" type="text">
                                                     <span class="input-group-addon">%</span>
-                                                </div>
+                                                </div> 
+                                            </div>
+                                        </div>
+
+                                        <!-- Text input-->
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label" for="st_num">Sales Tax RS.</label>
+                                            <div class="col-md-7">
+                                                <input id="st_num" name="st_num" placeholder="" class="form-control input-md" type="text">
                                                 
                                             </div>
                                         </div>
+
                                         <!-- Prepended checkbox -->
                                         <div class="form-group">
                                             <label class="col-md-4 control-label" for="fed_tax">F.E.D Tax:</label>
@@ -160,11 +169,30 @@
                                                 
                                             </div>
                                         </div>
+
+                                        <!-- Text input-->
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label" for="fed_num">FED RS.</label>
+                                            <div class="col-md-7">
+                                                <input id="fed_num" name="fed_num" placeholder="" class="form-control input-md" type="text" readonly>
+                                                
+                                            </div>
+                                        </div>
+
                                         <!-- Text input-->
                                         <div class="form-group">
                                             <label class="col-md-4 control-label" for="amnt">Amount</label>
                                             <div class="col-md-7">
                                                 <input id="amnt" name="amnt" placeholder="" class="form-control input-md" type="text">
+                                                
+                                            </div>
+                                        </div>
+
+                                        <!-- Text input-->
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label" for="tot_amnt">Amount Incl. Sales Tax</label>
+                                            <div class="col-md-7">
+                                                <input id="tot_amnt" name="tot_amnt" placeholder="" class="form-control input-md" type="text">
                                                 
                                             </div>
                                         </div>
@@ -209,26 +237,34 @@
                                 <script type="text/javascript">
                                 var quantity = document.getElementById('qunty');
                                 var ppu = document.getElementById('price');
-                                var tot_amnt = document.getElementById('amnt');
+                                var tot_amnt = document.getElementById('tot_amnt');
                                 var sales_tax_check = document.getElementById('sales_tax_check');
                                 var sales_tax = document.getElementById('sales_tax');
+                                var st_num = document.getElementById('st_num');
+                                var amnt = document.getElementById('amnt');
                                 ppu.onkeyup = function(){
-                                var total = quantity.value * ppu.value;
-                                if(total>0){
-                                if(sales_tax_check.checked){
-                                var tax = (total/100)*sales_tax.value;
-                                tot_amnt.value = total+tax;
-                                }else{
-                                tot_amnt.value = quantity.value * ppu.value;
-                                }
-                                calc_tot();
-                                }
+                                    var total = quantity.value * ppu.value;
+                                    if(total>0){
+                                        amnt.value = total.toFixed(2);
+                                        if(sales_tax_check.checked){
+                                            var tax = (total/100)*sales_tax.value;
+
+                                            st_num.value = tax.toFixed(2);
+
+                                            tot_amnt.value = total+tax;
+                                        }else{
+                                            tot_amnt.value = quantity.value * ppu.value;
+                                        }
+                                        calc_tot();
+                                    }
                                 }
                                 quantity.onkeyup = function(){
                                 var total = quantity.value * ppu.value;
                                 if(total>0){
+                                    amnt.value = total.toFixed(2);
                                 if(sales_tax_check.checked){
                                 var tax = (total/100)*sales_tax.value;
+                                st_num.value =  tax.toFixed(2);
                                 tot_amnt.value = total+tax;
                                 }else{
                                 tot_amnt.value = quantity.value * ppu.value;
@@ -239,8 +275,10 @@
                                 sales_tax.onkeyup = function(){
                                 var total = quantity.value * ppu.value;
                                 if(total>0){
+                                    amnt.value = total.toFixed(2);
                                 if(sales_tax_check.checked){
                                 var tax = (total/100)*sales_tax.value;
+                                st_num.value =  tax.toFixed(2);
                                 tot_amnt.value = total+tax;
                                 }else{
                                 tot_amnt.value = quantity.value * ppu.value;
