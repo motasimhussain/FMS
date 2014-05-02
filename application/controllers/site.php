@@ -127,10 +127,12 @@ class Site extends CI_Controller {
 		if ($this->general_query->get_sales_view()) {
 			$this->data['top_tables'] = $this->db->query('SELECT * FROM sales_inv WHERE `sale_sess`="'.$this->input->post("sale_sess").'"');
 			$this->data['gen_inv'] = $this->general_query->get_sales_view();
-			$this->data['invoice'] = ' active';
-			$this->data['main_content'] = 'sales_inv';
-			$this->load->view('includes/template', $this->data);	
+
 		}
+					$this->data['invoice'] = ' active';
+					$this->data['main_content'] = 'sales_inv';
+					$this->load->view('includes/template', $this->data);	
+
 	}
 	public function purchase_inv(){
 		$this->data['invoice'] = ' active';

@@ -1,4 +1,10 @@
- <?php $row2=$top_tables->row(0); ?>
+ <?php if (!isset($top_tables)) {
+  $row2=NULL;
+   }else {
+    $row2=$top_tables->row(0); 
+   }
+?>
+
     <aside class="right-side">
         <!-- Content Header (Page header) -->
 
@@ -13,6 +19,11 @@
                 <li class="active">General Elements</li>
             </ol>
         </section><!-- Main content -->
+<?php
+if(!empty($row2)):
+
+ ?>
+
 
         <section class="content">
             <div class="row">
@@ -315,4 +326,5 @@
 </table>
 
         </section>
+      <?php endif;?>
     </aside>
