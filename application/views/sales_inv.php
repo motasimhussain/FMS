@@ -51,7 +51,7 @@ if(!empty($row2)):
   <td width=268 colspan=2 valign=top style='font-size:14px;width:201.25pt;border:none;
   padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'><?php echo $row2->w_tel;?></p>
+  normal'><?php if($row2->tot_tax != 0){echo $row2->w_tel;}else{echo "...";}?></p>
   </td>
   <td width=63 valign=top style='font-size:14px;width:47.25pt;border:none;padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
@@ -60,7 +60,7 @@ if(!empty($row2)):
   <td width=108 valign=top style='font-size:14px;width:80.95pt;border:none;border-bottom:solid windowtext 1.0pt;
   padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'>SO<?php echo $row2->serial;?></p>
+  normal'><?php echo $row2->serial;?></p>
   </td>
  </tr>
  <tr>
@@ -72,7 +72,7 @@ if(!empty($row2)):
   <td width=268 colspan=2 valign=top style='font-size:14px;width:201.25pt;border:none;
   padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'><?php echo $row2->w_gst;?></p>
+  normal'><?php if($row2->tot_tax != 0){echo $row2->w_gst;}else{echo "...";}?></p>
   </td>
   <td width=63 valign=top style='font-size:14px;width:47.25pt;border:none;padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
@@ -93,7 +93,7 @@ if(!empty($row2)):
   <td width=268 colspan=2 valign=top style='font-size:14px;width:201.25pt;border:none;
   padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'><?php echo $row2->w_ntn;?></p>
+  normal'><?php if($row2->tot_tax != 0){ echo $row2->w_ntn;}else{echo "...";}?></p>
   </td>
   <td width=63 valign=top style='font-size:14px;width:47.25pt;border:none;padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
@@ -132,7 +132,7 @@ if(!empty($row2)):
   normal'><?php echo $row2->c_address;?></p>
   </td>
  </tr>
- <tr>
+ <!-- <tr>
   <td width=102 valign=top style='font-size:14px;width:76.25pt;border:none;padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'>&nbsp;</p>
@@ -142,7 +142,7 @@ if(!empty($row2)):
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'>&nbsp;</p>
   </td>
- </tr>
+ </tr> -->
  <tr>
   <td width=102 valign=top style='font-size:14px;width:76.25pt;border:none;padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
@@ -156,44 +156,42 @@ if(!empty($row2)):
  </tr>
 </table>
 
-<p >&nbsp;</p>
-
 <table class="table" class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
  style='font-size:14px;border-collapse:collapse;border:none'>
- <tr>
+ <tr class="text-center">
   <td width=100 valign=top style='font-size:14px;width:75.15pt;border:solid windowtext 1.0pt;
   padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'>S. No.</p>
+  normal'><b>S. No.</b></p>
   </td>
   <td width=100 colspan=2 valign=top style='font-size:14px;width:75.15pt;border:solid windowtext 1.0pt;
   border-left:none;padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'>Description</p>
+  normal'><b>Description</b></p>
   </td>
   <td width=100 colspan=2 valign=top style='font-size:14px;width:75.15pt;border:solid windowtext 1.0pt;
   border-left:none;padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'>Quantity</p>
+  normal'><b>Quantity</b></p>
   </td>
   <td width=100 colspan=2 valign=top style='font-size:14px;width:75.15pt;border:solid windowtext 1.0pt;
   border-left:none;padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'>Weight</p>
+  normal'><b>Weight</b></p>
   </td>
   <td width=100 valign=top style='font-size:14px;width:75.15pt;border:solid windowtext 1.0pt;
   border-left:none;padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'>Unit Price</p>
+  normal'><b>Unit Price</b></p>
   </td>
   <td width=100 valign=top style='font-size:14px;width:75.2pt;border:solid windowtext 1.0pt;
   border-left:none;padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'>Amount</p>
+  normal'><b>Amount</b></p>
   </td>
  </tr>
  <?php foreach ($gen_inv as $row): ?>
- <tr>
+ <tr class="text-center">
   <td width=100 valign=top style='font-size:14px;width:75.15pt;border-top:none;border-left:
   solid windowtext 1.0pt;border-bottom:none;border-right:solid windowtext 1.0pt;
   padding:0in 5.4pt 0in 5.4pt'>
@@ -274,7 +272,7 @@ if(!empty($row2)):
   <td  colspan=0 valign=top style='font-size:14px;width:150.3pt;border:solid windowtext 1.0pt;
   border-left:none;padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'>Total Amount:</p>
+  normal'><b>Total Amount:</b></p>
   </td>
   <td  colspan=0 valign=top style='font-size:14px;width:150.35pt;border:solid windowtext 1.0pt;
   border-left:none;padding:0in 5.4pt 0in 5.4pt'>
@@ -288,16 +286,18 @@ if(!empty($row2)):
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'></p>
   </td>
+  <?php if($row2->tot_tax != 0): ?>
   <td  colspan=0 valign=top style='font-size:14px;width:150.3pt;border:solid windowtext 1.0pt;
   border-left:none;padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'>Add Sales Tax:</p>
+  normal'><b>Add Sales Tax:</b></p>
   </td>
   <td  colspan=0 valign=top style='font-size:14px;width:150.35pt;border:solid windowtext 1.0pt;
   border-left:none;padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'><?php echo $row2->tot_tax;?></p>
   </td>
+  <?php endif; ?>
  </tr>
  <tr>
   <td  colspan=7 valign=top style='font-size:14px;width:150.3pt;border:solid windowtext 1.0pt;
@@ -308,7 +308,7 @@ if(!empty($row2)):
   <td  colspan=0 valign=top style='font-size:14px;width:150.3pt;border:solid windowtext 1.0pt;
   border-left:none;padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'>Total Amount Of Bill:</p>
+  normal'><b>Total Amount Of Bill:</b></p>
   </td>
   <td  colspan=0 valign=top style='font-size:14px;width:150.35pt;border:solid windowtext 1.0pt;
   border-left:none;padding:0in 5.4pt 0in 5.4pt'>
@@ -321,7 +321,7 @@ if(!empty($row2)):
   border-left:solid windowtext 1.0pt;border-bottom:none;border-right:solid windowtext 1.0pt;
   padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'>For <?php echo $row2->w_name;?></p>
+  normal'><b>For <?php echo $row2->w_name;?></b></p>
   </td>
  </tr>
  <tr>
@@ -329,7 +329,7 @@ if(!empty($row2)):
   border-left:solid windowtext 1.0pt;border-bottom:solid windowtext 1.0pt;
   border-right:none;padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'>Prepared by:</p>
+  normal'><b>Prepared by:</b></p>
   </td>
   <td width=181 colspan=2 valign=top style='font-size:14px;width:136.0pt;border:none;
   border-bottom:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
@@ -339,7 +339,7 @@ if(!empty($row2)):
   <td width=95 colspan=2 valign=top style='font-size:14px;width:71.0pt;border:none;border-bottom:
   solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'>Checked by:</p>
+  normal'><b>Checked by:</b></p>
   </td>
   <td width=212 colspan=3 valign=top style='font-size:14px;width:158.7pt;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;

@@ -63,9 +63,9 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-4 control-label" for="serial">Serial #:</label>
+                                        <label class="col-md-4 control-label" for="serial">Serial # SO:</label>
                                         <div class="col-md-7">
-                                            <input id="serial" name="serial" placeholder="" class="form-control input-md" required="" type="text" value="SO<?php echo $serial;?>">
+                                            <input id="serial" name="serial" placeholder="" class="form-control input-md" required="" type="text" value="<?php echo $serial;?>">
                                             
                                         </div>
                                         </div>              <!-- Text input-->
@@ -214,7 +214,7 @@
                                 </fieldset>
                                 <!-- Script to dynamically generate words from numbers -->
                                 <script type="text/javascript">
-                                var getNum = document.getElementById("amnt");
+                                var getNum = document.getElementById("tot_amnt");
                                 function calc_tot(){
                                 console.log("triggered");
                                 var num = Math.floor(getNum.value);

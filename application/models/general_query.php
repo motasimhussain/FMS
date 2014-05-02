@@ -21,7 +21,7 @@ class General_query extends CI_Model {
 			foreach ($query->result() as $row) {
 				$num = $row->serial;
 			}
-			return $num;
+			return $num + 1;
 		}
 	}
 	function get_sale_rec(){
