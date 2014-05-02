@@ -130,23 +130,23 @@ class Site extends CI_Controller {
 			$this->data['gen_inv'] = $this->general_query->get_sales_view();
 
 		}
-					$this->data['invoice'] = ' active';
-					$this->data['main_content'] = 'sales_inv';
-					$this->load->view('includes/template', $this->data);	
+		$this->data['invoice'] = ' active';
+		$this->data['main_content'] = 'sales_inv';
+		$this->load->view('includes/template', $this->data);	
 
 	}
-	public function gen_sales_serial()
-{
+
+	public function gen_sales_serial(){
 		$this->load->model('general_query');
 		if ($this->general_query->gen_sales_serial()) {
 			$this->data['top_tables'] = $this->db->query('SELECT * FROM sales_inv WHERE `serial`="'.$this->input->post("serial").'"');
 			$this->data['gen_inv'] = $this->general_query->gen_sales_serial();
 		}
-							$this->data['invoice'] = ' active';
-					$this->data['main_content'] = 'sales_inv';
-					$this->load->view('includes/template', $this->data);	
-
-}
+		$this->data['invoice'] = ' active';
+		$this->data['main_content'] = 'sales_inv';
+		$this->load->view('includes/template', $this->data);
+	}
+	
 	public function purchase_inv(){
 		$this->data['invoice'] = ' active';
 		$this->data['main_content'] = 'purchase_inv';
@@ -184,7 +184,7 @@ class Site extends CI_Controller {
 		$this->load->view('includes/template2',$this->data);
 	}
 
-	//included in forms is hidden on non-admin login
+	//included in forms, is hidden on non-admin login
 
 	public function add_usr(){
 		$is_admin = $this->session->userdata('is_admin');

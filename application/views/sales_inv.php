@@ -30,15 +30,13 @@ if(!empty($row2)):
  ?>
 
 
-        <section class="content">
-            <div class="row">
-                <!-- left column --> 
-            </div><!--/.col (left) -->
+<section class="content">
 
-           <div style="padding-right:70px;padding-left:70px;">
-               <h1 class="text-center" >INVOICE</h1>
+<div style="padding-right:70px;padding-left:70px;">
+<h1 class="text-center" >INVOICE</h1>
 
  <h2 class="text-center"><?php echo $row2->w_name;?></h2>
+ <h5 class="text-center"><?php echo $row2->w_address ?></h5>
 <br>
 
 <table class="table" class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
@@ -109,7 +107,6 @@ if(!empty($row2)):
  </tr>
 </table>
 
-<p >&nbsp;</p>
 
 <table class="table" class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
  style='font-size:14px;border-collapse:collapse;border:none'>
@@ -285,7 +282,7 @@ if(!empty($row2)):
   normal'><?php echo $row2->tot_amnt;?></p>
   </td>
  </tr>
- <tr>
+ <tr height="50">
   <td width=601 colspan=9 valign=top style='font-size:14px;width:450.95pt;border-top:none;
   border-left:solid windowtext 1.0pt;border-bottom:none;border-right:solid windowtext 1.0pt;
   padding:0in 5.4pt 0in 5.4pt'>

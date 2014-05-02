@@ -2,8 +2,7 @@
 
 class General_query extends CI_Model {
 
-	function gen_sales_serial()
-	{
+	function gen_sales_serial(){
 	
 		$this->db->where('serial', $this->input->post('serial'));
 		$query = $this->db->get('sales_inv');
@@ -15,21 +14,14 @@ class General_query extends CI_Model {
 		}
 	}
 
-	function get_curr_serial()
-	{
+	function get_curr_serial(){
 		$this->db->select_max('serial');
 		$query = $this->db->get('sales');
-		//cho $query->$db->get->row()->serial;
 		if($query->num_rows() > 0){
 			foreach ($query->result() as $row) {
 				$num = $row->serial;
 			}
-
-			// $data  = array('curr_serial' => ,$num );
-			// $this->session->set_userdata($data);
-			// echo '<script>localStorage.setItem("serial","'.$num.'");</script>';
-				return $num;
-
+			return $num;
 		}
 	}
 	function get_sale_rec(){
