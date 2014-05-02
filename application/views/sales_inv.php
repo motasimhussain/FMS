@@ -9,15 +9,20 @@
         <!-- Content Header (Page header) -->
 
         <section class="content-header">
-            <h1>Invoice Form <small>Preview</small></h1>
+            <form class="form-inline">
+              <ul class="list-inline">
+              <li>
+                <label class="control-label" for="serial">Serial #</label>
+              </li>
+              <li>  
+                <input type="text" class="form-control" id="serial" name="serial">
+              </li>
 
-            <ol class="breadcrumb">
-                <li><a href="#">Home</a></li>
-
-                <li><a href="#">Forms</a></li>
-
-                <li class="active">General Elements</li>
-            </ol>
+              <li>
+                <button class="btn btn-success" value="submit">Generate</button>
+              </li>
+              </ul>
+            </form>
         </section><!-- Main content -->
 <?php
 if(!empty($row2)):
