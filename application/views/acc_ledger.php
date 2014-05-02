@@ -30,24 +30,21 @@
           </span> -->
 
           <ul class="list-inline">
-
+            <li><label class="control-label" for="reservation">Pick Date</label></li>
             <li>
-              <label class="control-label" for="reservation">Pick Date</label>  
-              <input type="text" class="form-control getLedger" id="reservation" name="led_date" style="width:15em;">
+              <input type="text" class="form-control getLedger" id="reservation" name="led_date" style="width:10em;">
             </li>
-
-            <li>
-              <label class="control-label" for="led_for">Pick Workplace</label>  
-              <select id="led_for" name="led_for" class="form-control" style="width:15em;">
+            <li><label class="control-label" for="led_for">Pick Workplace</label> </li>
+            <li> 
+              <select id="led_for" name="led_for" class="form-control" style="width:10em;">
                 <?php foreach($select_workplace as $row): ?>
                   <option value="<?php echo $row->id; ?>"><?php echo $row->w_name; ?></option>
                 <?php endforeach; ?>
               </select>
             </li>
-
+            <li> <label class="control-label" for="coname">Pick Company</label></li>
             <li>
-              <label class="control-label" for="coname">Pick Company</label>  
-              <select id="coname" name="coname" class="form-control" style="width:15em;">
+              <select id="coname" name="coname" class="form-control" style="width:10em;">
                 <?php foreach($select_company as $row): ?>
                   <option value="<?php echo $row->id; ?>"><?php echo $row->c_name; ?></option>
                 <?php endforeach; ?>
@@ -55,7 +52,7 @@
             </li>
 
             <li>
-              <button class="btn btn-success" value="submit">Get</button>
+              <button class="btn btn-success" value="submit">Generate</button>
             </li>
             
           </ul>
