@@ -65,7 +65,7 @@
                                     <div class="form-group">
                                         <label class="col-md-4 control-label" for="serial">Serial #:</label>
                                         <div class="col-md-7">
-                                            <input id="serial" name="serial" placeholder="" class="form-control input-md" required="" type="text" value="SO0000">
+                                            <input id="serial" name="serial" placeholder="" class="form-control input-md" required="" type="text" value="SO<?php echo $serial;?>">
                                             
                                         </div>
                                         </div>              <!-- Text input-->

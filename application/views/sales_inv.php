@@ -9,7 +9,7 @@
         <!-- Content Header (Page header) -->
 
         <section class="content-header">
-            <form class="form-inline">
+            <form class="form-inline" method="post" action="<?php echo base_url(); ?>index.php/site/gen_sales_serial">
               <ul class="list-inline">
               <li>
                 <label class="control-label" for="serial">Serial #</label>
@@ -62,7 +62,7 @@ if(!empty($row2)):
   <td width=108 valign=top style='font-size:14px;width:80.95pt;border:none;border-bottom:solid windowtext 1.0pt;
   padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'><?php echo $row2->serial;?></p>
+  normal'>SO<?php echo $row2->serial;?></p>
   </td>
  </tr>
  <tr>

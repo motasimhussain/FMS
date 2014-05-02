@@ -63,6 +63,7 @@ class Site extends CI_Controller {
 	}
 
 	public function sales_frm(){
+
 		if($this->general_query->get_sale_rec()){
 
 			$this->data['sale_table'] =  $this->general_query->get_sale_rec();
@@ -81,7 +82,7 @@ class Site extends CI_Controller {
 			$this->data['select_company'] = 'no content';
 		}
 
-
+		$this->data['serial'] = $this->general_query->get_curr_serial();
 		$this->data['forms'] = ' active';
 		$this->data['main_content'] = 'sales_frm';
 		$this->load->view('includes/template', $this->data);
@@ -134,6 +135,18 @@ class Site extends CI_Controller {
 					$this->load->view('includes/template', $this->data);	
 
 	}
+	public function gen_sales_serial()
+{
+		$this->load->model('general_query');
+		if ($this->general_query->gen_sales_serial()) {
+			$this->data['top_tables'] = $this->db->query('SELECT * FROM sales_inv WHERE `serial`="'.$this->input->post("serial").'"');
+			$this->data['gen_inv'] = $this->general_query->gen_sales_serial();
+		}
+							$this->data['invoice'] = ' active';
+					$this->data['main_content'] = 'sales_inv';
+					$this->load->view('includes/template', $this->data);	
+
+}
 	public function purchase_inv(){
 		$this->data['invoice'] = ' active';
 		$this->data['main_content'] = 'purchase_inv';

@@ -2,24 +2,6 @@
 
 class Sales_frm extends CI_Model {
 
-	public function __construct()
-	{
-		parent::__construct();
-		$this->db->select_max('serial');
-		$query = $this->db->get('sales');
-		//cho $query->$db->get->row()->serial;
-		if($query->num_rows() > 0){
-			foreach ($query->result() as $row) {
-				$num = $row->serial;
-			}
-
-			$data  = array('curr_serial' => ,$num );
-			$this->session->set_userdata($data);
-
-		}
-		
-	}
-
 	function add(){
 		if(!$this->session->userdata('sale_id'))
 		{
