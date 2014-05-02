@@ -139,7 +139,7 @@ class Site extends CI_Controller {
 	public function gen_sales_serial(){
 		$this->load->model('general_query');
 		if ($this->general_query->gen_sales_serial()) {
-			$this->data['top_tables'] = $this->db->query('SELECT * FROM sales_inv WHERE `serial`="'.$this->input->post("serial").'"');
+			$this->data['top_tables'] = $this->db->query('SELECT w_name, w_address, w_tel, serial, w_gst, w_ntn, bill_num, c_name, c_address, ref_num, amnt_in_wrd,  SUM(amnt) AS tot_amnt FROM sales_inv WHERE `serial`="'.$this->input->post("serial").'"');
 			$this->data['gen_inv'] = $this->general_query->gen_sales_serial();
 		}
 		$this->data['invoice'] = ' active';
