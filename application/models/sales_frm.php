@@ -24,8 +24,10 @@ class Sales_frm extends CI_Model {
 			'price' => $this->input->post('price'),
 			'wght' => $this->input->post('wght'),
 			'sales_tax' => $this->input->post('sales_tax'),
+			'sales_tax_tot' => $this->input->post('st_num'),
 			'fed_tax' => $this->input->post('fed_tax'),
 			'amnt' => $this->input->post('amnt'),
+			'tot_amnt' => $this->input->post('tot_amnt'),
 			'amnt_in_wrd' => $this->input->post('amnt_wrd'),
 			'sale_sess' => $this->session->userdata('sale_id')
 		);
