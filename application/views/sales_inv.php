@@ -230,7 +230,7 @@ if(!empty($row2)):
   <tr  height='
     <?php 
       $num = sizeof($gen_inv);
-      echo (350-($num*10)); 
+      echo (330-($num*10)); 
     ?> '>
 
   <td width=100 valign=top style='font-size:14px;width:75.15pt;border-top:none;border-left:
@@ -267,7 +267,7 @@ if(!empty($row2)):
   </tr>
  <tr>
   <td  colspan=7 valign=top style='font-size:14px;width:150.3pt;border:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
+  border-bottom:none;padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'><?php echo $row2->amnt_in_wrd;?></p>
   </td>
@@ -275,6 +275,40 @@ if(!empty($row2)):
   border-left:none;padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'>Total Amount:</p>
+  </td>
+  <td  colspan=0 valign=top style='font-size:14px;width:150.35pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><?php echo $row2->tot_amnt;?></p>
+  </td>
+ </tr>
+ <tr>
+  <td  colspan=7 valign=top style='font-size:14px;width:150.3pt;border:solid windowtext 1.0pt;
+  border-top:none;border-bottom:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'></p>
+  </td>
+  <td  colspan=0 valign=top style='font-size:14px;width:150.3pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>Add Sales Tax:</p>
+  </td>
+  <td  colspan=0 valign=top style='font-size:14px;width:150.35pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><?php echo $row2->tot_amnt;?></p>
+  </td>
+ </tr>
+ <tr>
+  <td  colspan=7 valign=top style='font-size:14px;width:150.3pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'></p>
+  </td>
+  <td  colspan=0 valign=top style='font-size:14px;width:150.3pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>Total Amount Of Bill:</p>
   </td>
   <td  colspan=0 valign=top style='font-size:14px;width:150.35pt;border:solid windowtext 1.0pt;
   border-left:none;padding:0in 5.4pt 0in 5.4pt'>
