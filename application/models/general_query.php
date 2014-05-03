@@ -14,6 +14,30 @@ class General_query extends CI_Model {
 		}
 	}
 
+	function gen_sales_inv(){
+		return $this->db->query('SELECT w_name, w_address, w_tel, serial, w_gst, w_ntn, bill_num, c_name, c_address, ref_num, amnt_in_wrd, 
+						  SUM(sales_tax_tot) AS tot_tax, SUM(amnt) 
+						  AS tot_amnt, (SUM(sales_tax_tot) + SUM(amnt)) 
+						  AS tot_bill 
+						  FROM sales_inv 
+						  WHERE `sale_sess`="'.$this->input->post("sale_sess").'"'
+						);
+
+
+	}
+
+	function gen_sales_inv_serial(){
+		return $this->db->query('SELECT w_name, w_address, w_tel, serial, w_gst, w_ntn, bill_num, c_name, c_address, ref_num, amnt_in_wrd, 
+						  SUM(sales_tax_tot) AS tot_tax, SUM(amnt) 
+						  AS tot_amnt, (SUM(sales_tax_tot) + SUM(amnt)) 
+						  AS tot_bill 
+						  FROM sales_inv 
+						  WHERE `serial`="'.$this->input->post("serial").'"'
+						);
+
+
+	}
+
 	function get_curr_serial(){
 		$this->db->select_max('serial');
 		$query = $this->db->get('sales');

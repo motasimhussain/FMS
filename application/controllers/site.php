@@ -126,7 +126,7 @@ class Site extends CI_Controller {
 	public function gen_sales_inv(){
 		$this->load->model('general_query');
 		if ($this->general_query->get_sales_view()) {
-			$this->data['top_tables'] =  $this->db->query('SELECT w_name, w_address, w_tel, serial, w_gst, w_ntn, bill_num, c_name, c_address, ref_num, amnt_in_wrd, SUM(sales_tax_tot) AS tot_tax, SUM(amnt) AS tot_amnt, (SUM(sales_tax_tot) + SUM(amnt)) AS tot_bill FROM sales_inv WHERE `sale_sess`="'.$this->input->post("sale_sess").'"');
+			$this->data['top_tables'] = $this->general_query->gen_sales_inv();
 			$this->data['gen_inv'] = $this->general_query->get_sales_view();
 
 		}
@@ -139,7 +139,7 @@ class Site extends CI_Controller {
 	public function gen_sales_serial(){
 		$this->load->model('general_query');
 		if ($this->general_query->gen_sales_serial()) {
-			$this->data['top_tables'] = $this->db->query('SELECT w_name, w_address, w_tel, serial, w_gst, w_ntn, bill_num, c_name, c_address, ref_num, amnt_in_wrd, SUM(sales_tax_tot) AS tot_tax, SUM(amnt) AS tot_amnt, (SUM(sales_tax_tot) + SUM(amnt)) AS tot_bill FROM sales_inv WHERE `serial`="'.$this->input->post("serial").'"');
+			$this->data['top_tables'] = $this->general_query->gen_sales_inv_serial();
 			$this->data['gen_inv'] = $this->general_query->gen_sales_serial();
 		}
 		$this->data['invoice'] = ' active';
