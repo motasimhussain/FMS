@@ -117,7 +117,7 @@ class General_query extends CI_Model {
 			foreach ($query->result() as $row) {
 				$num = $row->serial;
 			}
-		if(!$this->session->userdata('sale_id'))
+		if(!$this->session->userdata('sale_id') && !$this->session->userdata('purchase_id'))
 		{
 			return $num + 1;
 
