@@ -83,7 +83,7 @@ class Site extends CI_Controller {
 			$this->data['select_company'] = 'no content';
 		}
 
-		$this->data['serial'] = $this->general_query->get_curr_serial();
+		$this->data['serial'] = $this->general_query->get_curr_serial('sales');
 		$this->data['forms'] = ' active';
 		$this->data['main_content'] = 'sales_frm';
 		$this->load->view('includes/template', $this->data);
@@ -91,6 +91,13 @@ class Site extends CI_Controller {
 
 	public function purchase_frm(){
 
+		if($this->general_query->get_purchase_rec()){
+
+			$this->data['purchase_table'] =  $this->general_query->get_purchase_rec();
+		}else{
+			$this->data['purchase_table'] = 'No Sales';
+		}
+		
 		if($this->general_query->get_wn()){
 			$this->data['select_workplace'] = $this->general_query->get_wn();
 		}else{
@@ -103,6 +110,7 @@ class Site extends CI_Controller {
 			$this->data['select_company'] = 'no content';
 		}
 
+		$this->data['serial'] = $this->general_query->get_curr_serial('purchase');
 		$this->data['forms'] = ' active';
 		$this->data['main_content'] = 'purchase_frm';
 		$this->load->view('includes/template', $this->data);
@@ -148,33 +156,33 @@ class Site extends CI_Controller {
 		$this->load->view('includes/print_template', $this->data);
 	}
 	
-	public function purchase_inv(){
-		$this->data['invoice'] = ' active';
-		$this->data['main_content'] = 'purchase_inv';
-		$this->load->view('includes/template', $this->data);
-	}
+	// public function purchase_inv(){
+	// 	$this->data['invoice'] = ' active';
+	// 	$this->data['main_content'] = 'purchase_inv';
+	// 	$this->load->view('includes/template', $this->data);
+	// }
 
 	public function gen_purchase_inv(){
 		$this->load->model('general_query');
-		if ($this->general_query->get_sales_view()) {
-			$this->data['top_tables'] = $this->general_query->gen_sales_inv();
-			$this->data['gen_inv'] = $this->general_query->get_sales_view();
+		if ($this->general_query->get_purchase_view()) {
+			$this->data['top_tables'] = $this->general_query->gen_purchase_inv();
+			$this->data['gen_inv'] = $this->general_query->get_purchase_view();
 
 		}
 		$this->data['invoice'] = ' active';
-		$this->data['main_content'] = 'p_s_inv';
+		$this->data['main_content'] = 'p_p_inv';
 		$this->load->view('includes/print_template', $this->data);	
 
 	}
 
 	public function gen_purchase_serial(){
 		$this->load->model('general_query');
-		if ($this->general_query->gen_sales_serial()) {
-			$this->data['top_tables'] = $this->general_query->gen_sales_inv_serial();
-			$this->data['gen_inv'] = $this->general_query->gen_sales_serial();
+		if ($this->general_query->gen_purchase_serial()) {
+			$this->data['top_tables'] = $this->general_query->gen_purchase_inv_serial();
+			$this->data['gen_inv'] = $this->general_query->gen_purchase_serial();
 		}
 		$this->data['invoice'] = ' active';
-		$this->data['main_content'] = 'p_s_inv';
+		$this->data['main_content'] = 'p_p_inv';
 		$this->load->view('includes/print_template', $this->data);
 	}
 
