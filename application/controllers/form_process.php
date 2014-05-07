@@ -41,6 +41,13 @@ class Form_process extends CI_Controller {
 		}
 	}
 
+	public function purchase_frm(){
+		$this->load->model('purchase_frm');
+		if ($this->sales_frm->add()) {
+			redirect('site/purchase_frm');
+		}
+	}
+
 
 	public function add_work(){
 		$this->load->model('add_work');

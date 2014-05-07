@@ -70,6 +70,7 @@ class Site extends CI_Controller {
 		}else{
 			$this->data['sale_table'] = 'No Sales';
 		}
+		
 		if($this->general_query->get_wn()){
 			$this->data['select_workplace'] = $this->general_query->get_wn();
 		}else{
@@ -131,8 +132,8 @@ class Site extends CI_Controller {
 
 		}
 		$this->data['invoice'] = ' active';
-		$this->data['main_content'] = 'sales_inv';
-		$this->load->view('includes/template', $this->data);	
+		$this->data['main_content'] = 'p_s_inv';
+		$this->load->view('includes/print_template', $this->data);	
 
 	}
 
@@ -143,14 +144,38 @@ class Site extends CI_Controller {
 			$this->data['gen_inv'] = $this->general_query->gen_sales_serial();
 		}
 		$this->data['invoice'] = ' active';
-		$this->data['main_content'] = 'sales_inv';
-		$this->load->view('includes/template', $this->data);
+		$this->data['main_content'] = 'p_s_inv';
+		$this->load->view('includes/print_template', $this->data);
 	}
 	
 	public function purchase_inv(){
 		$this->data['invoice'] = ' active';
 		$this->data['main_content'] = 'purchase_inv';
 		$this->load->view('includes/template', $this->data);
+	}
+
+	public function gen_purchase_inv(){
+		$this->load->model('general_query');
+		if ($this->general_query->get_sales_view()) {
+			$this->data['top_tables'] = $this->general_query->gen_sales_inv();
+			$this->data['gen_inv'] = $this->general_query->get_sales_view();
+
+		}
+		$this->data['invoice'] = ' active';
+		$this->data['main_content'] = 'p_s_inv';
+		$this->load->view('includes/print_template', $this->data);	
+
+	}
+
+	public function gen_purchase_serial(){
+		$this->load->model('general_query');
+		if ($this->general_query->gen_sales_serial()) {
+			$this->data['top_tables'] = $this->general_query->gen_sales_inv_serial();
+			$this->data['gen_inv'] = $this->general_query->gen_sales_serial();
+		}
+		$this->data['invoice'] = ' active';
+		$this->data['main_content'] = 'p_s_inv';
+		$this->load->view('includes/print_template', $this->data);
 	}
 
 	//invoice end //
