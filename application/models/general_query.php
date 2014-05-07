@@ -110,17 +110,20 @@ class General_query extends CI_Model {
 
 
 	function get_curr_serial($val){
-		if(!$this->session->userdata('sale_id'))
-		{
+
 		$this->db->select_max('serial');
 		$query = $this->db->get($val);
 		if($query->num_rows() > 0){
 			foreach ($query->result() as $row) {
 				$num = $row->serial;
 			}
+		if(!$this->session->userdata('sale_id'))
+		{
 			return $num + 1;
 
 		}
+		else
+			return $num;
 
 		}
 	}
