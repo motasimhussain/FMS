@@ -43,7 +43,7 @@ class Form_process extends CI_Controller {
 
 	public function purchase_frm(){
 		$this->load->model('purchase_frm');
-		if ($this->sales_frm->add()) {
+		if ($this->purchase_frm->add()) {
 			redirect('site/purchase_frm');
 		}
 	}
