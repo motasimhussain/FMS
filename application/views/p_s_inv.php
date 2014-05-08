@@ -71,7 +71,7 @@ if(!empty($row2)):
   <td width=108 valign=top style='font-size:14px;width:80.95pt;border:none;border-bottom:solid windowtext 1.0pt;
   padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'><?php echo $row2->serial;?></p>
+  normal'><?php echo $row2->s_serial;?></p>
   </td>
  </tr>
  <tr>
@@ -201,13 +201,16 @@ if(!empty($row2)):
   normal'><b>Amount</b></p>
   </td>
  </tr>
- <?php foreach ($gen_inv as $row): ?>
+<?php 
+    $s_num = 1;
+    foreach ($gen_inv as $row): 
+?>
  <tr class="text-center">
   <td width=100 valign=top style='font-size:14px;width:75.15pt;border-top:none;border-left:
   solid windowtext 1.0pt;border-bottom:none;border-right:solid windowtext 1.0pt;
   padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'>1</p>
+  normal'><?php echo $s_num ?></p>
   </td>
   <td width=100 colspan=2 valign=top style='font-size:14px;width:75.15pt;border:none;
   border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
@@ -235,7 +238,7 @@ if(!empty($row2)):
   normal'><?php echo $row->amnt; ?></p>
   </td>
  </tr>
-<?php endforeach; ?>
+<?php $s_num++; endforeach; ?>
   <tr  height='
     <?php 
       $num = sizeof($gen_inv);

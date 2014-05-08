@@ -11,11 +11,11 @@ class Purchase_frm extends CI_Model {
 
 		}
 		$data = array(
-
+			'type' => 'purchase',
 			'inv_for' => $this->input->post('inv_for'),
 			'cmp_name' => $this->input->post('cmp_name'),
 			'acc' => $this->input->post('acc'),
-			'serial' => $this->input->post('serial'),
+			'p_serial' => $this->input->post('serial'),
 			'ref_num' => $this->input->post('ref_num'),
 			'bill_num' => $this->input->post('bill_num'),
 			'date' => $this->input->post('date'),
@@ -29,11 +29,11 @@ class Purchase_frm extends CI_Model {
 			'amnt' => $this->input->post('amnt'),
 			'tot_amnt' => $this->input->post('tot_amnt'),
 			'amnt_in_wrd' => $this->input->post('amnt_wrd'),
-			'purchase_sess' => $this->session->userdata('purchase_id')
+			'sale_sess' => $this->session->userdata('purchase_id')
 		);
 
 
-		$query = $this->db->insert('purchase',$data);
+		$query = $this->db->insert('sp_records',$data);
 
 		if($query){
 			return ture;

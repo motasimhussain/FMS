@@ -63,7 +63,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-4 control-label" for="serial">Serial # SO:</label>
+                                        <label class="col-md-4 control-label" for="serial">Serial # PO:</label>
                                         <div class="col-md-7">
                                             <input id="serial" name="serial" placeholder="" class="form-control input-md" required="" type="text" value="<?php echo $serial;?>">
                                             
@@ -355,7 +355,7 @@
                                                     
                                                     ?>
                                                     <tr class="even">
-                                                        <td class="  sorting_1"><?php echo $row->serial;?></td>
+                                                        <td class="  sorting_1"><?php echo $row->p_serial;?></td>
                                                         <td class=" "><?php echo $row->ref_num;?></td>
                                                         <td class=" "><?php echo $row->bill_num;?></td>
                                                         <td class=" "><?php echo $row->date;?></td>
@@ -368,10 +368,10 @@
                                                         <td class=" "><?php echo $row->amnt;?></td>
                                                     </tr>
                                                     <?php
-                                                    $purchase_sess = $row->purchase_sess;
+                                                    $sale_sess = $row->sale_sess;
                                                     endforeach;
                                                     }  else{
-                                                     $purchase_sess = '0';
+                                                     $sale_sess = '0';
                                                   ?>
                                                     <tr class="even">
                                                         <td colspan="11" class="text-center">No Sales</td>
@@ -387,7 +387,7 @@
  
                                         <fieldset>
                                             <div class="form-group">
-                                            <input type="hidden" name = "sale_sess" value="<?php echo $purchase_sess; ?>">
+                                            <input type="hidden" name = "sale_sess" value="<?php echo $sale_sess; ?>">
                                                 <div class="col-md-12">
                                                     <button id="gen_inv" name="gen_inv" class="btn btn-primary pull-right">Generate Invoice</button>
                                                 </div>
