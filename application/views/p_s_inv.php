@@ -22,6 +22,11 @@
               <li>
                 <button class="btn btn-success" value="submit">Generate</button>
               </li>
+
+               <li>
+                  <button class="btn btn-default" onclick="window.print();"><i class="fa fa-print"></i> Print</button>
+              </li>
+
               </ul>
             </form>
         </section><!-- Main content -->
@@ -33,7 +38,7 @@ if(!empty($row2)):
 <div class="pad margin no-print">
     <div class="alert alert-info" style="margin-bottom: 0!important;">
         <i class="fa fa-info"></i>
-        <b>Note:</b> This page has been enhanced for printing. Click the print button at the bottom of the invoice to test.
+        <b>Note:</b> This page has been enhanced for printing. Click the print button at the top of the invoice to print.
     </div>
 </div>
 

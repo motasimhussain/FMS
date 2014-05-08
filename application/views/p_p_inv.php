@@ -22,6 +22,10 @@
               <li>
                 <button class="btn btn-success" value="submit">Generate</button>
               </li>
+
+              <li>
+                  <button class="btn btn-default" onclick="window.print();"><i class="fa fa-print"></i> Print</button>
+              </li>
               </ul>
             </form>
         </section><!-- Main content -->
