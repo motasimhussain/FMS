@@ -1,6 +1,8 @@
 <?php 
 if (uri_string() != 'site/sales_frm' && ($this->session->userdata('sale_id')))
     $this->session->unset_userdata('sale_id');
+if (uri_string() != 'site/purchase_frm' && ($this->session->userdata('sale_id')))
+    $this->session->unset_userdata('purchase_id');
 ?>
 
 <!DOCTYPE html>

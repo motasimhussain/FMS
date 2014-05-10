@@ -95,16 +95,13 @@
                                         
                                         <!-- Textarea -->
                                         <div class="form-group">
-                                            <label class="col-md-4 control-label" for="desc">Description:</label>
+                                            <label class="col-md-4 control-label" for="i_name">Item Name:</label>
                                             <div class="col-md-7">
-                                                <textarea class="form-control" id="desc" name="desc"></textarea>
+                                                <input type="text" class="form-control" id="i_name" name="i_name"></textarea>
                                             </div>
                                         </div>
                                         <!-- Text input-->
-                                    </div>
-                                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                        
-                                        <div class="form-group">
+                                                                            <div class="form-group">
                                             <label class="col-md-4 control-label" for="wght">Unit Weight:</label>
                                             <div class="col-md-7">
                                                 <select id="wght" name="wght" placeholder="" class="form-control input-md" required=""  class="form-control">
@@ -117,6 +114,10 @@
                                             </div>
                                         </div>
                                         <!-- Text input-->
+                                    </div>
+                                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                        
+
                                         <div class="form-group">
                                             <label class="col-md-4 control-label" for="qunty">Quantity:</label>
                                             <div class="col-md-7">
