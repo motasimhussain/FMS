@@ -11,23 +11,27 @@ class Auth extends CI_Model {
 		if($query->num_rows == 1){
 
 			foreach ($query->result() as $row) {
-				if($row->is_admin == 1){
+				if($row->is_admin == 1 && $row->password != ""){
 
 					$data = array(
 						'is_admin' => 'true',
 						'pic' => $row->pic
 					);
 					$this->session->set_userdata($data);
-				}else{
+					return true;
+				}else if($row->is_admin == 0 && $row->password != ""){
 					$data = array(
 						'is_admin' => 'false',
 						'pic' => $row->pic
 					);
 					$this->session->set_userdata($data);
+					return true;
+				}else{
+					return false;
 				}
 			}
 
-			return true;
+			
 		}else {return false;}
 	}
 	

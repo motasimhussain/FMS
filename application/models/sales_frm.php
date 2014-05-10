@@ -7,7 +7,7 @@ class Sales_frm extends CI_Model {
 		{
 			$data = array('sale_id' => time());
 			$this->session->set_userdata($data); 
-			echo $this->session->userdata('sale_id');
+			//echo $this->session->userdata('sale_id');
 
 		}
 		$data = array(
