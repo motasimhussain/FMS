@@ -3,7 +3,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-        Sales Form
+        Purchase Form
         <small>Preview</small>
         </h1>
         <ol class="breadcrumb">
@@ -93,17 +93,17 @@
                                             </div>
                                         </div>
                                         
-                                        <!-- Textarea -->
                                         <div class="form-group">
-                                            <label class="col-md-4 control-label" for="desc">Description:</label>
-                                            <div class="col-md-7">
-                                                <textarea class="form-control" id="desc" name="desc"></textarea>
-                                            </div>
+                                        <label class="col-md-4 control-label" for="i_name">Item:</label>
+                                        <div class="col-md-7">
+                                            <select id="i_name" name="i_name" class="form-control">
+                                                <?php foreach($select_item as $row): ?>
+                                                <option value="<?php echo $row->i_name; ?>"><?php echo $row->i_name; ?></option>
+                                                <?php endforeach; ?>
+                                            </select>
                                         </div>
-                                        <!-- Text input-->
-                                    </div>
-                                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                        
+                                        </div>
+
                                         <div class="form-group">
                                             <label class="col-md-4 control-label" for="wght">Unit Weight:</label>
                                             <div class="col-md-7">
@@ -116,6 +116,11 @@
                                                 </select>
                                             </div>
                                         </div>
+                                        <!-- Text input-->
+                                    </div>
+                                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                        
+                                        
                                         <!-- Text input-->
                                         <div class="form-group">
                                             <label class="col-md-4 control-label" for="qunty">Quantity:</label>

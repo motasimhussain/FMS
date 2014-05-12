@@ -358,7 +358,7 @@ if(!empty($row2)):
   normal'></p>
   </td>
  </tr>
-<!--  <tr height=0>
+ <tr height=0>
   <td width=100 style='font-size:14px;border:none'></td>
   <td width=13 style='font-size:14px;border:none'></td>
   <td width=87 style='font-size:14px;border:none'></td>
@@ -368,7 +368,7 @@ if(!empty($row2)):
   <td width=11 style='font-size:14px;border:none'></td>
   <td width=100 style='font-size:14px;border:none'></td>
   <td width=100 style='font-size:14px;border:none'></td>
- </tr> -->
+ </tr>
 </table>
 </div>
         </section>

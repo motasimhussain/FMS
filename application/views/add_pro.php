@@ -29,6 +29,17 @@
                                     <form class="form-horizontal" action="<?php echo base_url(); ?>index.php/form_process/add_pro" method="post">
                                       <fieldset>
 
+                                      <div class="form-group">
+                                        <label class="col-md-4 control-label" for="i_for">Item for:</label>
+                                        <div class="col-md-4">
+                                            <select id="i_for" name="i_for" class="form-control">
+                                                <?php foreach($select_workplace as $row): ?>
+                                                <option value="<?php echo $row->id; ?>"><?php echo $row->w_name; ?></option>
+                                                <?php endforeach; ?>
+                                            </select>
+                                        </div>
+                                    </div>
+
                                       <!-- Text input-->
                                       <div class="form-group">
                                         <label class="col-md-4 control-label" for="item_code">Item Code</label>  

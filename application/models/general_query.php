@@ -173,6 +173,17 @@ class General_query extends CI_Model {
 		}
 	}
 
+	function get_items(){
+		$this->db->select('i_code,i_name');
+		$query = $this->db->get('items');
+		if($query->num_rows() > 0){
+			foreach ($query->result() as $row) {
+				$data[] = $row;
+			}
+			return $data;
+		}
+	}
+
 	function get_names(){
 		$this->db->select('id,name');
 		$query = $this->db->get('user');

@@ -175,17 +175,17 @@ if(!empty($row2)):
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'><b>S. No.</b></p>
   </td>
-  <td width=100 colspan=2 valign=top style='font-size:14px;width:75.15pt;border:solid windowtext 1.0pt;
+  <td width=100 colspan=4 valign=top style='font-size:14px;width:75.15pt;border:solid windowtext 1.0pt;
   border-left:none;padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'><b>Description</b></p>
   </td>
-  <td width=100 colspan=2 valign=top style='font-size:14px;width:75.15pt;border:solid windowtext 1.0pt;
+  <td width=100 colspan=1 valign=top style='font-size:14px;width:75.15pt;border:solid windowtext 1.0pt;
   border-left:none;padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'><b>Quantity</b></p>
   </td>
-  <td width=100 colspan=2 valign=top style='font-size:14px;width:75.15pt;border:solid windowtext 1.0pt;
+  <td width=100 colspan=1 valign=top style='font-size:14px;width:75.15pt;border:solid windowtext 1.0pt;
   border-left:none;padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'><b>Weight</b></p>
@@ -212,17 +212,17 @@ if(!empty($row2)):
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'><?php echo $s_num ?></p>
   </td>
-  <td width=100 colspan=2 valign=top style='font-size:14px;width:75.15pt;border:none;
+  <td width=100 colspan=4 valign=top style='font-size:14px;width:75.15pt;border:none;
   border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'><?php echo $row->dscr; ?></p>
   </td>
-  <td width=100 colspan=2 valign=top style='font-size:14px;width:75.15pt;border:none;
+  <td width=100 colspan=1 valign=top style='font-size:14px;width:75.15pt;border:none;
   border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'><?php echo $row->qunty; ?></p>
   </td>
-  <td width=100 colspan=2 valign=top style='font-size:14px;width:75.15pt;border:none;
+  <td width=100 colspan=1 valign=top style='font-size:14px;width:75.15pt;border:none;
   border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'><?php echo $row->wght; ?></p>
@@ -251,17 +251,17 @@ if(!empty($row2)):
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'></p>
   </td>
-  <td width=100 colspan=2 valign=top style='font-size:14px;width:75.15pt;border:none;
+  <td width=100 colspan=4 valign=top style='font-size:14px;width:75.15pt;border:none;
   border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'></p>
   </td>
-  <td width=100 colspan=2 valign=top style='font-size:14px;width:75.15pt;border:none;
+  <td width=100 colspan=1 valign=top style='font-size:14px;width:75.15pt;border:none;
   border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'></p>
   </td>
-  <td width=100 colspan=2 valign=top style='font-size:14px;width:75.15pt;border:none;
+  <td width=100 colspan=1 valign=top style='font-size:14px;width:75.15pt;border:none;
   border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'></p>
@@ -362,7 +362,7 @@ if(!empty($row2)):
   normal'></p>
   </td>
  </tr>
-<!--  <tr height=0>
+ <tr height=0>
   <td width=100 style='font-size:14px;border:none'></td>
   <td width=13 style='font-size:14px;border:none'></td>
   <td width=87 style='font-size:14px;border:none'></td>
@@ -372,7 +372,7 @@ if(!empty($row2)):
   <td width=11 style='font-size:14px;border:none'></td>
   <td width=100 style='font-size:14px;border:none'></td>
   <td width=100 style='font-size:14px;border:none'></td>
- </tr> -->
+ </tr>
 </table>
 </div>
         </section>

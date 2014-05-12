@@ -93,12 +93,15 @@
                                             </div>
                                         </div>
                                         
-                                        <!-- Textarea -->
-                                        <div class="form-group">
-                                            <label class="col-md-4 control-label" for="i_name">Item Name:</label>
-                                            <div class="col-md-7">
-                                                <input type="text" class="form-control" id="i_name" name="i_name"></textarea>
-                                            </div>
+                                       <div class="form-group">
+                                        <label class="col-md-4 control-label" for="i_name">Item:</label>
+                                        <div class="col-md-7">
+                                            <select id="i_name" name="i_name" class="form-control">
+                                                <?php foreach($select_item as $row): ?>
+                                                <option value="<?php echo $row->i_name; ?>"><?php echo $row->i_name; ?></option>
+                                                <?php endforeach; ?>
+                                            </select>
+                                        </div>
                                         </div>
                                         <!-- Text input-->
                                                                             <div class="form-group">

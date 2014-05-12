@@ -83,6 +83,12 @@ class Site extends CI_Controller {
 			$this->data['select_company'] = 'no content';
 		}
 
+		if($this->general_query->get_items()){
+			$this->data['select_item'] = $this->general_query->get_items();
+		}else{
+			$this->data['select_item'] = 'no content';
+		}
+
 		$this->data['serial'] = $this->general_query->get_curr_serial('s_serial');
 		$this->data['forms'] = ' active';
 		$this->data['main_content'] = 'sales_frm';
@@ -109,6 +115,11 @@ class Site extends CI_Controller {
 		}else{
 			$this->data['select_company'] = 'no content';
 		}
+		if($this->general_query->get_items()){
+			$this->data['select_item'] = $this->general_query->get_items();
+		}else{
+			$this->data['select_item'] = 'no content';
+		}
 
 		$this->data['serial'] = $this->general_query->get_curr_serial('p_serial');
 		$this->data['forms'] = ' active';
@@ -123,6 +134,11 @@ class Site extends CI_Controller {
 	}
 
 	public function add_pro(){
+		if($this->general_query->get_wn()){
+			$this->data['select_workplace'] = $this->general_query->get_wn();
+		}else{
+			$this->data['select_workplace'] = 'no content';
+		}
 		$this->data['forms'] = ' active';
 		$this->data['main_content'] = 'add_pro';
 		$this->load->view('includes/template', $this->data);
