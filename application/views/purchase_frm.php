@@ -88,7 +88,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label class="col-md-4 control-label" for="textinput">Date:</label>
-                                            <div class="col-md-7 input-append date" id="dp3" data-date="" data-date-format="dd-mm-yyyy">
+                                            <div class="col-md-7">
                                                 <input id="pickdate" name="date" placeholder="" class="form-control input-md" type="text">
                                             </div>
                                         </div>

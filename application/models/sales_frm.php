@@ -10,6 +10,10 @@ class Sales_frm extends CI_Model {
 			//echo $this->session->userdata('sale_id');
 
 		}
+
+		// echo $this->input->post('date');
+		// die();
+
 		$data = array(
 			'type' => 'sales',
 			'inv_for' => $this->input->post('inv_for'),
@@ -20,7 +24,18 @@ class Sales_frm extends CI_Model {
 			'bill_num' => $this->input->post('bill_num'),
 			'date' => $this->input->post('date'),
 			'i_name' => $this->input->post('i_name'),
-			'dscr' => (" Sales # ".$this->input->post('qunty')." ".$this->input->post('i_name').$this->input->post('desc')." @ ".$this->input->post('amnt')." Add S.Tax ".$this->input->post('sales_tax')."% = ".$this->input->post('st_num')),
+			'dscr' => (" Sales # "
+						.$this->input->post('qunty').
+						" "
+						.$this->input->post('i_name').
+						$this->input->post('desc').
+						" @ "
+						.$this->input->post('amnt').
+						" Add S.Tax "
+						.$this->input->post('sales_tax').
+						"% = "
+						.$this->input->post('st_num')),
+			
 			'qunty' => $this->input->post('qunty'),
 			'price' => $this->input->post('price'),
 			'wght' => $this->input->post('wght'),

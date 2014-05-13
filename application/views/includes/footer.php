@@ -6,7 +6,7 @@
         <!-- jQuery 2.1.0 -->
         <script src="<?=base_url(); ?>js/jquery-2.1.0.min.js"></script>
         <!-- jQuery UI 1.10.3 -->
-        <script src="<?=base_url(); ?>js/jquery-ui-1.10.3.min.js" type="text/javascript"></script>
+        <script src="<?=base_url(); ?>js/jquery-ui-1.10.4.min.js" type="text/javascript"></script>
 
         <!-- Bootstrap -->
         <script src="<?=base_url(); ?>js/bootstrap.min.js" type="text/javascript"></script>
@@ -14,30 +14,27 @@
         <script src="<?=base_url(); ?>js/plugins/sparkline/jquery.sparkline.min.js" type="text/javascript"></script>
         <!-- fullCalendar -->
         <script src="<?=base_url(); ?>js/plugins/fullcalendar/fullcalendar.min.js" type="text/javascript"></script>
-        <!-- jQuery Knob Chart -->
-        <script src="<?=base_url(); ?>js/plugins/jqueryKnob/jquery.knob.js" type="text/javascript"></script>
         <!-- daterangepicker -->
         <script src="<?=base_url(); ?>js/plugins/daterangepicker/daterangepicker.js" type="text/javascript"></script>
         <!-- Bootstrap WYSIHTML5 -->
         <script src="<?=base_url(); ?>js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js" type="text/javascript"></script>
         <!-- iCheck -->
-       
-
-        <script src="<?=base_url(); ?>js/bootstrap-datepicker.js" type="text/javascript"></script>
-
         <!-- AdminLTE App -->
         <script src="<?=base_url(); ?>js/AdminLTE/app.js" type="text/javascript"></script>
         
         <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 
+        <script>
+            $(function() {
+                $( "#pickdate" ).datepicker({ dateFormat: "yy-mm-dd" });
+            });
+        </script>
+
 
         <script type="text/javascript">
             $(function() {
-                //Datemask dd/mm/yyyy
 
                 //Date range picker
-                $('#pickdate').datepicker();
-
                 $('#reservation').daterangepicker();
                 //Date range picker with time picker
                 $('#reservationtime').daterangepicker({timePicker: true, timePickerIncrement: 30, format: 'MM/DD/YYYY h:mm A'});
