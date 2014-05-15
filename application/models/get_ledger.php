@@ -4,23 +4,31 @@ class Get_ledger extends CI_Model {
 
 	public function get_entries()
 	{
+
 		$parse_date = $this->input->post('led_date');
-		$date_range = explode(" - ", $parse_date);
 
-		$fields = array(
-						'inv_for' => $this->input->post('led_for'),
-						'cmp_name' => $this->input->post('coname'),
-		 				);
-		$this->db->where($fields);
-		$this->db->where('date BETWEEN "' . $date_range[0]. '" AND "' . $date_range[1].'"');
+		if(isset($parse_date) && $parse_date!= ""){
 
-		$query = $this->db->get('ledger');
+			list($date_1, $date_2) = explode(" - ", $parse_date);
+			// print_r($date_range);
+			// die();
 
-		foreach ($query->result() as $row) {
-			echo $row->debit. " ";
+			$fields = array(
+							'inv_for' => $this->input->post('led_for'),
+							'cmp_name' => $this->input->post('coname'),
+			 				);
+			$this->db->where($fields);
+			$this->db->where('date BETWEEN "' . $date_1. '" AND "' . $date_2.'"');
+
+			$query = $this->db->get('ledger');
+			if($query->num_rows() > 0){
+				foreach ($query->result() as $row) {
+					$data[] = $row;
+				}
+
+				return $data;
+			}
 		}
-
-		die();
 	}
 
 }

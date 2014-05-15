@@ -2,32 +2,7 @@
     <!-- Content Header (Page header) -->
 
     <section class="content-header">
-        <form class="form-inline" method="post" action="<?php echo base_url(); ?>index.php/form_process/get_ledger">
-          <!-- <span>
-            <label class="control-label" for="reservation">Pick Date</label>  
-            <input type="text" class="form-control getLedger" id="reservation" name="led_date" style="width:15em;">
-          </span>
-          <span style="padding-left:10px">
-            <label class="control-label" for="led_for">Pick Workplace</label>  
-            <select id="led_for" name="led_for" class="form-control" style="width:15em;">
-                <?php foreach($select_workplace as $row): ?>
-                <option value="<?php echo $row->id; ?>"><?php echo $row->w_name; ?></option>
-                <?php endforeach; ?>
-            </select>
-          </span>
-
-          <span style="padding-left:10px">
-            <label class="control-label" for="coname">Pick Company</label>  
-            <select id="coname" name="coname" class="form-control" style="width:15em;">
-                <?php foreach($select_company as $row): ?>
-                  <option value="<?php echo $row->id; ?>"><?php echo $row->c_name; ?></option>
-                <?php endforeach; ?>
-            </select>
-          </span>
-
-          <span style="padding-left:10px">
-            <button class="btn btn-success" value="submit">Get</button>
-          </span> -->
+        <form class="form-inline" method="post" action="<?php echo base_url(); ?>index.php/site/acc_ledger">
 
           <ul class="list-inline">
             <li><label class="control-label" for="reservation">Pick Date</label></li>
@@ -84,6 +59,8 @@
         <div class="row">
             <!-- left column -->
         </div><!--/.col (left) -->
+
+        <?php if($data != "no entries"): ?>
 
        <div style="padding-right:70px;padding-left:70px;">
            <h1 class="text-center" >Accounts Ledger</h1>
@@ -211,6 +188,7 @@
               normal'>$op_bal</p>
               </td>
              </tr>
+             <?php foreach($data as $row): ?>
              <tr>
               <td width=88 valign=top style='width:65.65pt;border-top:none;border-left:
               solid windowtext 1.0pt;border-bottom:none;border-right:solid windowtext 1.0pt;
@@ -221,7 +199,7 @@
               <td width=87 valign=top style='width:65.4pt;border:none;border-right:solid windowtext 1.0pt;
               padding:0in 5.4pt 0in 5.4pt'>
               <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-              normal'>$date</p>
+              normal'><?php echo $row->date; ?></p>
               </td>
               <td width=85 valign=top style='width:63.9pt;border:none;border-right:solid windowtext 1.0pt;
               padding:0in 5.4pt 0in 5.4pt'>
@@ -236,19 +214,20 @@
               <td width=85 valign=top style='width:63.4pt;border:none;border-right:solid windowtext 1.0pt;
               padding:0in 5.4pt 0in 5.4pt'>
               <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-              normal'>$debit</p>
+              normal'><?php echo $row->debit; ?></p>
               </td>
               <td width=86 colspan=2 valign=top style='width:64.85pt;border:none;
               border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
               <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-              normal'>$credit</p>
+              normal'><?php echo $row->credit; ?></p>
               </td>
               <td width=75 valign=top style='width:56.45pt;border:none;border-right:solid windowtext 1.0pt;
               padding:0in 5.4pt 0in 5.4pt'>
               <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-              normal'>$bal</p>
+              normal'><?php echo $row->balance ?></p>
               </td>
              </tr>
+           <?php endforeach; ?>
              <tr>
               <td width=355 colspan=5 valign=top style='width:266.25pt;border:solid windowtext 1.0pt;
               padding:0in 5.4pt 0in 5.4pt'>
@@ -284,6 +263,8 @@
              </tr>
             </table>
           </div>
+
+        <?php endif; ?>
 
     </section>
 </aside>

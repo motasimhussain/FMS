@@ -219,6 +219,13 @@ class Site extends CI_Controller {
 		}else{
 			$this->data['select_company'] = 'no content';
 		}
+
+		$this->load->model('get_ledger');
+		if($this->get_ledger->get_entries()){
+			$this->data['data'] = $this->get_ledger->get_entries();
+		}else{
+			$this->data['data'] = 'no entries';
+		}
 		$this->data['ledger'] = ' active';
 		$this->data['main_content'] = 'acc_ledger';
 		$this->load->view('includes/template', $this->data);
