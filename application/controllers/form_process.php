@@ -58,9 +58,19 @@ class Form_process extends CI_Controller {
 
 	public function get_ledger(){
 		$this->load->model('get_ledger');
-		if ($this->get_ledger->get_entry()) {
+		if ($this->get_ledger->get_entries()){
 			redirect('site/acc_ledger');
 		}
+	}
+
+	public function clear_session_sales(){
+		$this->session->unset_userdata('sale_id');
+		redirect('site/sales_frm');
+	}
+
+	public function clear_session_purchase(){
+		$this->session->unset_userdata('purchase_id');
+		redirect('site/purchase_frm');
 	}
 
 }

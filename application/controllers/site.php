@@ -208,6 +208,17 @@ class Site extends CI_Controller {
 	//ledger start//
 
 	public function acc_ledger(){
+		if($this->general_query->get_wn()){
+			$this->data['select_workplace'] = $this->general_query->get_wn();
+		}else{
+			$this->data['select_workplace'] = 'no content';
+		}
+
+		if($this->general_query->get_cn()){
+			$this->data['select_company'] = $this->general_query->get_cn();
+		}else{
+			$this->data['select_company'] = 'no content';
+		}
 		$this->data['ledger'] = ' active';
 		$this->data['main_content'] = 'acc_ledger';
 		$this->load->view('includes/template', $this->data);

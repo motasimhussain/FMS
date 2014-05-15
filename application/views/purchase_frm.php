@@ -2,15 +2,11 @@
 <aside class="right-side">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-        <h1>
-        Purchase Form
-        <small>Preview</small>
-        </h1>
-        <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="#">Forms</a></li>
-            <li class="active">General Elements</li>
-        </ol>
+        <ul class="list-inline">
+            <li><h3 style="margin-top: 0px;margin-bottom: 0px;">Purchase Form</h3></li>
+
+            <li class="pull-right"><a class="btn btn-success" href="<?php echo base_url(); ?>index.php/form_process/clear_session_purchase">New</a></li>
+        </ul>
     </section>
     <!-- Main content -->
     <section class="content">
@@ -30,13 +26,27 @@
                                 <!-- Form Name -->
                                 <!-- Select Basic -->
                                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+
+                                <?php
+                                                    if($purchase_table != 'No Sales'){
+                                                        //$data = $sale_table->row(0);
+                                                        foreach ($purchase_table as $row ) {
+                                                            $inv_for = $row->inv_for;
+                                                            $cmp_name = $row->cmp_name;
+                                                            $acc = $row->acc;
+                                                            $ref_num = $row->ref_num;
+                                                            $bill_num = $row->bill_num;
+                                                            $date = $row->date;
+                                                        }
+                                                    }
+                                    ?>
                                     
                                     <div class="form-group">
                                         <label class="col-md-4 control-label" for="inv_for">Invoice for:</label>
                                         <div class="col-md-7">
                                             <select id="inv_for" name="inv_for" class="form-control">
                                                 <?php foreach($select_workplace as $row): ?>
-                                                <option value="<?php echo $row->id; ?>"><?php echo $row->w_name; ?></option>
+                                                <option value="<?php echo $row->id; ?>"<?php if(isset($inv_for)){if($row->id == $inv_for){echo " selected";}}?>><?php echo $row->w_name; ?></option>
                                                 <?php endforeach; ?>
                                             </select>
                                         </div>
@@ -47,7 +57,7 @@
                                         <div class="col-md-7">
                                             <select id="cmp_name" name="cmp_name" class="form-control">
                                                 <?php foreach($select_company as $row): ?>
-                                                <option value="<?php echo $row->id; ?>"><?php echo $row->c_name; ?></option>
+                                                <option value="<?php echo $row->id; ?>"<?php if(isset($cmp_name)){if($row->id == $cmp_name){echo " selected";}}?>><?php echo $row->c_name; ?></option>
                                                 <?php endforeach; ?>
                                             </select>
                                         </div>
@@ -57,7 +67,7 @@
                                         <div class="col-md-7">
                                             <select id="acc" name="acc" class="form-control">
                                                 <?php foreach($select_company as $row): ?>
-                                                <option value="<?php echo $row->id; ?>"><?php echo $row->c_name; ?></option>
+                                                <option value="<?php echo $row->id; ?>"<?php if(isset($acc)){if($row->id == $acc){echo " selected";}}?>><?php echo $row->c_name; ?></option>
                                                 <?php endforeach; ?>
                                             </select>
                                         </div>
@@ -72,7 +82,7 @@
                                         <div class="form-group">
                                             <label class="col-md-4 control-label" for="ref_num">Ref #:</label>
                                             <div class="col-md-7">
-                                                <input id="ref_num" name="ref_num" placeholder="" class="form-control input-md" required="" type="text">
+                                                <input id="ref_num" name="ref_num" placeholder="" class="form-control input-md" required="" type="text" value="<?php if(isset($ref_num)){echo $ref_num;}?>">
                                                 
                                             </div>
                                         </div>
@@ -82,14 +92,14 @@
                                         <div class="form-group">
                                             <label class="col-md-4 control-label" for="bill_num">Bill #:</label>
                                             <div class="col-md-7">
-                                                <input id="bill_num" name="bill_num" placeholder="" class="form-control input-md" required="" type="text">
+                                                <input id="bill_num" name="bill_num" placeholder="" class="form-control input-md" required="" type="text" value="<?php if(isset($bill_num)){echo $bill_num;}?>">
                                                 
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-md-4 control-label" for="textinput">Date:</label>
                                             <div class="col-md-7">
-                                                <input id="pickdate" name="date" placeholder="" class="form-control input-md" type="text">
+                                                <input id="pickdate" name="date" placeholder="" class="form-control input-md" type="text" value="<?php if(isset($date)){echo $date;}?>">
                                             </div>
                                         </div>
                                         

@@ -277,7 +277,7 @@ if(!empty($row2)):
   <td  colspan=7 valign=top style='font-size:14px;width:150.3pt;border:solid windowtext 1.0pt;
   border-bottom:none;padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'><?php echo $row2->amnt_in_wrd;?></p>
+  normal' id='amntWrd'></p>
   </td>
   <td  colspan=0 valign=top style='font-size:14px;width:150.3pt;border:solid windowtext 1.0pt;
   border-left:none;padding:0in 5.4pt 0in 5.4pt'>
@@ -323,7 +323,7 @@ if(!empty($row2)):
   <td  colspan=0 valign=top style='font-size:14px;width:150.35pt;border:solid windowtext 1.0pt;
   border-left:none;padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'><?php echo $row2->tot_bill;?></p>
+  normal' id="totAmnt"><?php echo $row2->tot_bill;?></p>
   </td>
  </tr>
  <tr height="50">
@@ -372,5 +372,30 @@ if(!empty($row2)):
 </table>
 </div>
         </section>
+
+        <script type="text/javascript">
+        var getNum = document.getElementById("totAmnt");
+        function calc_tot(){
+        console.log("triggered");
+        var num = Number(getNum.textContent);
+        var a = ['','one ','two ','three ','four ', 'five ','six ','seven ','eight ','nine ','ten ','eleven ','twelve ','thirteen ','fourteen ','fifteen ','sixteen ','seventeen ','eighteen ','nineteen '];
+        var b = ['', '', 'twenty','thirty','forty','fifty', 'sixty','seventy','eighty','ninety'];
+        function inWords (num) {
+        if ((num = num.toString()).length > 9) return 'overflow';
+        n = ('000000000' + num).substr(-9).match(/^(\d{2})(\d{2})(\d{2})(\d{1})(\d{2})$/);
+        if (!n) return; var str = '';
+        str += (n[1] != 0) ? (a[Number(n[1])] || b[n[1][0]] + ' ' + a[n[1][1]]) + 'crore ' : '';
+        str += (n[2] != 0) ? (a[Number(n[2])] || b[n[2][0]] + ' ' + a[n[2][1]]) + 'lakh ' : '';
+        str += (n[3] != 0) ? (a[Number(n[3])] || b[n[3][0]] + ' ' + a[n[3][1]]) + 'thousand ' : '';
+        str += (n[4] != 0) ? (a[Number(n[4])] || b[n[4][0]] + ' ' + a[n[4][1]]) + 'hundred ' : '';
+        str += (n[5] != 0) ? ((str != '') ? 'and ' : '') + (a[Number(n[5])] || b[n[5][0]] + ' ' + a[n[5][1]]) + 'only ' : '';
+        return str;
+        }
+        document.getElementById("amntWrd").innerHTML = inWords(num);
+        }
+        calc_tot();
+        </script>
+
+
       <?php endif;?>
 </aside><!-- /.right-side -->
