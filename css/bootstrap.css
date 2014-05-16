@@ -1692,6 +1692,7 @@ th {
 }
 
 .table-bordered {
+  
   border: 1px solid #dddddd;
 }
 

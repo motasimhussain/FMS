@@ -12,7 +12,7 @@
 			<h1>Sales Tax Invoice</h1>
 </div>
 
-	<table class="table table-bordered">
+	<table class="table-bordered">
 		
 				<tr>
 					<td class="col-xs-2"><b>Serial #:</b> 1249071</td>
@@ -22,7 +22,7 @@
 					<td class="col-xs-2"><b>Ref.:</b> PO</td>
 				</tr>
 		</table>	
-		<table class="table table-bordered">
+		<table class="table-bordered">
 			
 			<tr>
 				<td class="col-xs-2"><b>Suppliers name</b> </td>
@@ -55,7 +55,7 @@
 				<td class="col-xs-4 border-bottom">Serial #</td>
 			</tr>
 		</table>
-		<table class="table table-bordered">
+		<table class="table-bordered">
 	<thead>
 		<tr>
 			<th class="col-xs-1 text-center">Quantity</th>

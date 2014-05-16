@@ -16,7 +16,7 @@
 			<p>Tel:... Fax:... Sales tax registration #: 12-34-5678-910-11</p>
 			<p></p>
 </div>
-<table class="col-xs-12 table invoice-table">
+<table class="col-xs-12 invoice-table">
 		<tr>
 			<td class="col-xs-2">Serial #</td>
 			<td class="col-xs-2 border-bottom">1249071</td>
@@ -44,7 +44,7 @@
 			<td class="col-xs-10 border-bottom">Serial #</td>
 		</tr>
 </table>
-<table class="table table-bordered">
+<table class="table-bordered">
 	<thead>
 		<tr>
 			<th class="col-xs-1 text-center">Sno</th>
