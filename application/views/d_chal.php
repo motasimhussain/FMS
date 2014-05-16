@@ -8,10 +8,10 @@
     </div>
 </div>
 <section class="content invoice">
-<div style="padding-right:70px;padding-left:70px;">
+<div style="font-size:13px;">
 	<div class="row text-center">
-			<h1>Delivery Challan</h1>
-			<h1>Pak Japan Chemical Ink</h1>
+			<h2>Delivery Challan</h2>
+			<h2>Pak Japan Chemical Ink</h2>
 			<p>M-II F92/4, SHER SHAH S.I.T.E KARACHI</p>
 			<p>Tel:... Fax:... Sales tax registration #: 12-34-5678-910-11</p>
 			<p></p>

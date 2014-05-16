@@ -8,8 +8,8 @@
     </div>
 </div>
 <section class="content invoice">
-<div style="padding-right:70px;padding-left:70px;">	<div class="row text-center">
-			<h1>Sales Tax Invoice</h1>
+<div style="font-size:13px;">	<div class="row text-center">
+			<h2>Sales Tax Invoice</h2>
 </div>
 
 	<table class="table-bordered">
