@@ -1,5 +1,22 @@
     <aside class="right-side">
 
+    <section class="content-header">
+            <form class="form-inline" method="post" action="<?php echo base_url(); ?>index.php/site/gen_sales_serial">
+              <ul class="list-inline">
+              <li>
+                <label class="control-label" for="serial">Serial #</label>
+              </li>
+              <li>  
+                <input type="text" class="form-control" id="serial" name="serial">
+              </li>
+
+              <li>
+                <button class="btn btn-success" value="submit">Generate</button>
+              </li>
+              </ul>
+            </form>
+        </section><!-- Main content -->
+
 
 <div class="pad margin no-print">
     <div class="alert alert-info" style="margin-bottom: 0!important;">

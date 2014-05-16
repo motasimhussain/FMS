@@ -1,4 +1,34 @@
+<?php if (!isset($top_tables)) {
+  $row2=NULL;
+   }else {
+    $row2=$top_tables->row(0); 
+   }
+?>
+
+
     <aside class="right-side">
+
+    <section class="content-header">
+            <form class="form-inline" method="post" action="<?php echo base_url(); ?>index.php/site/gen_challan">
+              <ul class="list-inline">
+              <li>
+                <label class="control-label" for="serial">Serial #</label>
+              </li>
+              <li>  
+                <input type="text" class="form-control" id="serial" name="serial">
+              </li>
+
+              <li>
+                <button class="btn btn-success" value="submit">Generate</button>
+              </li>
+              </ul>
+            </form>
+        </section><!-- Main content -->
+
+<?php
+if(!empty($row2)):
+
+ ?>
 
 
 <div class="pad margin no-print">
@@ -11,37 +41,37 @@
 <div style="font-size:13px;">
 	<div class="row text-center">
 			<h2>Delivery Challan</h2>
-			<h2>Pak Japan Chemical Ink</h2>
-			<p>M-II F92/4, SHER SHAH S.I.T.E KARACHI</p>
-			<p>Tel:... Fax:... Sales tax registration #: 12-34-5678-910-11</p>
+			<h3 class="text-center"><?php echo $row2->w_name;?></h3>
+			<p><?php echo $row2->w_address ?></p>
+			<p>Tel / Fax #:<?php if($row2->sales_tax_tot != 0){echo $row2->w_tel;}else{echo "...";}?> Sales tax registration #: <?php if($row2->sales_tax_tot != 0){echo $row2->w_gst;}else{echo "...";}?></p>
 			<p></p>
 </div>
 <table class="col-xs-12 invoice-table">
 		<tr>
 			<td class="col-xs-2">Serial #</td>
-			<td class="col-xs-2 border-bottom">1249071</td>
+			<td class="col-xs-2 border-bottom"><?php echo $row2->s_serial;?></td>
 			<td class="col-xs-6 text-right">Dated</td>
-			<td class="col-xs-2 border-bottom">31-12-1998</td>
+			<td class="col-xs-2 border-bottom"><?php echo date('d-m-Y');?></td>
 			
 		</tr>
 		<tr>
 			<td class="col-xs-2">Ref. I</td>
-			<td class="col-xs-2 border-bottom">1249071</td>
+			<td class="col-xs-2 border-bottom"><?php echo $row2->ref_num;?></td>
 			<td class="col-xs-6 text-right">Bill #</td>
-			<td class="col-xs-2 border-bottom">31-12-1998</td>
+			<td class="col-xs-2 border-bottom"><?php echo $row2->bill_num;?></td>
 			
 		</tr>
 		<tr>
-			<td class="col-xs-2">Buyers name &</td>
-			<td class="col-xs-10 border-bottom">Serial #</td>
+			<td class="col-xs-2">Buyers name </td>
+			<td class="col-xs-10 border-bottom"><?php echo $row2->c_name;?></td>
 		</tr>
 		<tr>
 			<td class="col-xs-2">Address</td>
-			<td class="col-xs-10 border-bottom">Serial #</td>
+			<td class="col-xs-10 border-bottom"><?php echo $row2->c_address;?></td>
 		</tr>
 		<tr>
-					<td class="col-xs-2"></td>
-			<td class="col-xs-10 border-bottom">Serial #</td>
+			<td class="col-xs-2"></td>
+			<td class="col-xs-10 border-bottom"></td>
 		</tr>
 </table>
 <table class="table-bordered">
@@ -54,18 +84,53 @@
 		</tr>
 	</thead>
 	<tbody>
+		<?php 
+		    $s_num = 1;
+		    foreach ($gen_inv as $row): 
+		?>
 		<tr>
-			<td class="col-xs-1 text-center border-right">1</td>
-			<td class="col-xs-9 text-center border-right">rotted tomatoes</td>
-			<td class="col-xs-1 text-center border-right">3200.00</td>
-			<td class="col-xs-1 text-center">KGS</td>
+			<td class="col-xs-1 text-center border-right"><?php echo $s_num; ?></td>
+			<td class="col-xs-9 text-center border-right"><?php echo $row->dscr; ?></td>
+			<td class="col-xs-1 text-center border-right qunty"><?php echo $row->qunty; ?></td>
+			<td class="col-xs-1 text-center"><?php echo $row->wght; ?></td>
 		</tr>
+		<?php $s_num++; endforeach; ?>
+		  <tr  height='
+		    <?php 
+		      $num = sizeof($gen_inv);
+		      echo (280-($num*15)); 
+		    ?> '>
+
+		    <td class="col-xs-1 text-center border-right"></td>
+			<td class="col-xs-9 text-center border-right"></td>
+			<td class="col-xs-1 text-center border-right"></td>
+			<td class="col-xs-1 text-center"></td>
+
+		    </tr>
 	</tbody>
 	<tfoot><th class="col-xs-1 text-center"></th>
 			<th class="col-xs-9 text-center">Total:</th>
-			<th class="col-xs-1 text-center">3200.00</th>
-			<th class="col-xs-1 text-center"></th></tfoot>
+			<th class="col-xs-1 text-center" id="totQty"></th>
+			<th class="col-xs-1 text-center"></th>
+	</tfoot>
+
+	<script type="text/javascript">
+		var arr = document.getElementsByClassName("qunty");
+		var tot_qty = document.getElementById("totQty");
+		var qty = 0;
+		for(var i=0; i<arr.length; i++){
+			qty = qty + Number(arr[i].innerText);
+		}
+
+		tot_qty.innerHTML = qty;
+
+	</script>
+
+
 </table>
 </div>
 </section>
+
+
+<?php endif;?>
 </aside>

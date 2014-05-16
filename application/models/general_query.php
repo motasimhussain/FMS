@@ -108,6 +108,29 @@ class General_query extends CI_Model {
 
 	///////// END PURCHASE MODELS //////////
 
+	////////// CHALLAN START ////////////
+
+	function get_challan(){
+
+		$this->db->where('s_serial', $this->input->post('serial'));
+		$query = $this->db->get('sales_inv');
+		if($query->num_rows() > 0){
+			foreach ($query->result() as $row) {
+				$data[] = $row;
+			}
+			return $data;
+		}		
+
+	}
+
+	function gen_challan(){
+
+		return $this->db->query('SELECT * FROM sales_inv WHERE `s_serial`="'.$this->input->post("serial").'"');
+
+	}
+
+	////////// CHALLAN END ////////////
+
 
 	function get_curr_serial($s_type){
 
