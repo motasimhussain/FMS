@@ -7116,3 +7116,20 @@ td.visible-print {
     display: none !important;
   }
 }
+.border,.border-left{
+  border-left: 1px solid #ccc;
+}
+.border,.border-right{
+  border-right: 1px solid #ccc;
+}
+.border,.border-top{
+  border-top: 1px solid #ccc;
+}
+.border,.border-bottom{
+  border-bottom: 1px solid #ccc;
+}
+.invoice td[class*="col-"]{
+  position: static;
+  display: table-cell;
+  float: left !important;
+}

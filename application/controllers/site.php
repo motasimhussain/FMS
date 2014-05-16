@@ -250,6 +250,18 @@ class Site extends CI_Controller {
 		$this->data['main_content'] = 'data';
 		$this->load->view('includes/template2',$this->data);
 	}
+	
+		public function gen_challan(){
+		$this->data['d_chal'] = ' active';
+		$this->data['main_content'] = 'd_chal';
+		$this->load->view('includes/template',$this->data);
+	}
+	
+		public function gen_sales_tax_inv(){
+		$this->data['sales_tax_inv'] = ' active';
+		$this->data['main_content'] = 'sales_tax_inv';
+		$this->load->view('includes/template',$this->data);
+	}
 
 	//included in forms, is hidden on non-admin login
 
