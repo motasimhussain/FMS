@@ -114,14 +114,14 @@ if(!empty($row2)):
 			<td class="col-xs-1 text-center"><?php echo $row->sales_tax; ?>%</td>
 			<td class="col-xs-1 text-center totTax"><?php echo $row->sales_tax_tot; ?></td>
 			<td class="col-xs-1 text-center"><?php echo $row->fed_tax; ?>%</td>
-			<td class="col-xs-2 text-center totAmnt"><?php echo $row2->tot_amnt;?></td>
+			<td class="col-xs-2 text-center totAmnt"><?php echo $row->tot_amnt;?></td>
 		</tr>
 
 		<?php $s_num++; endforeach; ?>
 		  <tr  height='
 		    <?php 
 		      $num = sizeof($gen_inv);
-		      echo (280-($num*15)); 
+		      echo (250-($num*15)); 
 		    ?> '>
 
 		    <td class="col-xs-1 text-center"></td>
@@ -138,12 +138,24 @@ if(!empty($row2)):
 	<tfoot><th class="col-xs-1 text-center" id="qty">Quantity</th>
 			<th class="col-xs-3 text-center">Total</th>
 			<th class="col-xs-1 text-center"></th>
-			<th class="col-xs-2 text-center" id="price">123456</th>
+			<th class="col-xs-2 text-center" id="price"></th>
 			<th class="col-xs-1 text-center"></th>
-			<th class="col-xs-1 text-center" id="totTax">123456</th>
+			<th class="col-xs-1 text-center" id="totTax"></th>
 			<th class="col-xs-1 text-center"></th>
-			<th class="col-xs-2 text-center" id="totAmnt">123456</th>
+			<th class="col-xs-2 text-center" id="totAmnt"></th>
 </tfoot></table>
+<p id="amntWrd"></p>
+&nbsp;
+<div class="row">
+	
+	<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+		<p><b>Signature</b></p>
+	</div>
+	<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+		<p class="pull-right"><b><?php echo $row2->w_name; ?></b></p>
+	</div>
+
+</div>
 	</div>
 </section>
 
@@ -180,11 +192,34 @@ if(!empty($row2)):
 	Tqty.innerHTML = qunty;
 	Tprice.innerHTML = pr;
 	TtotTax.innerHTML = tTax;
-	totAmnt.innerHTML = tAmnt;
-
-
+	TtotAmnt.innerHTML = tAmnt;
 
 </script>
+
+<script type="text/javascript">
+        function calc_tot(tAmnt){
+        console.log("triggered");
+        var num = Math.floor(Number(tAmnt));
+        var a = ['','one ','two ','three ','four ', 'five ','six ','seven ','eight ','nine ','ten ','eleven ','twelve ','thirteen ','fourteen ','fifteen ','sixteen ','seventeen ','eighteen ','nineteen '];
+        var b = ['', '', 'twenty','thirty','forty','fifty', 'sixty','seventy','eighty','ninety'];
+        function inWords (num) {
+        if ((num = num.toString()).length > 9) return 'overflow';
+        n = ('000000000' + num).substr(-9).match(/^(\d{2})(\d{2})(\d{2})(\d{1})(\d{2})$/);
+        if (!n) return; var str = '';
+        str += (n[1] != 0) ? (a[Number(n[1])] || b[n[1][0]] + ' ' + a[n[1][1]]) + 'crore ' : '';
+        str += (n[2] != 0) ? (a[Number(n[2])] || b[n[2][0]] + ' ' + a[n[2][1]]) + 'lakh ' : '';
+        str += (n[3] != 0) ? (a[Number(n[3])] || b[n[3][0]] + ' ' + a[n[3][1]]) + 'thousand ' : '';
+        str += (n[4] != 0) ? (a[Number(n[4])] || b[n[4][0]] + ' ' + a[n[4][1]]) + 'hundred ' : '';
+        str += (n[5] != 0) ? ((str != '') ? 'and ' : '') + (a[Number(n[5])] || b[n[5][0]] + ' ' + a[n[5][1]]) + 'only ' : '';
+        return str;
+        }
+        document.getElementById("amntWrd").innerHTML = inWords(num);
+        }
+        calc_tot(tAmnt);
+</script>
+
+
+
 
 </aside>
 <?php endif;?>
