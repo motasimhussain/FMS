@@ -78,7 +78,7 @@
               </td>
               <td width=97 valign=top style='width:72.9pt;padding:0in 5.4pt 0in 5.4pt'>
               <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-              normal'></p>
+              normal'><?php echo date('d-m-Y');?></p>
               </td>
              </tr>
              <tr>
@@ -106,7 +106,7 @@
               </td>
               <td width=90 valign=top style='width:67.5pt;padding:0in 5.4pt 0in 5.4pt'>
               <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-              normal'>$date_from</p>
+              normal'><?php echo $this->session->userdata('st_date'); ?></p>
               </td>
               <td width=78 valign=top style='width:58.8pt;padding:0in 5.4pt 0in 5.4pt'>
               <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
@@ -114,7 +114,7 @@
               </td>
               <td width=97 valign=top style='width:72.9pt;padding:0in 5.4pt 0in 5.4pt'>
               <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-              normal'>$date_to</p>
+              normal'><?php echo $this->session->userdata('en_date'); ?></p>
               </td>
              </tr>
              <tr height=0>
@@ -126,7 +126,11 @@
              </tr>
             </table>
 
-            <?php break; endforeach; ?>
+            <?php
+              $this->session->unset_userdata('st_date');
+              $this->session->unset_userdata('en_date');
+              break; endforeach; 
+            ?>
 
             <table class="MsoTableGrid table" border=1 cellspacing=0 cellpadding=0
              style='border-collapse:collapse;border:none;font-size:13px;'>

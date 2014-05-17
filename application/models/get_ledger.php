@@ -26,6 +26,13 @@ class Get_ledger extends CI_Model {
 					$data[] = $row;
 				}
 
+				// $data["st_date"] = $date_1;
+				// $data["en_date"] = $date_2;
+				$arr = array('st_date' => $date_1, 
+							 'en_date' => $date_2
+							);
+				$this->session->set_userdata($arr);
+
 				$this->get_opening_bal($date_1);
 
 				return $data;
