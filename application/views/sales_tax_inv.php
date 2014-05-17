@@ -108,12 +108,12 @@ if(!empty($row2)):
 		?>
 		<tr>
 			<td class="col-xs-1 text-center qty"><?php echo $row->qunty; ?></td>
-			<td class="col-xs-3 text-center "><?php echo $row->dscr; ?></td>
+			<td class="col-xs-3 text-center "><?php echo $row->i_name; ?></td>
 			<td class="col-xs-1 text-center "><?php echo $row->price; ?></td>
 			<td class="col-xs-2 text-center price"><?php echo $row->amnt; ?></td>
 			<td class="col-xs-1 text-center"><?php echo $row->sales_tax; ?>%</td>
 			<td class="col-xs-1 text-center totTax"><?php echo $row->sales_tax_tot; ?></td>
-			<td class="col-xs-1 text-center"><?php echo $row->fed_tax; ?>%</td>
+			<td class="col-xs-1 text-center"><?php echo $row->fed_tax; ?></td>
 			<td class="col-xs-2 text-center totAmnt"><?php echo $row->tot_amnt;?></td>
 		</tr>
 

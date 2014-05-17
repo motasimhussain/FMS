@@ -35,7 +35,7 @@ class Sales_frm extends CI_Model {
 						.$this->input->post('sales_tax').
 						"% = "
 						.$this->input->post('st_num')),
-			
+
 			'qunty' => $this->input->post('qunty'),
 			'price' => $this->input->post('price'),
 			'wght' => $this->input->post('wght'),

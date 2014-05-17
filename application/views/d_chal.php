@@ -90,7 +90,7 @@ if(!empty($row2)):
 		?>
 		<tr>
 			<td class="col-xs-1 text-center border-right"><?php echo $s_num; ?></td>
-			<td class="col-xs-9 text-center border-right"><?php echo $row->dscr; ?></td>
+			<td class="col-xs-9 text-center border-right"><?php echo $row->i_name; ?></td>
 			<td class="col-xs-1 text-center border-right qunty"><?php echo $row->qunty; ?></td>
 			<td class="col-xs-1 text-center"><?php echo $row->wght; ?></td>
 		</tr>

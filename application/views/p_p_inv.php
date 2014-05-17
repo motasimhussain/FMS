@@ -211,7 +211,7 @@ if(!empty($row2)):
   <td width=100 colspan=2 valign=top style='font-size:14px;width:75.15pt;border:none;
   border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'><?php echo $row->dscr; ?></p>
+  normal'><?php echo $row->i_name; ?></p>
   </td>
   <td width=100 colspan=2 valign=top style='font-size:14px;width:75.15pt;border:none;
   border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
@@ -377,7 +377,7 @@ if(!empty($row2)):
         var getNum = document.getElementById("totAmnt");
         function calc_tot(){
         console.log("triggered");
-        var num = Number(getNum.textContent);
+        var num = Math.floor(Number(getNum.textContent));
         var a = ['','one ','two ','three ','four ', 'five ','six ','seven ','eight ','nine ','ten ','eleven ','twelve ','thirteen ','fourteen ','fifteen ','sixteen ','seventeen ','eighteen ','nineteen '];
         var b = ['', '', 'twenty','thirty','forty','fifty', 'sixty','seventy','eighty','ninety'];
         function inWords (num) {
