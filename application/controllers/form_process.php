@@ -73,6 +73,13 @@ class Form_process extends CI_Controller {
 		redirect('site/purchase_frm');
 	}
 
+		public function set_credit_limit(){
+		$this->load->model('set_credit_limit');
+		if ($this->set_credit_limit->set_limit()){
+			redirect('site/set_credit_limit');
+		}
+	}
+
 }
 
 /* End of file form_process.php */

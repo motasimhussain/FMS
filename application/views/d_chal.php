@@ -69,10 +69,6 @@ if(!empty($row2)):
 			<td class="col-xs-2">Address</td>
 			<td class="col-xs-10 border-bottom"><?php echo $row2->c_address;?></td>
 		</tr>
-		<tr>
-			<td class="col-xs-2"></td>
-			<td class="col-xs-10 border-bottom"></td>
-		</tr>
 </table>
 <table class="table-bordered">
 	<thead>

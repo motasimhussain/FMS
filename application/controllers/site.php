@@ -320,6 +320,18 @@ class Site extends CI_Controller {
 		$this->load->view('includes/template', $this->data);
 	}
 
+
+		public function set_credit_limit(){
+		if($this->general_query->get_cn()){
+			$this->data['select_company'] = $this->general_query->get_cn();
+		}else{
+			$this->data['select_company'] = 'no content';
+		}
+		$this->data['forms'] = ' active';
+		$this->data['main_content'] = 'set_credit_limit';
+		$this->load->view('includes/template', $this->data);
+	}
+
 }
 
 /* End of file site.php */

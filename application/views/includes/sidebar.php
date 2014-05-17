@@ -43,6 +43,8 @@
                             </a>
                             <ul class="treeview-menu">
                                 <li style="<?php echo $hide_usr; ?>"><a href="<?php echo base_url();?>index.php/site/add_usr"><i class="fa fa-angle-double-right"></i> Add User</a></li>
+                                 <li><a href="<?php echo base_url();?>index.php/site/set_credit_limit"><i class="fa fa-angle-double-right"></i> Set Credit Limit</a></li>
+
                                 <li><a href="<?php echo base_url();?>index.php/site/add_work"><i class="fa fa-angle-double-right"></i> Add Workplace</a></li>
                                 <li><a href="<?php echo base_url();?>index.php/site/add_co"><i class="fa fa-angle-double-right"></i> Add Company</a></li>
                                 <li><a href="<?php echo base_url();?>index.php/site/add_pro"><i class="fa fa-angle-double-right"></i> Add Product</a></li>
