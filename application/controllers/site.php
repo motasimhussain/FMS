@@ -332,6 +332,22 @@ class Site extends CI_Controller {
 		$this->load->view('includes/template', $this->data);
 	}
 
+	public function voucher_frm(){
+		if($this->general_query->get_cn()){
+			$this->data['select_company'] = $this->general_query->get_cn();
+		}else{
+			$this->data['select_company'] = 'no content';
+		}
+		if($this->general_query->get_wn()){
+			$this->data['select_workplace'] = $this->general_query->get_wn();
+		}else{
+			$this->data['select_workplace'] = 'no content';
+		}
+		$this->data['forms'] = ' active';
+		$this->data['main_content'] = 'voucher_frm';
+		$this->load->view('includes/template', $this->data);
+	}
+
 }
 
 /* End of file site.php */

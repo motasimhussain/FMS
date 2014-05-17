@@ -26,7 +26,7 @@
                                     <h3 class="box-title">Voucher</h3>
                                 </div><!-- /.box-header -->
                                 <div class="box-body">
-                                    <form class="form-horizontal" action="<?php echo base_url(); ?>index.php/form_process/set_credit_limit" method="post">
+                                    <form class="form-horizontal" action="<?php echo base_url(); ?>index.php/form_process/voucher_frm" method="post">
                                       <fieldset>
                                         <div class="form-group">
                                         <label class="col-md-4 control-label" for="serial">Serial:</label>  
@@ -50,8 +50,8 @@
                                         <label class="col-md-4 control-label" for="method">Method:</label>
                                         <div class="col-md-4">
                                             <select id="v_type" name="method" class="form-control">
-                                                <option>Cheque</option>
-                                                <option>Cash</option>
+                                                <option value="cheque">Cheque</option>
+                                                <option value="cash">Cash</option>
                                             </select>
                                         </div>
                                     </div>
@@ -59,18 +59,22 @@
                                         <label class="col-md-4 control-label" for="inv_for">Workplace:</label>
                                         <div class="col-md-4">
                                             <select id="inv_for" name="inv_for" class="form-control">
-                                                <option>Payment</option>
-                                                <option>Recieved</option>
+                                               <?php foreach($select_workplace as $row): ?>
+                                                <option value="<?php echo $row->id; ?>"><?php echo $row->w_name; ?></option>
+                                                <?php endforeach; ?>
                                             </select>
+                                        </div>
                                         </div>
 
                                        <div class="form-group">
                                         <label class="col-md-4 control-label" for="cmp_name">Company:</label>
                                         <div class="col-md-4">
                                             <select id="cmp_name" name="cmp_name" class="form-control">
-                                                <option>Payment</option>
-                                                <option>Recieved</option>
+                                                <?php foreach($select_company as $row): ?>
+                                                <option value="<?php echo $row->id; ?>"><?php echo $row->c_name; ?></option>
+                                                <?php endforeach; ?>
                                             </select>
+                                        </div>
                                         </div>
 
 
@@ -101,9 +105,11 @@
                                      <div class="form-group">
                                         <label class="col-md-4 control-label" for="apply"></label>
                                         <div class="col-md-4">
-                                          <button id="apply" name="apply" class="btn btn-primary" type="sumbit">Apply</button>
+                                          <button id="apply" name="apply" class="btn btn-primary" type="sumbit">Save</button>
                                         </div>
                                       </div>
+                                      </div>
+
 
                                       </fieldset>
                                       </form>

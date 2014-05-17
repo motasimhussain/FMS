@@ -80,6 +80,13 @@ class Form_process extends CI_Controller {
 		}
 	}
 
+	public function voucher_frm(){
+		$this->load->model('voucher_frm');
+		if ($this->voucher_frm->add()){
+			redirect('site/voucher_frm');
+		}
+	}
+
 }
 
 /* End of file form_process.php */
