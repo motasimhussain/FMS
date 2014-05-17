@@ -15,7 +15,7 @@ class Sales_frm extends CI_Model {
 		// die();
 
 		$data = array(
-			'type' => 'sales',
+			'type' => 'purchase',
 			'inv_for' => $this->input->post('inv_for'),
 			'cmp_name' => $this->input->post('cmp_name'),
 			'acc' => $this->input->post('acc'),
