@@ -40,7 +40,7 @@
                                         <div class="col-md-4">
                                             <select id="v_type" name="v_type" class="form-control">
                                                 <option value="purchase">Payment</option>
-                                                <option value="sale">Recieved</option>
+                                                <option value="sales">Recieved</option>
                                             </select>
                                         </div>
                                     </div>
