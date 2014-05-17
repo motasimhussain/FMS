@@ -106,7 +106,7 @@
               </td>
               <td width=90 valign=top style='width:67.5pt;padding:0in 5.4pt 0in 5.4pt'>
               <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-              normal'><?php echo $this->session->userdata('st_date'); ?></p>
+              normal'><?php echo date('d-m-Y',strtotime($this->session->userdata('st_date'))); ?></p>
               </td>
               <td width=78 valign=top style='width:58.8pt;padding:0in 5.4pt 0in 5.4pt'>
               <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
@@ -114,7 +114,7 @@
               </td>
               <td width=97 valign=top style='width:72.9pt;padding:0in 5.4pt 0in 5.4pt'>
               <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-              normal'><?php echo $this->session->userdata('en_date'); ?></p>
+              normal'><?php echo date('d-m-Y',strtotime($this->session->userdata('en_date'))); ?></p>
               </td>
              </tr>
              <tr height=0>
@@ -203,7 +203,7 @@
               <td width=87 valign=top style='width:65.4pt;border:none;border-right:solid windowtext 1.0pt;
               padding:0in 5.4pt 0in 5.4pt'>
               <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-              normal'><?php echo $row->date; ?></p>
+              normal'><?php echo date('d-m-Y',strtotime($row->date)); ?></p>
               </td>
               <!-- <td width=85 valign=top style='width:63.9pt;border:none;border-right:solid windowtext 1.0pt;
               padding:0in 5.4pt 0in 5.4pt'>
