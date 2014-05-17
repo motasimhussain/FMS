@@ -10,10 +10,10 @@ class Voucher_frm extends CI_Model {
 				$v_type ='p_serial';
 			}
 
-		$dscr = if($this->input->post("method") == "cash"){
-				 $this->input->post('dscr'); 
+		 if($this->input->post("method") == "cash"){
+				$dscr = $this->input->post('dscr'); 
 			}else{
-				"CH# ".$this->input->post("chq_num")." ".$this->input->post("dscr");
+				$dscr = "CH# ".$this->input->post("chq_num")." ".$this->input->post("dscr");
 			}
 
 		$data = array(
