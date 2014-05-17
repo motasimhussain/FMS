@@ -19,6 +19,7 @@ class Voucher_frm extends CI_Model {
 		$data = array(
 			'type' => $this->input->post('v_type'),
 			$v_type => $this->input->post('serial'),
+			'date' => $this->input->post('date'),
 			'inv_for' => $this->input->post('inv_for'),
 			'cmp_name' => $this->input->post('cmp_name'),
 			'dscr' => $dscr,

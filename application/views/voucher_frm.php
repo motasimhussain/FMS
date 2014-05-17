@@ -77,11 +77,17 @@
                                         </div>
                                         </div>
 
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label" for="textinput">Date:</label>
+                                            <div class="col-md-4" >
+                                                <input id="pickdate" name="date" placeholder="" class="form-control input-md" type="text" value="<?php if(isset($date)){echo $date;}?>">
+                                            </div>
+                                        </div>
 
                                       <div class="form-group">
                                         <label class="col-md-4 control-label" for="chq_num">Cheque Number:</label>  
                                         <div class="col-md-4">
-                                        <input id="chq_num" name="chq_num" placeholder="Credit Limit" class="form-control input-md" type="text" required>
+                                        <input id="chq_num" name="chq_num" placeholder="Credit Limit" class="form-control input-md" type="text">
                                           
                                         </div>
                                       </div>
