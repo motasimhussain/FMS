@@ -8,7 +8,7 @@ foreach ($_FILES["scandoc"]["error"] as $key => $error) {
     if ($error == UPLOAD_ERR_OK) {
         $tmp_name = $_FILES["scandoc"]["tmp_name"][$key];
         $name = $_FILES["scandoc"]["name"][$key];
-        move_uploaded_file($tmp_name, "uploads/$name");
+        move_uploaded_file($tmp_name, "scan_uploads/$name");
     	
     	}
 	}
