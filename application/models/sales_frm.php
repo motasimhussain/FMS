@@ -24,7 +24,7 @@ class Sales_frm extends CI_Model {
 			'bill_num' => $this->input->post('bill_num'),
 			'date' => $this->input->post('date'),
 			'i_name' => $this->input->post('i_name'),
-			'dscr' => (" Sales # "
+			'dscr' => (" Sales: "
 						.$this->input->post('qunty').
 						" "
 						.$this->input->post('i_name').

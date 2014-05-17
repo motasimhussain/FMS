@@ -62,15 +62,15 @@
 
         <?php if($data != "no entries"): ?>
 
-       <div style="padding-right:70px;padding-left:70px;">
+       <div style="padding-right:5px;padding-left:5px;">
            <h1 class="text-center" >Accounts Ledger</h1>
-
+           <?php foreach($data as $row): ?>
            <table class="MsoTableGrid table" border=0 cellspacing=0 cellpadding=0
              style='border-collapse:collapse;border:none'>
              <tr>
               <td width=426 colspan=3 valign=top style='width:319.25pt;padding:0in 5.4pt 0in 5.4pt'>
               <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-              normal'>$invoice_for</p>
+              normal'><?php echo $row->w_name; ?></p>
               </td>
               <td width=78 valign=top style='width:58.8pt;padding:0in 5.4pt 0in 5.4pt'>
               <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
@@ -78,7 +78,7 @@
               </td>
               <td width=97 valign=top style='width:72.9pt;padding:0in 5.4pt 0in 5.4pt'>
               <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-              normal'>$date</p>
+              normal'></p>
               </td>
              </tr>
              <tr>
@@ -92,13 +92,13 @@
               </td>
               <td width=97 valign=top style='width:72.9pt;padding:0in 5.4pt 0in 5.4pt'>
               <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-              normal'>$page_no</p>
+              normal'>1</p>
               </td>
              </tr>
              <tr>
               <td width=282 valign=top style='width:211.25pt;padding:0in 5.4pt 0in 5.4pt'>
               <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-              normal'>$company_name</p>
+              normal'><?php echo $row->c_name; ?></p>
               </td>
               <td width=54 valign=top style='width:40.5pt;padding:0in 5.4pt 0in 5.4pt'>
               <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
@@ -126,12 +126,12 @@
              </tr>
             </table>
 
-            <p class=MsoNormal>&nbsp;</p>
+            <?php break; endforeach; ?>
 
             <table class="MsoTableGrid table" border=1 cellspacing=0 cellpadding=0
-             style='border-collapse:collapse;border:none'>
+             style='border-collapse:collapse;border:none;font-size:13px;'>
              <tr>
-              <td width=88 valign=top style='width:65.65pt;border-top:2.25pt;border-left:
+              <td width=66 valign=top style='width:40pt;border-top:2.25pt;border-left:
               2.25pt;border-bottom:1.0pt;border-right:1.0pt;border-color:windowtext;
               border-style:solid;padding:0in 5.4pt 0in 5.4pt'>
               <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
@@ -143,13 +143,13 @@
               <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
               normal'>Date</p>
               </td>
-              <td width=85 valign=top style='width:63.9pt;border-top:solid windowtext 2.25pt;
+              <!-- <td width=85 valign=top style='width:63.9pt;border-top:solid windowtext 2.25pt;
               border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
               padding:0in 5.4pt 0in 5.4pt'>
               <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
               normal'>Main Ref #:</p>
-              </td>
-              <td width=95 colspan=2 valign=top style='width:71.3pt;border-top:solid windowtext 2.25pt;
+              </td> -->
+              <td width=95 colspan=4 valign=top style='width:71.3pt;border-top:solid windowtext 2.25pt;
               border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
               padding:0in 5.4pt 0in 5.4pt'>
               <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
@@ -161,7 +161,7 @@
               <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
               normal'>Debit</p>
               </td>
-              <td width=86 colspan=2 valign=top style='width:64.85pt;border-top:solid windowtext 2.25pt;
+              <td width=86 colspan=1 valign=top style='width:64.85pt;border-top:solid windowtext 2.25pt;
               border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
               padding:0in 5.4pt 0in 5.4pt'>
               <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
@@ -190,33 +190,33 @@
              </tr>
              <?php foreach($data as $row): ?>
              <tr>
-              <td width=88 valign=top style='width:65.65pt;border-top:none;border-left:
+              <td width=66 valign=top style='width:40pt;border-top:none;border-left:
               solid windowtext 1.0pt;border-bottom:none;border-right:solid windowtext 1.0pt;
               padding:0in 5.4pt 0in 5.4pt'>
               <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-              normal'>$ref</p>
+              normal'><?php echo $row->ref_num; ?></p>
               </td>
               <td width=87 valign=top style='width:65.4pt;border:none;border-right:solid windowtext 1.0pt;
               padding:0in 5.4pt 0in 5.4pt'>
               <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
               normal'><?php echo $row->date; ?></p>
               </td>
-              <td width=85 valign=top style='width:63.9pt;border:none;border-right:solid windowtext 1.0pt;
+              <!-- <td width=85 valign=top style='width:63.9pt;border:none;border-right:solid windowtext 1.0pt;
               padding:0in 5.4pt 0in 5.4pt'>
               <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-              normal'>$main_ref</p>
-              </td>
-              <td width=95 colspan=2 valign=top style='width:71.3pt;border:none;border-right:
+              normal'></p>
+              </td> -->
+              <td width=95 colspan=4 valign=top style='width:71.3pt;border:none;border-right:
               solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
               <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-              normal'>$desc</p>
+              normal'><?php echo $row->dscr;?></p>
               </td>
               <td width=85 valign=top style='width:63.4pt;border:none;border-right:solid windowtext 1.0pt;
               padding:0in 5.4pt 0in 5.4pt'>
               <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
               normal'><?php echo $row->debit; ?></p>
               </td>
-              <td width=86 colspan=2 valign=top style='width:64.85pt;border:none;
+              <td width=86 colspan=1 valign=top style='width:64.85pt;border:none;
               border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
               <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
               normal'><?php echo $row->credit; ?></p>
@@ -229,12 +229,12 @@
              </tr>
            <?php endforeach; ?>
              <tr>
-              <td width=355 colspan=5 valign=top style='width:266.25pt;border:solid windowtext 1.0pt;
+              <td width=355 colspan=6 valign=top style='width:266.25pt;border:solid windowtext 1.0pt;
               padding:0in 5.4pt 0in 5.4pt'>
               <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
               normal'>Total:</p>
               </td>
-              <td width=85 colspan=2 valign=top style='width:64.1pt;border:solid windowtext 1.0pt;
+              <td width=85 colspan=1 valign=top style='width:64.1pt;border:solid windowtext 1.0pt;
               border-left:none;padding:0in 5.4pt 0in 5.4pt'>
               <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
               normal'>$tot_debit</p>
@@ -251,7 +251,7 @@
               </td>
              </tr>
              <tr height=0>
-              <td width=88 style='border:none'></td>
+              <td width=66 style='border:none'></td>
               <td width=87 style='border:none'></td>
               <td width=85 style='border:none'></td>
               <td width=46 style='border:none'></td>

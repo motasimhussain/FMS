@@ -20,7 +20,7 @@ class Get_ledger extends CI_Model {
 			$this->db->where($fields);
 			$this->db->where('date BETWEEN "' . $date_1. '" AND "' . $date_2.'"');
 
-			$query = $this->db->get('ledger');
+			$query = $this->db->get('ledger_rpt');
 			if($query->num_rows() > 0){
 				foreach ($query->result() as $row) {
 					$data[] = $row;
