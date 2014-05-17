@@ -217,10 +217,9 @@ class Site extends CI_Controller {
 
 	public function gen_sales_tax_inv(){
 		$this->load->model('general_query');
-		if ($this->general_query->get_purchase_view()) {
-			$this->data['top_tables'] = $this->general_query->gen_purchase_inv();
-			$this->data['gen_inv'] = $this->general_query->get_purchase_view();
-
+		if ($this->general_query->get_challan()) {
+			$this->data['top_tables'] = $this->general_query->gen_challan();
+			$this->data['gen_inv'] = $this->general_query->get_challan();
 		}
 
 		$this->data['invoice'] = ' active';
