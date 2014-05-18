@@ -45,7 +45,13 @@ if(!empty($row2)):
 
 <div style="padding-right:70px;padding-left:70px;">
 <h2 class="text-center" >INVOICE</h2>
+<?php if($row2->w_name == "Pak Japan Textile"){ ?>
+<div class="row text-center"><img src="<?=base_url(); ?>img/pjt.png"></div>
+<?php }else if($row2->w_name == "Pak Japan Ink Chemical"){ ?>
+ <div class="row text-center"><img src="<?=base_url(); ?>img/pjic.png"></div>
+ <?php }else{ ?>
  <h3 class="text-center"><?php echo $row2->w_name;?></h3>
+ <?php } ?>
  <h5 class="text-center"><?php echo $row2->w_address ?></h5>
 <br>
 

@@ -44,9 +44,9 @@ class Get_ledger extends CI_Model {
 		$query = "SELECT * FROM `ledger` WHERE `inv_for`='".$this->input->post('led_for')."' AND 'cmp_name'='".$this->input->post('coname')."' AND `date`< '".$date_1."' ORDER BY `date` DESC LIMIT 1";
 		$result = $this->db->query($query);
 		foreach ($result->result() as $row) {
-			echo $row->balance;
+			// echo $row->balance;
 		}
-		die();
+		// die();
 
 	}
 
