@@ -44,15 +44,34 @@ if(!empty($row2)):
 <section class="content invoice">
 
 <div style="padding-right:70px;padding-left:70px;">
-<h2 class="text-center" >INVOICE</h2>
+
 <?php if($row2->w_name == "Pak Japan Textile"){ ?>
-<div class="row text-center"><img src="<?=base_url(); ?>img/pjt.png"></div>
+<div class="row">
+  <div style="float:left;"><img src="<?=base_url(); ?>img/pjt.png"> </div>
+    <div class="pull-right" style="display:inline-block;">
+      <h2 class="text-center" style="margin-top: 3px;" >
+        <strong>INVOICE</strong>
+      </h2>
+    </div>
+</div>
+
 <?php }else if($row2->w_name == "Pak Japan Ink Chemical"){ ?>
- <div class="row text-center"><img src="<?=base_url(); ?>img/pjic.png"></div>
+<div class="row">
+    <div style="float:left;">
+      <img src="<?=base_url(); ?>img/pjic.png">
+    </div>
+    <div class="pull-right" style="display:inline-block;">
+      <h2 class="text-center" style="margin-top: 3px;" >
+        <strong>INVOICE</strong>
+      </h2>
+    </div>
+</div>
+ 
  <?php }else{ ?>
- <h3 class="text-center"><?php echo $row2->w_name;?></h3>
+ <h3 class="pull-left"><strong><?php echo $row2->w_name;?></strong></h3>
+    <h2 class="pull-right" style="display:inline-block;" ><strong>INVOICE</strong></h2>
  <?php } ?>
- <h5 class="text-center"><?php echo $row2->w_address ?></h5>
+ <h5 class="text-center" style="clear:both;"><strong><?php echo $row2->w_address ?></strong></h5>
 <br>
 
 <table class="table" class=MsoTableGrid border=1 cellspacing=0 cellpadding=0

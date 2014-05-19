@@ -38,8 +38,37 @@ if(!empty($row2)):
     </div>
 </div>
 <section class="content invoice">
-<div style="font-size:13px;">	<div class="row text-center">
-			<h2>Sales Tax Invoice</h2>
+<div style="font-size:13px;">	
+<div class="row" style="padding-right:30px;padding-left:30px;">
+
+	<?php if($row2->w_name == "Pak Japan Textile"){ ?>
+	<div class="row">
+	  	<div style="float:left;">
+	  		<img src="<?=base_url(); ?>img/pjt.png">
+	  	</div>
+	    <div class="pull-right" style="display:inline-block;">
+	      <h2 class="text-left" style="margin-top: 20px;" >
+	        <strong>Sales Tax Invoice</strong>
+	      </h2>
+	    </div>
+	</div>
+
+	<?php }else if($row2->w_name == "Pak Japan Ink Chemical"){ ?>
+	<div class="row">
+	    <div style="float:left;">
+	      <img src="<?=base_url(); ?>img/pjic.png">
+	    </div>
+	    <div class="pull-right" style="display:inline-block;">
+	      <h2 class="text-right" style="margin-top: 3px;" >
+	        <strong>Sales Tax Invoice</strong>
+	      </h2>
+	    </div>
+	</div>
+	<?php }else{ ?>
+	 	<h3 class="pull-left"><strong><?php echo $row2->w_name;?></strong></h3>
+	 	<h2 class="pull-right" style="display:inline-block;" ><strong>INVOICE</strong></h2>
+	<?php } ?>
+
 </div>
 
 	<table class="table-bordered">
@@ -56,31 +85,31 @@ if(!empty($row2)):
 			
 			<tr>
 				<td class="col-xs-2"><b>Suppliers name</b> </td>
-				<td class="col-xs-4 border-bottom"><?php echo $row2->w_name;?></td>
+				<td class="col-xs-4 border-bottom"><strong><?php echo $row2->w_name;?></strong></td>
 				<td class="col-xs-2"><b>Buyers name</b> </td>
 				<td class="col-xs-4 border-bottom"><?php echo $row2->c_name;?></td>
 			</tr>
 			<tr>
 				<td class="col-xs-2"><b>Address</b></td>
-				<td class="col-xs-4 border-bottom"><?php echo $row2->w_address; ?></td>
+				<td class="col-xs-4 border-bottom"><strong><?php echo $row2->w_address; ?></strong></td>
 				<td class="col-xs-2"><b>Address</b></td>
 				<td class="col-xs-4 border-bottom"><?php echo $row2->c_address; ?></td>
 			</tr>
 			<tr>
 				<td class="col-xs-2"><b>Telephone #:</b></td>
-				<td class="col-xs-4 border-bottom"><?php echo $row2->w_tel; ?></td>
+				<td class="col-xs-4 border-bottom"><strong><?php echo $row2->w_tel; ?></strong></td>
 				<td class="col-xs-2"><b>Telephone #:</b></td>
 				<td class="col-xs-4 border-bottom"><?php echo $row2->c_tel; ?></td>
 			</tr>
 			<tr>
 				<td class="col-xs-2"><b>GST #:</b></td>
-				<td class="col-xs-4 border-bottom"><?php echo $row2->w_gst; ?></td>
+				<td class="col-xs-4 border-bottom"><strong><?php echo $row2->w_gst; ?></strong></td>
 				<td class="col-xs-2"><b>GST #:</b></td>
 				<td class="col-xs-4 border-bottom"><?php echo $row2->c_gst; ?></td>
 			</tr>
 			<tr>
 				<td class="col-xs-2"><b>NTN #:</b></td>
-				<td class="col-xs-4 border-bottom"><?php echo $row2->w_ntn ?></td>
+				<td class="col-xs-4 border-bottom"><strong><?php echo $row2->w_ntn ?></strong></td>
 				<td class="col-xs-2"><b>NTN #:</b></td>
 				<td class="col-xs-4 border-bottom"><?php echo $row2->c_ntn ?></td>
 			</tr>
@@ -121,7 +150,7 @@ if(!empty($row2)):
 		  <tr  height='
 		    <?php 
 		      $num = sizeof($gen_inv);
-		      echo (250-($num*15)); 
+		      echo (300-($num*15)); 
 		    ?> '>
 
 		    <td class="col-xs-1 text-center"></td>
@@ -144,16 +173,16 @@ if(!empty($row2)):
 			<th class="col-xs-1 text-center"></th>
 			<th class="col-xs-2 text-center" id="totAmnt"></th>
 </tfoot></table>
-<p id="amntWrd"></p>
+<strong><p id="amntWrd"></p></strong>
 &nbsp;
 <div class="row">
-	
-	<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+	<div class="text-left" style="padding-left:15px;display:inline-block">
+		<p><b><?php echo $row2->w_name; ?></b></p>
+	</div>
+	<div class="pull-right" style="padding-right:15px;display:inline-block">
 		<p><b>Signature</b></p>
 	</div>
-	<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-		<p class="pull-right"><b><?php echo $row2->w_name; ?></b></p>
-	</div>
+	
 
 </div>
 	</div>

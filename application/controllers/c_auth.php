@@ -18,12 +18,17 @@ class C_auth extends CI_Controller {
 				'is_logged_in' => 'true'
 			);
 
-			$this->session->set_userdata($data);
-			redirect('site');
+			if($this->input->post('username') != ""){
+				$this->session->set_userdata($data);
+				redirect('site');
+			}else{
+				redirect('c_auth');
+			}
 
 		}else{
 			//$this->load->view('View File');
-			echo "wrong credentials";
+			$this->session->sess_destroy();
+			redirect('c_auth');
 		}
 	}
 

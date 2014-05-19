@@ -32,7 +32,10 @@ class Auth extends CI_Model {
 			}
 
 			
-		}else {return false;}
+		}else {
+			$this->session->sess_destroy();
+			return false;
+		}
 	}
 	
 
