@@ -7,6 +7,8 @@
         <script src="<?=base_url(); ?>js/jquery-2.1.0.min.js"></script>
         <!-- jQuery UI 1.10.3 -->
         <script src="<?=base_url(); ?>js/jquery-ui-1.10.4.min.js" type="text/javascript"></script>
+        
+
 
         <!-- Bootstrap -->
         <script src="<?=base_url(); ?>js/bootstrap.min.js" type="text/javascript"></script>
@@ -21,9 +23,8 @@
         <!-- iCheck -->
         <!-- AdminLTE App -->
         <script src="<?=base_url(); ?>js/AdminLTE/app.js" type="text/javascript"></script>
-        
-        <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 
+ 
         <script>
             $(function() {
                 $( "#pickdate" ).datepicker({ dateFormat: "yy-mm-dd" });
@@ -31,6 +32,9 @@
         </script>
 
 
+
+
+        </script>
         <script type="text/javascript">
             $(function() {
 

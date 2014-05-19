@@ -4,7 +4,31 @@ class General_query extends CI_Model {
 
 
 	/////////    SALES MODELS ////////
-
+		function del_emp($id){
+$this->db->where('id', $id);
+$this->db->delete('user');
+return True;
+	}
+	function get_all_emp(){
+	
+		$query = $this->db->get('user');
+		if($query->num_rows() > 0){
+			foreach ($query->result() as $row) {
+				$data[] = $row;
+			}
+			return $data;
+		}
+	}
+		function get_emp_pro($id){
+		$this->db->where('id', $id);
+		$query = $this->db->get('user');
+		if($query->num_rows() > 0){
+			foreach ($query->result() as $row) {
+				$data[] = $row;
+			}
+			return $data;
+		}
+	}
 	function gen_sales_serial(){
 	
 		$this->db->where('s_serial', $this->input->post('serial'));

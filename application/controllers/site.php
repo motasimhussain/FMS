@@ -18,6 +18,8 @@ class Site extends CI_Controller {
 			//$this->data['inv_form'] = '';
 			$this->data['forms'] = '';
 			$this->data['bank'] = '';
+			$this->data['employee'] = '';
+
 			$this->data['invoice'] = '';
 			$this->data['ledger'] = '';
 			$this->data['calendar'] = '';
@@ -353,7 +355,35 @@ class Site extends CI_Controller {
 		$this->data['main_content'] = 'add_bank';
 		$this->load->view('includes/template', $this->data);
 	}
+	public function emp_pro($id,$action){
+		if ($action == "delete") {
+		$this->load->model('general_query');
 
+		if($this->general_query->del_emp($id)){
+			redirect('site/all_emp');
+		}
+		}
+		if($this->general_query->get_emp_pro($id)){
+			$this->data['emp_det'] = $this->general_query->get_emp_pro($id);
+		}else{
+			$this->data['emp_det'] = 'no content';
+		}
+		$this->data['action'] = $action;
+		$this->data['employee'] = ' active';
+		$this->data['main_content'] = 'emp_pro';
+		$this->load->view('includes/template2', $this->data);
+	}
+
+		public function all_emp(){
+		if($this->general_query->get_all_emp()){
+			$this->data['all_emp'] = $this->general_query->get_all_emp();
+		}else{
+			$this->data['all_emp'] = 'no content';
+		}
+		$this->data['employee'] = ' active';
+		$this->data['main_content'] = 'all_emp';
+		$this->load->view('includes/template2', $this->data);
+	}
 }
 
 /* End of file site.php */
