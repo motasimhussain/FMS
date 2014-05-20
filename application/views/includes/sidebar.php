@@ -44,12 +44,19 @@
                             <ul class="treeview-menu">
                                 <li style="<?php echo $hide_usr; ?>"><a href="<?php echo base_url();?>index.php/site/add_usr"><i class="fa fa-angle-double-right"></i> Add User</a></li>
                                  <li><a href="<?php echo base_url();?>index.php/site/set_credit_limit"><i class="fa fa-angle-double-right"></i> Set Credit Limit</a></li>
-                                 <li><a href="<?php echo base_url();?>index.php/site/voucher_frm"><i class="fa fa-angle-double-right"></i> Add Voucher</a></li>
                                 <li><a href="<?php echo base_url();?>index.php/site/add_work"><i class="fa fa-angle-double-right"></i> Add Workplace</a></li>
                                 <li><a href="<?php echo base_url();?>index.php/site/add_co"><i class="fa fa-angle-double-right"></i> Add Company</a></li>
                                 <li><a href="<?php echo base_url();?>index.php/site/add_pro"><i class="fa fa-angle-double-right"></i> Add Product</a></li>
-                                <li><a href="<?php echo base_url();?>index.php/site/sales_frm"><i class="fa fa-angle-double-right"></i> Sales Form</a></li>
-                                <li><a href="<?php echo base_url();?>index.php/site/purchase_frm"><i class="fa fa-angle-double-right"></i> Purchase Form</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview <?php echo $bank ?>">
+                            <a href="#">
+                                <i class="fa fa-edit"></i> <span>BANK</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="<?php echo base_url();?>index.php/site/voucher_frm"><i class="fa fa-angle-double-right"></i> Add Voucher</a></li>
+                                <li><a href=""><i class="fa fa-angle-double-right"></i> Add Bank</a></li>
                             </ul>
                         </li>
                         <li class="treeview <?php echo $invoice ?>">
@@ -58,6 +65,8 @@
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
+                                <li><a href="<?php echo base_url();?>index.php/site/sales_frm"><i class="fa fa-angle-double-right"></i> Sales Form</a></li>
+                                <li><a href="<?php echo base_url();?>index.php/site/purchase_frm"><i class="fa fa-angle-double-right"></i> Purchase Form</a></li>
                                 <li><a href="<?php echo base_url();?>index.php/site/gen_sales_inv"><i class="fa fa-angle-double-right"></i> Sales Invoice</a></li>
                                 <li><a href="<?php echo base_url();?>index.php/site/gen_purchase_inv"><i class="fa fa-angle-double-right"></i> Purchase Invoice</a></li>
                                 <li><a href="<?php echo base_url();?>index.php/site/gen_challan"><i class="fa fa-angle-double-right"></i> Delivery Challan</a></li>

@@ -5,7 +5,7 @@
         <ul class="list-inline">
             <li><h3 style="margin-top: 0px;margin-bottom: 0px;">Sales Form</h3></li>
 
-            <li class="pull-right"><a class="btn btn-success" href="<?php echo base_url(); ?>index.php/form_process/clear_session_sales">New</a></li>
+            <li class="pull-right"><a accesskey="n" class="btn btn-success" href="<?php echo base_url(); ?>index.php/form_process/clear_session_sales">New</a></li>
         </ul>
     </section>
     <!-- Main content -->

@@ -17,6 +17,7 @@ class Site extends CI_Controller {
 			$this->data['dashboard'] = '';
 			//$this->data['inv_form'] = '';
 			$this->data['forms'] = '';
+			$this->data['bank'] = '';
 			$this->data['invoice'] = '';
 			$this->data['ledger'] = '';
 			$this->data['calendar'] = '';
@@ -90,7 +91,7 @@ class Site extends CI_Controller {
 		}
 
 		$this->data['serial'] = $this->general_query->get_curr_serial('s_serial');
-		$this->data['forms'] = ' active';
+		$this->data['invoice'] = ' active';
 		$this->data['main_content'] = 'sales_frm';
 		$this->load->view('includes/template', $this->data);
 	}
@@ -122,7 +123,7 @@ class Site extends CI_Controller {
 		}
 
 		$this->data['serial'] = $this->general_query->get_curr_serial('p_serial');
-		$this->data['forms'] = ' active';
+		$this->data['invoice'] = ' active';
 		$this->data['main_content'] = 'purchase_frm';
 		$this->load->view('includes/template', $this->data);
 	}
@@ -343,7 +344,7 @@ class Site extends CI_Controller {
 		}else{
 			$this->data['select_workplace'] = 'no content';
 		}
-		$this->data['forms'] = ' active';
+		$this->data['bank'] = ' active';
 		$this->data['main_content'] = 'voucher_frm';
 		$this->load->view('includes/template', $this->data);
 	}
