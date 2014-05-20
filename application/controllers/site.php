@@ -348,6 +348,11 @@ class Site extends CI_Controller {
 		$this->data['main_content'] = 'voucher_frm';
 		$this->load->view('includes/template', $this->data);
 	}
+	public function add_bank(){
+		$this->data['bank'] = ' active';
+		$this->data['main_content'] = 'add_bank';
+		$this->load->view('includes/template', $this->data);
+	}
 
 }
 
