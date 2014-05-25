@@ -41,6 +41,74 @@
                     <div class="col-md-2 col-lg-2"></div>
 
                 </div>
+                <div class="row">&nbsp;</div>
+                <section class="col-lg-6 connectedSortable"> 
+                    <div class="box box-danger" id="loading-example">
+                        <div class="box-header">
+                            <!-- tools box -->
+                            <div class="pull-right box-tools">
+                                <button class="btn btn-danger btn-sm refresh-btn" data-toggle="tooltip" title="Reload"><i class="fa fa-refresh"></i></button>
+                                <button class="btn btn-danger btn-sm" data-widget='collapse' data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
+                                <button class="btn btn-danger btn-sm" data-widget='remove' data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
+                            </div><!-- /. tools -->
+                            <i class="fa fa-warning"></i>
+
+                            <h3 class="box-title">Near Credit Limit</h3>
+                        </div><!-- /.box-header -->
+                        <div class="box-body no-padding">
+                            <div class="row">
+                                <div class="col-sm-7">
+                                    <!-- bar chart -->
+                                    <div class="chart" id="bar-chart" style="height: 250px;"></div>
+                                </div>
+                                <div class="col-sm-5">
+                                    <div class="pad">
+                                        <!-- ///////////////////////////////////////////////////////////////////////////////// -->
+                                    </div><!-- /.pad -->
+                                </div><!-- /.col -->
+                            </div><!-- /.row - inside box -->
+                        </div><!-- /.box-body -->
+                        <div class="box-footer">
+                            <div class="row">
+                                <!-- //////////////////////////////////////////////////////////////////////////////////// -->
+                            </div><!-- /.row -->
+                        </div><!-- /.box-footer -->
+                    </div><!-- /.box -->        
+                </section>
+
+                <section class="col-lg-6 connectedSortable"> 
+                    <div class="box box-danger" id="loading-example">
+                        <div class="box-header">
+                            <!-- tools box -->
+                            <div class="pull-right box-tools">
+                                <button class="btn btn-danger btn-sm refresh-btn" data-toggle="tooltip" title="Reload"><i class="fa fa-refresh"></i></button>
+                                <button class="btn btn-danger btn-sm" data-widget='collapse' data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
+                                <button class="btn btn-danger btn-sm" data-widget='remove' data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
+                            </div><!-- /. tools -->
+                            <i class="fa fa-bar-chart-o"></i>
+
+                            <h3 class="box-title">Cheques Near Due</h3>
+                        </div><!-- /.box-header -->
+                        <div class="box-body no-padding">
+                            <div class="row">
+                                <div class="col-sm-7">
+                                    <!-- bar chart -->
+                                    <div class="chart" id="bar-chart" style="height: 250px;"></div>
+                                </div>
+                                <div class="col-sm-5">
+                                    <div class="pad">
+                                        <!-- ///////////////////////////////////////////////////////////////////////////////////////////// -->
+                                    </div><!-- /.pad -->
+                                </div><!-- /.col -->
+                            </div><!-- /.row - inside box -->
+                        </div><!-- /.box-body -->
+                        <div class="box-footer">
+                            <div class="row">
+                                <!-- //////////////////////////////////////////////////////////////////////////////////////////////// -->
+                            </div><!-- /.row -->
+                        </div><!-- /.box-footer -->
+                    </div><!-- /.box -->        
+                </section>
 
                 </section><!-- /.content -->
             </aside><!-- /.right-side -->

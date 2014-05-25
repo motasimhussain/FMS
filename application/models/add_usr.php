@@ -48,10 +48,7 @@ class Add_usr extends CI_Model {
 
 	function edit(){
 		$data = array(
-
-			'username' => $this->input->post('username'),
-			'password' => $this->input->post('password'),
-			'is_admin' => $this->input->post('is_admin'),
+			
 			'name' => $this->input->post('name'),
 			'l_name' => $this->input->post('l_name'),
 			'f_name' => $this->input->post('f_name'),
@@ -78,6 +75,7 @@ class Add_usr extends CI_Model {
 			'recc' => $this->input->post('recc')
 			//'pic' => $this->input->post('pic')
 		);
+		$this->db->where("id",$this->input->post('id'));
 		$query = $this->db->update('user',$data);
 
 		if($query){

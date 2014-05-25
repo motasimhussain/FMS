@@ -41,7 +41,7 @@ class Add_co extends CI_Model {
 				'p_serial' => 0,
 				'price' => 0,
 				'amnt' => 0,
-				'tot_amnt' => 0,
+				'tot_amnt' => 0
 			);
 
 			$this->db->insert('sp_records',$data);
@@ -53,7 +53,7 @@ class Add_co extends CI_Model {
 				's_serial' => 0,
 				'price' => 0,
 				'amnt' => 0,
-				'tot_amnt' => 0,
+				'tot_amnt' => 0
 			);
 
 			$this->db->insert('sp_records',$data);

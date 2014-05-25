@@ -294,7 +294,7 @@ class Site extends CI_Controller {
 		}
 
 		if($is_admin == 'true') {
-			$this->data['forms'] = ' active';
+			$this->data['employee'] = ' active';
 			$this->data['main_content'] = 'add_usr';
 			$this->load->view('includes/template',$this->data);
 		}else{
@@ -365,6 +365,7 @@ class Site extends CI_Controller {
 		}
 		if($this->general_query->get_emp_pro($id)){
 			$this->data['emp_det'] = $this->general_query->get_emp_pro($id);
+			$this->data['emp_id'] = $id;
 		}else{
 			$this->data['emp_det'] = 'no content';
 		}

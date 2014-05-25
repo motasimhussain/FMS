@@ -317,6 +317,7 @@ endif;
                                     </fieldset>
                                 <?php endif;?>
                                     </div>
+                                    <input hidden type="text" name="id" value="<?php echo $emp_id ?>">
                                   </form>
 </section>
 </aside>
