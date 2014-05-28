@@ -4,11 +4,12 @@ class General_query extends CI_Model {
 
 
 	/////////    SALES MODELS ////////
-		function del_emp($id){
-$this->db->where('id', $id);
-$this->db->delete('user');
-return True;
+	function del_emp($id){
+		$this->db->where('id', $id);
+		$this->db->delete('user');
+		return True;
 	}
+
 	function get_all_emp(){
 	
 		$query = $this->db->get('user');
@@ -19,7 +20,8 @@ return True;
 			return $data;
 		}
 	}
-		function get_emp_pro($id){
+
+	function get_emp_pro($id){
 		$this->db->where('id', $id);
 		$query = $this->db->get('user');
 		if($query->num_rows() > 0){
@@ -29,6 +31,7 @@ return True;
 			return $data;
 		}
 	}
+
 	function gen_sales_serial(){
 	
 		$this->db->where('s_serial', $this->input->post('serial'));
@@ -262,7 +265,66 @@ return True;
 		$this->db->update('user',$data);
 	}
 
+	function check_credit($cmp_name){
+		$this->db->where('cmp_name',$cmp_name);
+		$this->db->select_sum('credit','amnt');
+		$query = $this->db->get('ledger');
+
+		return $query->row()->amnt;
+
+	}
+
+	function check_credit_limit($id){
+		$this->db->where('id',$id);
+		$this->db->select('crd_limit');
+		$query = $this->db->get('company');
+		foreach ($query->result() as $row) {
+			if($row->crd_limit == 0){
+				return 999999999;
+			}else{
+				return $row->crd_limit;
+			}
+		}
+		
+
+	}
+
+	function get_cmp_ids(){
+		$query = $this->db->get('company');
+	    $array = array();
+
+	    foreach($query->result() as $row)
+	    {
+	        $array[] = $row->id; // add each user id to the array
+	    }
+
+	    return $array;
+	}
+
+	function evaluate_credit(){
+		$j = 0;
+		$array = $this->get_cmp_ids();
+		$credit = 0;
+		$credit_limit = 0;
+		for ($i=0; $i < sizeof($array); $i++) {
+
+			$credit = (double)$this->check_credit($array[$i]);
+			$credit_limit = (double)$this->check_credit_limit($i+1);
+
+			if($credit > $credit_limit){
+				$data[$j] = $i;
+				$j++;
+			}
+		}
+		if($j>0){
+			return $data;
+		}else{
+			return false;
+		}
+	}
+
 }
+
 
 /* End of file general_query.php */
 /* Location: ./application/models/general_query.php */

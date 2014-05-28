@@ -42,10 +42,19 @@ class Site extends CI_Controller {
 		}
 
 		$this->load->model('general_query');
-		
+		// die();
+
 	}
 
 	public function index(){
+
+		// $array = $this->general_query->get_cmp_ids();
+		// for ($i=0; $i < sizeof($array); $i++) { 
+		// 	echo $this->general_query->check_credit($array[$i]);
+		// }
+		// print_r($this->general_query->evaluate_credit());
+		// die();
+
 		$this->data['dashboard'] = ' active';
 		$this->data['main_content'] = 'index';
 		$this->load->view('includes/template', $this->data);

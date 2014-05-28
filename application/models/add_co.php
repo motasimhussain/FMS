@@ -30,7 +30,7 @@ class Add_co extends CI_Model {
 			$id = $row->id;
 		}
 
-		$count = $this->db->count_all('company');
+		$count = $this->db->count_all('workplace');
 
 		for ($i=1; $i<=$count  ; $i++) { 
 
