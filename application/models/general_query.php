@@ -278,15 +278,25 @@ class General_query extends CI_Model {
 		$this->db->where('id',$id);
 		$this->db->select('crd_limit');
 		$query = $this->db->get('company');
-		foreach ($query->result() as $row) {
-			if($row->crd_limit == 0){
-				return 999999999;
+		// foreach ($query->result() as $row) {
+		// 	if($row->crd_limit == 0){
+		// 		return 999999999;
+		// 	}else{
+		// 		return $row->crd_limit;
+		// 	}
+		// }
+		if($query->num_rows() > 0){
+		  	$row = $query->row();
+		   	$crd_limit = $row->crd_limit;
+		}
+
+		if(isset($crd_limit) || $crd_limit == 0){
+			if($crd_limit == 0){
+				return (double) 99999999;
 			}else{
-				return $row->crd_limit;
+				return (double)$crd_limit;
 			}
 		}
-		
-
 	}
 
 	function get_cmp_ids(){
@@ -308,11 +318,10 @@ class General_query extends CI_Model {
 		$credit_limit = 0;
 		for ($i=0; $i < sizeof($array); $i++) {
 
-			$credit = (double)$this->check_credit($array[$i]);
-			$credit_limit = (double)$this->check_credit_limit($i+1);
-
+			$credit = $this->check_credit($array[$i]);
+			$credit_limit = $this->check_credit_limit($array[$i]);
 			if($credit > $credit_limit){
-				$data[$j] = $i;
+				$data[$j] = $array[$i];
 				$j++;
 			}
 		}
@@ -320,6 +329,43 @@ class General_query extends CI_Model {
 			return $data;
 		}else{
 			return false;
+		}
+	}
+
+	function alert_credit(){
+		$arr = array();
+		if($data = $this->evaluate_credit()){
+			for ($i=0; $i < sizeof($data); $i++) {
+				$cmp =  $this->get_cn_by_id($data[$i]);
+				$limit = $this->get_cmp_limit($data[$i]);
+				$credit = $this->check_credit($data[$i]);
+				$arr[$i] = array(
+						'company' => $cmp,
+						'limit' => $limit,
+						'credit' => $credit
+				);
+			}
+			return $arr;
+		}else{
+			return false;
+		}
+	}
+
+	function get_cn_by_id($id){
+		$this->db->select('c_name');
+		$this->db->where('id',$id);
+		$query = $this->db->get('company');
+		if($query->num_rows() > 0){
+			return $query->row()->c_name;
+		}
+	}
+
+	function get_cmp_limit($id){
+		$this->db->select('crd_limit');
+		$this->db->where('id',$id);
+		$query = $this->db->get('company');
+		if($query->num_rows() > 0){
+			return $query->row()->crd_limit;
 		}
 	}
 

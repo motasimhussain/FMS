@@ -52,11 +52,11 @@ class Site extends CI_Controller {
 		// for ($i=0; $i < sizeof($array); $i++) { 
 		// 	echo $this->general_query->check_credit($array[$i]);
 		// }
-		// print_r($this->general_query->evaluate_credit());
-		// die();
+		$arr = $this->general_query->alert_credit();
 
 		$this->data['dashboard'] = ' active';
 		$this->data['main_content'] = 'index';
+		$this->data['limit'] = $arr;
 		$this->load->view('includes/template', $this->data);
 
 		if ($this->session->userdata('is_admin') == true) {

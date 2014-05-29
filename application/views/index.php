@@ -57,15 +57,17 @@
                         </div><!-- /.box-header -->
                         <div class="box-body no-padding">
                             <div class="row">
-                                <div class="col-sm-7">
-                                    <!-- bar chart -->
-                                    <div class="chart" id="bar-chart" style="height: 250px;"></div>
+                                <div class="text-center">
+                                
+                                <?php foreach ($limit as $row=>$crd_limit): ?>
+                                    <ul class="list-inline">
+                                    <li class="alert alert-info" style="padding:5px; margin-bottom:5px;">Credit limit reached for <?php echo $crd_limit["company"] ?></li>
+                                    <li class="alert alert-info" style="padding:5px; margin-bottom:5px;">Current Limit:  <?php echo $crd_limit["limit"] ?></li>
+                                    <li class="alert alert-danger" style="padding:5px; margin-bottom:5px;">Current Credit:  <?php echo $crd_limit["credit"] ?></li>
+                                    </ul>
+                                <?php endforeach; ?>
+                                
                                 </div>
-                                <div class="col-sm-5">
-                                    <div class="pad">
-                                        <!-- ///////////////////////////////////////////////////////////////////////////////// -->
-                                    </div><!-- /.pad -->
-                                </div><!-- /.col -->
                             </div><!-- /.row - inside box -->
                         </div><!-- /.box-body -->
                         <div class="box-footer">
