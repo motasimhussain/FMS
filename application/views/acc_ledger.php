@@ -179,17 +179,17 @@
               </td>
              </tr>
              <tr>
-              <td width=306 colspan=4 valign=top style='width:229.25pt;border-top:none;
+              <td width=306 colspan=8 valign=top style='width:229.25pt;border-top:none;
               border-left:solid windowtext 2.25pt;border-bottom:solid windowtext 2.25pt;
               border-right:none;padding:0in 5.4pt 0in 5.4pt'>
-              <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+              <p class="pull-right" style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
               normal'>Opening Balance:</p>
               </td>
-              <td width=296 colspan=5 valign=top style='width:221.7pt;border-top:none;
+              <td width=296 colspan=1 valign=top style='width:221.7pt;border-top:none;
               border-left:none;border-bottom:solid windowtext 2.25pt;border-right:solid windowtext 2.25pt;
               padding:0in 5.4pt 0in 5.4pt'>
               <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-              normal'>$op_bal</p>
+              normal'><?php echo $this->session->userdata('prev_bal'); $this->session->unset_userdata('prev_bal'); ?></p>
               </td>
              </tr>
              <?php foreach($data as $row): ?>
@@ -217,12 +217,12 @@
               </td>
               <td width=85 valign=top style='width:63.4pt;border:none;border-right:solid windowtext 1.0pt;
               padding:0in 5.4pt 0in 5.4pt'>
-              <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+              <p class="getDeb" style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
               normal'><?php echo $row->debit; ?></p>
               </td>
               <td width=86 colspan=1 valign=top style='width:64.85pt;border:none;
               border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
-              <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+              <p class="getCred" style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
               normal'><?php echo $row->credit; ?></p>
               </td>
               <td width=75 valign=top style='width:56.45pt;border:none;border-right:solid windowtext 1.0pt;
@@ -240,18 +240,18 @@
               </td>
               <td width=85 colspan=1 valign=top style='width:64.1pt;border:solid windowtext 1.0pt;
               border-left:none;padding:0in 5.4pt 0in 5.4pt'>
-              <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-              normal'>$tot_debit</p>
+              <p id="totDeb" style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+              normal'></p>
               </td>
               <td width=86 valign=top style='width:64.15pt;border:solid windowtext 1.0pt;
               border-left:none;padding:0in 5.4pt 0in 5.4pt'>
-              <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-              normal'>$tot_credit</p>
+              <p id="totCred" style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+              normal'></p>
               </td>
               <td width=75 valign=top style='width:56.45pt;border:solid windowtext 1.0pt;
               border-left:none;padding:0in 5.4pt 0in 5.4pt'>
               <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-              normal'>$tot_bal</p>
+              normal'><?php echo $row->balance ?></p>
               </td>
              </tr>
              <tr height=0>
@@ -267,6 +267,30 @@
              </tr>
             </table>
           </div>
+
+          <script type="text/javascript">
+
+          (function(){
+            var getDeb = document.getElementsByClassName("getDeb");
+            var getCred = document.getElementsByClassName("getCred");
+            var totDeb = document.getElementById("totDeb");
+            var totCred = document.getElementById("totCred");
+            var totalDeb = 0;
+            var totalCred = 0;
+
+            for (var i = 0; i < getDeb.length; i++) {
+              totalDeb = totalDeb + Number(getDeb[i].innerHTML);
+            }
+
+            for (var i = 0; i < getCred.length; i++) {
+              totalCred = totalCred + Number(getCred[i].innerHTML);
+            }
+
+            totDeb.innerHTML = totalDeb;
+            totCred.innerHTML = totalCred;
+          })();
+
+          </script>
 
         <?php endif; ?>
 
