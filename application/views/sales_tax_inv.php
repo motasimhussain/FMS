@@ -46,10 +46,10 @@ if(!empty($row2)):
 	  	<div style="float:left;">
 	  		<img src="<?=base_url(); ?>img/pjt.png">
 	  	</div>
-	    <div class="pull-right" style="display:inline-block;">
-	      <h2 class="text-left" style="margin-top: 20px;" >
+	    <div class="pull-left" style="display:inline-block;padding-left:45px;">
+	      <h1 class="text-right" style="margin-top:-10px;border:1px solid black; padding:5px; font-family:'Times New Roman';" >
 	        <strong>Sales Tax Invoice</strong>
-	      </h2>
+	      </h1>
 	    </div>
 	</div>
 
@@ -58,63 +58,68 @@ if(!empty($row2)):
 	    <div style="float:left;">
 	      <img src="<?=base_url(); ?>img/pjic.png">
 	    </div>
-	    <div class="pull-right" style="display:inline-block;">
-	      <h2 class="text-right" style="margin-top: 3px;" >
+	    <div class="pull-left" style="display:inline-block;">
+	      <h1 class="text-right" style="margin-top:3px; padding-left:65px;font-family:'Times New Roman';" >
 	        <strong>Sales Tax Invoice</strong>
-	      </h2>
+	      </h1>
 	    </div>
 	</div>
 	<?php }else{ ?>
 	 	<h3 class="pull-left"><strong><?php echo $row2->w_name;?></strong></h3>
-	 	<h2 class="pull-right" style="display:inline-block;" ><strong>INVOICE</strong></h2>
+	 	<h2 class="pull-left" style="display:inline-block;" ><strong>Sales Tax Invoice</strong></h2>
 	<?php } ?>
 
 </div>
 
-	<table class="table-bordered">
+	<table class="table-bordered" style="border-color: black;font-family:'Times New Roman';">
 		
 				<tr>
-					<td class="col-xs-2"><b>Serial #:</b> <?php echo $row2->s_serial;?></td>
-					<td class="col-xs-2"><b>Dated:</b> <?php echo date('d-m-Y');?></td>
-					<td class="col-xs-3"><b>Time of supply:</b> 00:00</td>
-					<td class="col-xs-3"><b>Term of sale:</b> CREDIT</td>
-					<td class="col-xs-2"><b>Ref.:</b><?php echo $row2->ref_num;?></td>
+					<td class="col-xs-2">Serial#: <b><?php echo $row2->s_serial;?></b></td>
+					<td class="col-xs-3">Dated: <b><?php echo date('d-m-Y');?></b></td>
+					<td class="col-xs-3">Time of supply:  
+					<b><?php 
+						date_default_timezone_set('GMT');
+						echo date("g:i:s"); 
+					?></b>
+					</td>
+					<td class="col-xs-3">Term of sale: <b>CREDIT</b></td>
+					<td class="col-xs-1">Ref:<b><?php echo $row2->ref_num;?></b></td>
 				</tr>
 		</table>	
-		<table class="table-bordered">
+		<table class="table-bordered" style="border-color: black;font-family:'Times New Roman';">
 			
 			<tr>
-				<td class="col-xs-2"><b>Suppliers name</b> </td>
-				<td class="col-xs-4 border-bottom"><strong><?php echo $row2->w_name;?></strong></td>
-				<td class="col-xs-2"><b>Buyers name</b> </td>
-				<td class="col-xs-4 border-bottom"><?php echo $row2->c_name;?></td>
+				<td class="col-xs-2">Suppliers Name </td>
+				<td class="col-xs-4 border-bottom" style="font-size:16px; height:40px;"><strong><?php echo $row2->w_name;?></strong></td>
+				<td class="col-xs-2">Buyers Name </td>
+				<td class="col-xs-4 border-bottom" style="font-size:16px;"><strong><?php echo $row2->c_name;?></strong></td>
 			</tr>
 			<tr>
-				<td class="col-xs-2"><b>Address</b></td>
+				<td class="col-xs-2">Address</td>
 				<td class="col-xs-4 border-bottom"><strong><?php echo $row2->w_address; ?></strong></td>
-				<td class="col-xs-2"><b>Address</b></td>
-				<td class="col-xs-4 border-bottom"><?php echo $row2->c_address; ?></td>
+				<td class="col-xs-2">Address</td>
+				<td class="col-xs-4 border-bottom"><strong><?php echo $row2->c_address; ?></strong></td>
 			</tr>
 			<tr>
-				<td class="col-xs-2"><b>Telephone #:</b></td>
+				<td class="col-xs-2">Telephone #:</td>
 				<td class="col-xs-4 border-bottom"><strong><?php echo $row2->w_tel; ?></strong></td>
-				<td class="col-xs-2"><b>Telephone #:</b></td>
-				<td class="col-xs-4 border-bottom"><?php echo $row2->c_tel; ?></td>
+				<td class="col-xs-2">Telephone #:</td>
+				<td class="col-xs-4 border-bottom"><strong><?php echo $row2->c_tel; ?></strong></td>
 			</tr>
 			<tr>
-				<td class="col-xs-2"><b>GST #:</b></td>
+				<td class="col-xs-2">GST #:</td>
 				<td class="col-xs-4 border-bottom"><strong><?php echo $row2->w_gst; ?></strong></td>
-				<td class="col-xs-2"><b>GST #:</b></td>
-				<td class="col-xs-4 border-bottom"><?php echo $row2->c_gst; ?></td>
+				<td class="col-xs-2">GST #:</td>
+				<td class="col-xs-4 border-bottom"><strong><?php echo $row2->c_gst; ?></strong></td>
 			</tr>
 			<tr>
-				<td class="col-xs-2"><b>NTN #:</b></td>
+				<td class="col-xs-2">NTN #:</td>
 				<td class="col-xs-4 border-bottom"><strong><?php echo $row2->w_ntn ?></strong></td>
-				<td class="col-xs-2"><b>NTN #:</b></td>
-				<td class="col-xs-4 border-bottom"><?php echo $row2->c_ntn ?></td>
+				<td class="col-xs-2">NTN #:</td>
+				<td class="col-xs-4 border-bottom"><strong><?php echo $row2->c_ntn ?></strong></td>
 			</tr>
 		</table>
-		<table class="table-bordered">
+		<table class="table-bordered" style="border-color: black;font-family:'Arial';">
 	<thead>
 		<tr>
 			<th class="col-xs-1 text-center">Quantity</th>
@@ -176,10 +181,12 @@ if(!empty($row2)):
 <strong><p id="amntWrd"></p></strong>
 &nbsp;
 <div class="row">
-	<div class="text-left" style="padding-left:15px;display:inline-block">
+	<div class="row text-right" style="padding-right:40px;display:block">
 		<p><b><?php echo $row2->w_name; ?></b></p>
 	</div>
-	<div class="pull-right" style="padding-right:15px;display:inline-block">
+	&nbsp;
+	&nbsp;
+	<div class="row text-right" style="padding-right:40px;display:block">
 		<p><b>Signature</b></p>
 	</div>
 	
@@ -228,17 +235,17 @@ if(!empty($row2)):
     function calc_tot(tAmnt){
     console.log("triggered");
     var num = Math.floor(Number(tAmnt));
-    var a = ['','one ','two ','three ','four ', 'five ','six ','seven ','eight ','nine ','ten ','eleven ','twelve ','thirteen ','fourteen ','fifteen ','sixteen ','seventeen ','eighteen ','nineteen '];
-    var b = ['', '', 'twenty','thirty','forty','fifty', 'sixty','seventy','eighty','ninety'];
+    var a = ['','One ','Two ','Three ','Four ', 'Five ','Six ','Seven ','Eight ','Nine ','Ten ','Eleven ','Twelve ','Thirteen ','Fourteen ','Fifteen ','Sixteen ','Seventeen ','Eighteen ','Nineteen '];
+    var b = ['', '', 'Twenty','Thirty','Forty','Fifty', 'Sixty','Seventy','Eighty','Ninety'];
     function inWords (num) {
     if ((num = num.toString()).length > 9) return 'overflow';
     n = ('000000000' + num).substr(-9).match(/^(\d{2})(\d{2})(\d{2})(\d{1})(\d{2})$/);
     if (!n) return; var str = '';
-    str += (n[1] != 0) ? (a[Number(n[1])] || b[n[1][0]] + ' ' + a[n[1][1]]) + 'crore ' : '';
-    str += (n[2] != 0) ? (a[Number(n[2])] || b[n[2][0]] + ' ' + a[n[2][1]]) + 'lakh ' : '';
-    str += (n[3] != 0) ? (a[Number(n[3])] || b[n[3][0]] + ' ' + a[n[3][1]]) + 'thousand ' : '';
-    str += (n[4] != 0) ? (a[Number(n[4])] || b[n[4][0]] + ' ' + a[n[4][1]]) + 'hundred ' : '';
-    str += (n[5] != 0) ? ((str != '') ? 'and ' : '') + (a[Number(n[5])] || b[n[5][0]] + ' ' + a[n[5][1]]) + 'only ' : '';
+    str += (n[1] != 0) ? (a[Number(n[1])] || b[n[1][0]] + ' ' + a[n[1][1]]) + 'Crore ' : '';
+    str += (n[2] != 0) ? (a[Number(n[2])] || b[n[2][0]] + ' ' + a[n[2][1]]) + 'Lakh ' : '';
+    str += (n[3] != 0) ? (a[Number(n[3])] || b[n[3][0]] + ' ' + a[n[3][1]]) + 'Thousand ' : '';
+    str += (n[4] != 0) ? (a[Number(n[4])] || b[n[4][0]] + ' ' + a[n[4][1]]) + 'Hundred ' : '';
+    str += (n[5] != 0) ? ((str != '') ? 'and ' : '') + (a[Number(n[5])] || b[n[5][0]] + ' ' + a[n[5][1]]) + 'Only ' : '';
     return str;
     }
     document.getElementById("amntWrd").innerHTML = inWords(num);

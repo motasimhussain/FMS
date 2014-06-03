@@ -59,13 +59,13 @@
                             <div class="row">
                                 <div class="text-center">
                                 
-                                <?php foreach ($limit as $row=>$crd_limit): ?>
+                                <?php if(isset($limit)){foreach ($limit as $row=>$crd_limit): ?>
                                     <ul class="list-inline">
                                     <li class="alert alert-info" style="padding:5px; margin-bottom:5px;">Credit limit reached for <?php echo $crd_limit["company"] ?></li>
                                     <li class="alert alert-info" style="padding:5px; margin-bottom:5px;">Current Limit:  <?php echo $crd_limit["limit"] ?></li>
                                     <li class="alert alert-danger" style="padding:5px; margin-bottom:5px;">Current Credit:  <?php echo $crd_limit["credit"] ?></li>
                                     </ul>
-                                <?php endforeach; ?>
+                                <?php endforeach;} ?>
                                 
                                 </div>
                             </div><!-- /.row - inside box -->

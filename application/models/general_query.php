@@ -71,13 +71,21 @@ class General_query extends CI_Model {
 
 	function get_sale_rec(){
 
-		$this->db->where('sale_sess', $this->session->userdata('sale_id'));
+		$s_id = $this->session->userdata('sale_id');
+
+		if(isset($s_id) && $s_id != 0){
+
+		$this->db->where('sale_sess',$this->session->userdata('sale_id'));
 		$query = $this->db->get('sp_records');
 		if($query->num_rows() > 0){
 			foreach ($query->result() as $row) {
 				$data[] = $row;
 			}
 			return $data;
+		}else{
+			return false;
+		}
+
 		}
 	}
 
@@ -123,13 +131,20 @@ class General_query extends CI_Model {
 
 	function get_purchase_rec(){
 
-		$this->db->where('sale_sess', $this->session->userdata('purchase_id'));
-		$query = $this->db->get('sp_records');
-		if($query->num_rows() > 0){
-			foreach ($query->result() as $row) {
-				$data[] = $row;
+		$p_id = $this->session->userdata('purchase_id');
+
+		if(isset($p_id) && $p_id != 0){
+
+			$this->db->where('sale_sess', $this->session->userdata('purchase_id'));
+			$query = $this->db->get('sp_records');
+			if($query->num_rows() > 0){
+				foreach ($query->result() as $row) {
+					$data[] = $row;
+				}
+				return $data;
+			}else{
+				return false;
 			}
-			return $data;
 		}
 	}
 
@@ -139,6 +154,10 @@ class General_query extends CI_Model {
 
 	function get_challan(){
 
+		$ser = $this->input->post('serial');
+
+		if(isset($ser) && $ser != 0){
+
 		$this->db->where('s_serial', $this->input->post('serial'));
 		$query = $this->db->get('sales_inv');
 		if($query->num_rows() > 0){
@@ -146,6 +165,7 @@ class General_query extends CI_Model {
 				$data[] = $row;
 			}
 			return $data;
+		}
 		}		
 
 	}
