@@ -276,21 +276,7 @@ class Site extends CI_Controller {
 		$this->load->view('includes/template2',$this->data);
 	}
 
-	public function mailbox(){
-		$this->data['mailbox'] = ' active';
-		$this->data['main_content'] = 'mailbox';
-		$this->load->view('includes/template2',$this->data);
-	}
-
-	public function data_table(){
-		$this->data['data_table'] = ' active';
-		$this->data['main_content'] = 'data';
-		$this->load->view('includes/template2',$this->data);
-	}
 	
-		
-		
-
 	//included in forms, is hidden on non-admin login
 
 	public function add_usr(){
@@ -332,7 +318,7 @@ class Site extends CI_Controller {
 		$this->load->view('includes/template', $this->data);
 	}
 
-
+	// Used for setting the credit limit for a specific company
 		public function set_credit_limit(){
 		if($this->general_query->get_cn()){
 			$this->data['select_company'] = $this->general_query->get_cn();
@@ -384,7 +370,7 @@ class Site extends CI_Controller {
 		$this->load->view('includes/template2', $this->data);
 	}
 
-		public function all_emp(){
+	public function all_emp(){
 		if($this->general_query->get_all_emp()){
 			$this->data['all_emp'] = $this->general_query->get_all_emp();
 		}else{
@@ -392,6 +378,40 @@ class Site extends CI_Controller {
 		}
 		$this->data['employee'] = ' active';
 		$this->data['main_content'] = 'all_emp';
+		$this->load->view('includes/template2', $this->data);
+	}
+
+
+	/////// ITEM LIST ////////////
+
+	public function pro_list($id,$action){
+		if ($action == "delete") {
+		$this->load->model('general_query');
+
+		if($this->general_query->del_pro($id)){
+			redirect('site/all_items');
+		}
+		}
+		if($this->general_query->get_item_pro($id)){
+			$this->data['item_det'] = $this->general_query->get_item_pro($id);
+			$this->data['item_id'] = $id;
+		}else{
+			$this->data['item_det'] = 'no content';
+		}
+		$this->data['action'] = $action;
+		$this->data['forms'] = ' active';
+		$this->data['main_content'] = 'item_pro';
+		$this->load->view('includes/template2', $this->data);
+	}
+
+	public function all_items(){
+		if($this->general_query->get_all_items()){
+			$this->data['all_items'] = $this->general_query->get_all_items();
+		}else{
+			$this->data['all_items'] = 'no content';
+		}
+		$this->data['forms'] = ' active';
+		$this->data['main_content'] = 'all_pro';
 		$this->load->view('includes/template2', $this->data);
 	}
 }

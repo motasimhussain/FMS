@@ -47,6 +47,7 @@
                                 <li><a href="<?php echo base_url();?>index.php/site/add_work"><i class="fa fa-angle-double-right"></i> Add Workplace</a></li>
                                 <li><a href="<?php echo base_url();?>index.php/site/add_co"><i class="fa fa-angle-double-right"></i> Add Company</a></li>
                                 <li><a href="<?php echo base_url();?>index.php/site/add_pro"><i class="fa fa-angle-double-right"></i> Add Product</a></li>
+                                <li><a href="<?php echo base_url();?>index.php/site/all_items"><i class="fa fa-angle-double-right"></i> Edit/View Products</a></li>
                             </ul>
                         </li>
                         <li class="treeview <?php echo $employee ?>">
@@ -99,17 +100,7 @@
                                 <li><a href="<?php echo base_url();?>index.php/site/inv_form"><i class="fa fa-angle-double-right"></i> Invoice Form</a></li> -->
                             </ul>
                         </li>
-                        <li class="treeview<?php echo $data_table ?>">
-                            <a href="#">
-                                <i class="fa fa-table"></i> <span>Tables</span>
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </a>
-                            <ul class="treeview-menu">
-                                <!-- <li><a href="pages/tables/simple.html"><i class="fa fa-angle-double-right"></i> Simple tables</a></li> -->
-                                <li><a href="<?php echo base_url();?>index.php/site/data_table"><i class="fa fa-angle-double-right"></i> Data tables</a></li>
-                            </ul>
-                        </li>
-
+                
                         <li class="<?php echo $scan_doc; ?>">
                             <a href="<?php echo base_url();?>index.php/site/scan_doc">
                                 <i class="fa fa-dashboard"></i> <span>Scan Documents</span>
@@ -119,13 +110,6 @@
                         <li class="<?php echo $calendar ?>">
                             <a href="<?php echo base_url();?>index.php/site/calendar">
                                 <i class="fa fa-calendar"></i> <span>Calendar</span>
-                                <small class="badge pull-right bg-red">3</small>
-                            </a>
-                        </li>
-                        <li class="<?php echo $mailbox ?>">
-                            <a href="<?php echo base_url();?>index.php/site/mailbox">
-                                <i class="fa fa-envelope"></i> <span>Mailbox</span>
-                                <small class="badge pull-right bg-yellow">12</small>
                             </a>
                         </li>
                         <!-- <li class="treeview">

@@ -42,10 +42,17 @@ class Form_process extends CI_Controller {
 		}
 	}
 
-		public function edit_usr(){
+	public function edit_usr(){
 		$this->load->model('add_usr');
 		if($this->add_usr->edit()){
 			redirect('site/all_emp');
+		}
+	}
+
+	public function edit_item(){
+		$this->load->model('add_pro');
+		if($this->add_pro->edit()){
+			redirect('site/all_items');
 		}
 	}
 

@@ -3,7 +3,7 @@
 class General_query extends CI_Model {
 
 
-	/////////    SALES MODELS ////////
+	//////// Employee Profiles ///////////
 	function del_emp($id){
 		$this->db->where('id', $id);
 		$this->db->delete('user');
@@ -32,6 +32,38 @@ class General_query extends CI_Model {
 		}
 	}
 
+	/////// ITEM LIST //////////////
+
+	function del_pro($id){
+		$this->db->where('id', $id);
+		$this->db->delete('items');
+		return True;
+	}
+
+	function get_all_items(){
+	
+		$query = $this->db->get('items');
+		if($query->num_rows() > 0){
+			foreach ($query->result() as $row) {
+				$data[] = $row;
+			}
+			return $data;
+		}
+	}
+
+	function get_item_pro($id){
+		$this->db->where('id', $id);
+		$query = $this->db->get('items');
+		if($query->num_rows() > 0){
+			foreach ($query->result() as $row) {
+				$data[] = $row;
+			}
+			return $data;
+		}
+	}
+
+
+/////////    SALES MODELS ////////
 	function gen_sales_serial(){
 	
 		$this->db->where('s_serial', $this->input->post('serial'));
