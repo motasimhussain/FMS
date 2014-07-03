@@ -139,11 +139,47 @@ class Site extends CI_Controller {
 		$this->load->view('includes/template', $this->data);
 	}
 
+	/////////////////// ADD AND EDIT COMPANY///////////////
+
 	public function add_co(){
 		$this->data['forms'] = ' active';
 		$this->data['main_content'] = 'add_co';
 		$this->load->view('includes/template', $this->data);
 	}
+
+	public function co_list($id,$action){
+		if ($action == "delete") {
+		$this->load->model('general_query');
+
+		if($this->general_query->del_co($id)){
+			redirect('site/all_co');
+		}
+		}
+		if($this->general_query->get_co_pro($id)){
+			$this->data['co_det'] = $this->general_query->get_co_pro($id);
+			$this->data['co_id'] = $id;
+		}else{
+			$this->data['co_det'] = 'no content';
+		}
+		$this->data['action'] = $action;
+		$this->data['forms'] = ' active';
+		$this->data['main_content'] = 'co_pro';
+		$this->load->view('includes/template2', $this->data);
+	}
+
+	public function all_co(){
+		if($this->general_query->get_all_co()){
+			$this->data['all_co'] = $this->general_query->get_all_co();
+		}else{
+			$this->data['all_co'] = 'no content';
+		}
+		$this->data['forms'] = ' active';
+		$this->data['main_content'] = 'all_co';
+		$this->load->view('includes/template2', $this->data);
+	}
+
+
+
 
 	public function add_pro(){
 		if($this->general_query->get_wn()){

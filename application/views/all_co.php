@@ -5,7 +5,7 @@
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        All Products
+                        All Companies
                         <small>advanced tables</small>
                     </h1>
                     <ol class="breadcrumb">
@@ -22,31 +22,33 @@
 
                             <div class="box">
                                 <div class="box-header">
-                                    <h3 class="box-title">List of all Products</h3>                                    
+                                    <h3 class="box-title">List of all Companies</h3>                                    
                                 </div><!-- /.box-header -->
                                 <div class="box-body table-responsive">
                                     <table id="example1" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
                                                 <th>ID</th>
-                                                <th>Product Name</th>
-                                                <th>Product Category</th>
-                                                <th>Purchase Price</th>
-                                                <th>Selling Price</th>
+                                                <th>Company Name</th>
+                                                <th>Address</th>
+                                                <th>Tel</th>
+                                                <th>GST</th>
+                                                <th>NTN</th>
                                                 <th class="text-center">Edit</th>
                                                 <th class="text-center">Delete</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        <?php foreach ($all_items as $row):?>
+                                        <?php foreach ($all_co as $row):?>
                                             <tr>
                                                 <td><?php echo $row->id;?></td>
-                                                <td><a href="<?php echo base_url(); ?>index.php/site/pro_list/<?php echo $row->id?>/view"><?php echo $row->i_code. "-" .$row->i_name;?></a></td>
-                                                <td><?php echo $row->i_cat;?></td>
-                                                <td><?php echo $row->i_p_price;?></td>
-                                                <td><?php echo $row->i_s_price;?></td>
-                                                <td class="text-center"><a href="<?php echo base_url(); ?>index.php/site/pro_list/<?php echo $row->id?>/edit" class="glyphicon glyphicon-pencil"></a></td>
-                                                <td class="text-center"><a href="<?php echo base_url(); ?>index.php/site/pro_list/<?php echo $row->id?>/delete" class="glyphicon glyphicon-remove"></a></td>
+                                                <td><a href="<?php echo base_url(); ?>index.php/site/co_list/<?php echo $row->id?>/view"><?php echo $row->c_name;?></a></td>
+                                                <td><?php echo $row->c_address;?></td>
+                                                <td><?php echo $row->c_tel;?></td>
+                                                <td><?php echo $row->c_gst;?></td>
+                                                <td><?php echo $row->c_ntn;?></td>
+                                                <td class="text-center"><a href="<?php echo base_url(); ?>index.php/site/co_list/<?php echo $row->id?>/edit" class="glyphicon glyphicon-pencil"></a></td>
+                                                <td class="text-center"><a href="<?php echo base_url(); ?>index.php/site/co_list/<?php echo $row->id?>/delete" class="glyphicon glyphicon-remove"></a></td>
                                             </tr>
                                             <?php endforeach; ?>
                                         </tbody>

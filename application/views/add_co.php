@@ -40,37 +40,51 @@
 
                                         <!-- Text input-->
                                         <div class="form-group">
-                                          <label class="col-md-4 control-label" for="textinput">Company Address</label>  
+                                          <label class="col-md-4 control-label" for="c_address">Company Address</label>  
                                           <div class="col-md-4">
-                                          <input id="textinput" name="c_address" placeholder="Address" class="form-control input-md" type="text" required>
+                                          <input id="c_address" name="c_address" placeholder="Address" class="form-control input-md" type="text" required>
                                             
                                           </div>
                                         </div>
 
                                         <!-- Text input-->
                                         <div class="form-group">
-                                          <label class="col-md-4 control-label" for="textinput">Tel/Fax #</label>  
+                                          <label class="col-md-4 control-label" for="c_tel">Tel/Fax #</label>  
                                           <div class="col-md-4">
-                                          <input id="textinput" name="c_tel" placeholder="Tel/Fax" class="form-control input-md" type="text" required>
+                                          <input id="c_tel" name="c_tel" placeholder="Tel/Fax" class="form-control input-md" type="text" required>
                                             
                                           </div>
                                         </div>
 
                                         <!-- Text input-->
                                         <div class="form-group">
-                                          <label class="col-md-4 control-label" for="textinput">GST #</label>  
+                                          <label class="col-md-4 control-label" for="c_gst">GST #</label>  
                                           <div class="col-md-4">
-                                          <input id="textinput" name="c_gst" placeholder="GST #" class="form-control input-md" type="text" required>
+                                          <input id="c_gst" name="c_gst" placeholder="GST #" class="form-control input-md" type="text" required>
                                             
                                           </div>
                                         </div>
 
                                         <!-- Text input-->
                                         <div class="form-group">
-                                          <label class="col-md-4 control-label" for="textinput">NTN</label>  
+                                          <label class="col-md-4 control-label" for="c_ntn">NTN</label>  
                                           <div class="col-md-4">
-                                          <input id="textinput" name="c_ntn" placeholder="NTN" class="form-control input-md" type="text" required>
+                                          <input id="c_ntn" name="c_ntn" placeholder="NTN" class="form-control input-md" type="text" required>
                                             
+                                          </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                          <label class="col-md-4 control-label" for="op_bal">Opening Balance</label>  
+                                          <div class="col-md-4">
+                                          <input id="op_bal" name="op_bal" placeholder="Opening Balance" class="form-control input-md" type="text" required>
+                                            
+                                          </div>
+                                          <div class="col-md-2">
+                                            <select id="v_type" name="v_type" class="form-control">
+                                                <option value="purchase">Credit</option>
+                                                <option value="sales">Debit</option>
+                                            </select>
                                           </div>
                                         </div>
 

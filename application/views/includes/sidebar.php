@@ -46,6 +46,7 @@
                                  <li><a href="<?php echo base_url();?>index.php/site/set_credit_limit"><i class="fa fa-angle-double-right"></i> Set Credit Limit</a></li>
                                 <li><a href="<?php echo base_url();?>index.php/site/add_work"><i class="fa fa-angle-double-right"></i> Add Workplace</a></li>
                                 <li><a href="<?php echo base_url();?>index.php/site/add_co"><i class="fa fa-angle-double-right"></i> Add Company</a></li>
+                                <li><a href="<?php echo base_url();?>index.php/site/all_co"><i class="fa fa-angle-double-right"></i> Edit/View Companies</a></li>
                                 <li><a href="<?php echo base_url();?>index.php/site/add_pro"><i class="fa fa-angle-double-right"></i> Add Product</a></li>
                                 <li><a href="<?php echo base_url();?>index.php/site/all_items"><i class="fa fa-angle-double-right"></i> Edit/View Products</a></li>
                             </ul>

@@ -20,6 +20,13 @@ class Form_process extends CI_Controller {
 		}
 	}
 
+	public function edit_co(){
+		$this->load->model('add_co');
+		if($this->add_co->edit()){
+			redirect('site/all_co');
+		}
+	}
+
 
 	public function add_bank(){
 		$this->load->model('add_co');

@@ -36,14 +36,14 @@
                                         </div>
                                       </div>
                                         <div class="form-group">
-                                        <label class="col-md-4 control-label" for="v_type">Voucher type:</label>
-                                        <div class="col-md-4">
-                                            <select id="v_type" name="v_type" class="form-control">
-                                                <option value="purchase">Payment</option>
-                                                <option value="sales">Recieved</option>
-                                            </select>
+                                            <label class="col-md-4 control-label" for="v_type">Voucher type:</label>
+                                            <div class="col-md-4">
+                                                <select id="v_type" name="v_type" class="form-control">
+                                                    <option value="purchase">Credit</option>
+                                                    <option value="sales">Debit</option>
+                                                </select>
+                                            </div>
                                         </div>
-                                    </div>
 
 
                                         <div class="form-group">

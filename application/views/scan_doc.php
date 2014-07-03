@@ -84,6 +84,14 @@
   </div>
 </div>
 
+<div class="form-group">
+  <label class="col-md-4 control-label" for="docupload"></label>
+  <div class="col-md-4">
+    <a href="<?php echo base_url();?>scan_uploads/index.php" class="btn btn-primary">View Uploads</a>
+    <!-- <button id="docupload" name="docupload" class="btn btn-primary">Upload</button> -->
+  </div>
+</div>
+
 </fieldset>
 </form>
 

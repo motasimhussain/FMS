@@ -62,6 +62,36 @@ class General_query extends CI_Model {
 		}
 	}
 
+	/////// Company LIST //////////////
+
+	function del_co($id){
+		$this->db->where('id', $id);
+		$this->db->delete('items');
+		return True;
+	}
+
+	function get_all_co(){
+	
+		$query = $this->db->get('company');
+		if($query->num_rows() > 0){
+			foreach ($query->result() as $row) {
+				$data[] = $row;
+			}
+			return $data;
+		}
+	}
+
+	function get_co_pro($id){
+		$this->db->where('id', $id);
+		$query = $this->db->get('company');
+		if($query->num_rows() > 0){
+			foreach ($query->result() as $row) {
+				$data[] = $row;
+			}
+			return $data;
+		}
+	}
+
 
 /////////    SALES MODELS ////////
 	function gen_sales_serial(){
