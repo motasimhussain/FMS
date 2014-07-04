@@ -15,11 +15,10 @@ class Sales_frm extends CI_Model {
 		// die();
 
 		$data = array(
-			'type' => 'purchase',
 			'inv_for' => $this->input->post('inv_for'),
 			'cmp_name' => $this->input->post('cmp_name'),
 			'acc' => $this->input->post('acc'),
-			's_serial' => $this->input->post('serial'),
+			'serial' => $this->input->post('serial'),
 			'ref_num' => $this->input->post('ref_num'),
 			'bill_num' => $this->input->post('bill_num'),
 			'date' => $this->input->post('date'),
@@ -49,7 +48,7 @@ class Sales_frm extends CI_Model {
 		);
 
 
-		$query = $this->db->insert('sp_records',$data);
+		$query = $this->db->insert('sales',$data);
 
 		if($query){
 			return ture;

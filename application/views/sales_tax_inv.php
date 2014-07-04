@@ -20,6 +20,10 @@
               <li>
                 <button class="btn btn-success" value="submit">Generate</button>
               </li>
+
+              <li>
+                  <button class="btn btn-default" onclick="window.print();"><i class="fa fa-print"></i> Print</button>
+              </li>
               </ul>
             </form>
         </section><!-- Main content -->
@@ -74,8 +78,12 @@ if(!empty($row2)):
 	<table class="table-bordered" style="border-color: black;font-family:'Times New Roman';">
 		
 				<tr>
-					<td class="col-xs-2">Serial#: <b><?php echo $row2->s_serial;?></b></td>
-					<td class="col-xs-3">Dated: <b><?php echo date('d-m-Y');?></b></td>
+					<td class="col-xs-2">Serial#: <b><?php echo $row2->serial;?></b></td>
+					<?php 
+						$phpdate = strtotime( $row2->date );
+						$mysqldate = date( 'd-m-Y', $phpdate );
+					?>
+					<td class="col-xs-3">Dated: <b><?php echo $mysqldate;?></b></td>
 					<td class="col-xs-3">Time of supply:  
 					<b><?php 
 						date_default_timezone_set('GMT');

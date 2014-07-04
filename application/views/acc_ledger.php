@@ -70,7 +70,7 @@
              <tr>
               <td width=426 colspan=3 valign=top style='width:319.25pt;padding:0in 5.4pt 0in 5.4pt'>
               <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-              normal'><?php echo $row->w_name; ?></p>
+              normal'><?php echo $this->session->userdata('workplace'); ?></p>
               </td>
               <td width=78 valign=top style='width:58.8pt;padding:0in 5.4pt 0in 5.4pt'>
               <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
@@ -98,7 +98,7 @@
              <tr>
               <td width=282 valign=top style='width:211.25pt;padding:0in 5.4pt 0in 5.4pt'>
               <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-              normal'><?php echo $row->c_name; ?></p>
+              normal'><?php echo $this->session->userdata('company'); ?></p>
               </td>
               <td width=54 valign=top style='width:40.5pt;padding:0in 5.4pt 0in 5.4pt'>
               <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
@@ -127,9 +127,11 @@
             </table>
 
             <?php
+              break; endforeach;
               $this->session->unset_userdata('st_date');
               $this->session->unset_userdata('en_date');
-              break; endforeach; 
+              $this->session->unset_userdata('workplace');
+              $this->session->unset_userdata('company');
             ?>
 
             <table class="MsoTableGrid table" border=1 cellspacing=0 cellpadding=0
@@ -189,7 +191,15 @@
               border-left:none;border-bottom:solid windowtext 2.25pt;border-right:solid windowtext 2.25pt;
               padding:0in 5.4pt 0in 5.4pt'>
               <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-              normal'><?php echo $this->session->userdata('prev_bal'); $this->session->unset_userdata('prev_bal'); ?></p>
+              normal'>
+
+                      <?php $op_bal = $this->session->userdata('prev_bal');
+                            echo $op_bal;
+                            $this->session->unset_userdata('prev_bal');
+                            $temp = $op_bal; 
+                      ?>
+
+              </p>
               </td>
              </tr>
              <?php foreach($data as $row): ?>
@@ -215,20 +225,43 @@
               <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
               normal'><?php echo $row->dscr;?></p>
               </td>
+              <?php if($row->type == "sale"){ ?>
+
               <td width=85 valign=top style='width:63.4pt;border:none;border-right:solid windowtext 1.0pt;
               padding:0in 5.4pt 0in 5.4pt'>
               <p class="getDeb" style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-              normal'><?php echo $row->debit; ?></p>
+              normal'><?php echo abs($row->tot_amnt); ?></p>
               </td>
               <td width=86 colspan=1 valign=top style='width:64.85pt;border:none;
               border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
               <p class="getCred" style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-              normal'><?php echo $row->credit; ?></p>
+              normal'><?php echo "0"; ?></p>
               </td>
+
+              <?php }else{ ?>
+
+              <td width=85 valign=top style='width:63.4pt;border:none;border-right:solid windowtext 1.0pt;
+              padding:0in 5.4pt 0in 5.4pt'>
+              <p class="getDeb" style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+              normal'><?php echo "0"; ?></p>
+              </td>
+              <td width=86 colspan=1 valign=top style='width:64.85pt;border:none;
+              border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+              <p class="getCred" style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+              normal'><?php echo abs($row->tot_amnt); ?></p>
+              </td>
+
+              <?php } ?>
+
               <td width=75 valign=top style='width:56.45pt;border:none;border-right:solid windowtext 1.0pt;
               padding:0in 5.4pt 0in 5.4pt'>
               <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-              normal'><?php echo $row->balance ?></p>
+              normal'>
+              <?php 
+                  $temp += $row->tot_amnt;
+                  echo $temp; 
+              ?>
+              </p>
               </td>
              </tr>
            <?php endforeach; ?>
@@ -251,7 +284,7 @@
               <td width=75 valign=top style='width:56.45pt;border:solid windowtext 1.0pt;
               border-left:none;padding:0in 5.4pt 0in 5.4pt'>
               <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-              normal'><?php echo $row->balance ?></p>
+              normal'><?php echo $temp ?></p>
               </td>
              </tr>
              <tr height=0>

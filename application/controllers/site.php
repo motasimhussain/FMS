@@ -101,7 +101,7 @@ class Site extends CI_Controller {
 			$this->data['select_item'] = 'no content';
 		}
 
-		$this->data['serial'] = $this->general_query->get_curr_serial('s_serial');
+		$this->data['serial'] = $this->general_query->get_curr_serial('sales');
 		$this->data['invoice'] = ' active';
 		$this->data['main_content'] = 'sales_frm';
 		$this->load->view('includes/template', $this->data);
@@ -133,7 +133,7 @@ class Site extends CI_Controller {
 			$this->data['select_item'] = 'no content';
 		}
 
-		$this->data['serial'] = $this->general_query->get_curr_serial('p_serial');
+		$this->data['serial'] = $this->general_query->get_curr_serial('purchase');
 		$this->data['invoice'] = ' active';
 		$this->data['main_content'] = 'purchase_frm';
 		$this->load->view('includes/template', $this->data);

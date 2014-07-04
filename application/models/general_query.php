@@ -96,7 +96,7 @@ class General_query extends CI_Model {
 /////////    SALES MODELS ////////
 	function gen_sales_serial(){
 	
-		$this->db->where('s_serial', $this->input->post('serial'));
+		$this->db->where('serial', $this->input->post('serial'));
 		$query = $this->db->get('sales_inv');
 		if($query->num_rows() > 0){
 			foreach ($query->result() as $row) {
@@ -107,7 +107,7 @@ class General_query extends CI_Model {
 	}
 
 	function gen_sales_inv(){
-		return $this->db->query('SELECT w_name, w_address, w_tel, s_serial, w_gst, w_ntn, bill_num, c_name, c_address, ref_num, amnt_in_wrd, 
+		return $this->db->query('SELECT w_name, w_address, w_tel, serial, date, w_gst, w_ntn, bill_num, c_name, c_address, ref_num, amnt_in_wrd, 
 						  SUM(sales_tax_tot) AS tot_tax, SUM(amnt) 
 						  AS tot_amnt, (SUM(sales_tax_tot) + SUM(amnt)) 
 						  AS tot_bill 
@@ -119,12 +119,12 @@ class General_query extends CI_Model {
 	}
 
 	function gen_sales_inv_serial(){
-		return $this->db->query('SELECT w_name, w_address, w_tel, s_serial, w_gst, w_ntn, bill_num, c_name, c_address, ref_num, amnt_in_wrd, 
+		return $this->db->query('SELECT w_name, w_address, w_tel, serial, date,  w_gst, w_ntn, bill_num, c_name, c_address, ref_num, amnt_in_wrd, 
 						  SUM(sales_tax_tot) AS tot_tax, SUM(amnt) 
 						  AS tot_amnt, (SUM(sales_tax_tot) + SUM(amnt)) 
 						  AS tot_bill 
 						  FROM sales_inv 
-						  WHERE `s_serial`="'.$this->input->post("serial").'"'
+						  WHERE `serial`="'.$this->input->post("serial").'"'
 						);
 
 
@@ -138,7 +138,7 @@ class General_query extends CI_Model {
 		if(isset($s_id) && $s_id != 0){
 
 		$this->db->where('sale_sess',$this->session->userdata('sale_id'));
-		$query = $this->db->get('sp_records');
+		$query = $this->db->get('sales');
 		if($query->num_rows() > 0){
 			foreach ($query->result() as $row) {
 				$data[] = $row;
@@ -157,7 +157,7 @@ class General_query extends CI_Model {
 
 	function gen_purchase_serial(){
 	
-		$this->db->where('p_serial', $this->input->post('serial'));
+		$this->db->where('serial', $this->input->post('serial'));
 		$query = $this->db->get('purchase_inv');
 		if($query->num_rows() > 0){
 			foreach ($query->result() as $row) {
@@ -168,7 +168,7 @@ class General_query extends CI_Model {
 	}
 
 	function gen_purchase_inv(){
-		return $this->db->query('SELECT w_name, w_address, w_tel, p_serial, w_gst, w_ntn, bill_num, c_name, c_address, ref_num, amnt_in_wrd, 
+		return $this->db->query('SELECT w_name, w_address, w_tel, serial, date, w_gst, w_ntn, bill_num, c_name, c_address, ref_num, amnt_in_wrd, 
 						  SUM(sales_tax_tot) AS tot_tax, SUM(amnt) 
 						  AS tot_amnt, (SUM(sales_tax_tot) + SUM(amnt)) 
 						  AS tot_bill 
@@ -180,12 +180,12 @@ class General_query extends CI_Model {
 	}
 
 	function gen_purchase_inv_serial(){
-		return $this->db->query('SELECT w_name, w_address, w_tel, p_serial, w_gst, w_ntn, bill_num, c_name, c_address, ref_num, amnt_in_wrd, 
+		return $this->db->query('SELECT w_name, w_address, w_tel, serial, date, w_gst, w_ntn, bill_num, c_name, c_address, ref_num, amnt_in_wrd, 
 						  SUM(sales_tax_tot) AS tot_tax, SUM(amnt) 
 						  AS tot_amnt, (SUM(sales_tax_tot) + SUM(amnt)) 
 						  AS tot_bill 
 						  FROM purchase_inv 
-						  WHERE `p_serial`="'.$this->input->post("serial").'"'
+						  WHERE `serial`="'.$this->input->post("serial").'"'
 						);
 
 
@@ -198,7 +198,7 @@ class General_query extends CI_Model {
 		if(isset($p_id) && $p_id != 0){
 
 			$this->db->where('sale_sess', $this->session->userdata('purchase_id'));
-			$query = $this->db->get('sp_records');
+			$query = $this->db->get('purchase');
 			if($query->num_rows() > 0){
 				foreach ($query->result() as $row) {
 					$data[] = $row;
@@ -220,7 +220,7 @@ class General_query extends CI_Model {
 
 		if(isset($ser) && $ser != 0){
 
-		$this->db->where('s_serial', $this->input->post('serial'));
+		$this->db->where('serial', $this->input->post('serial'));
 		$query = $this->db->get('sales_inv');
 		if($query->num_rows() > 0){
 			foreach ($query->result() as $row) {
@@ -234,7 +234,7 @@ class General_query extends CI_Model {
 
 	function gen_challan(){
 
-		return $this->db->query('SELECT * FROM sales_inv WHERE `s_serial`="'.$this->input->post("serial").'"');
+		return $this->db->query('SELECT * FROM sales_inv WHERE `serial`="'.$this->input->post("serial").'"');
 
 	}
 
@@ -243,11 +243,11 @@ class General_query extends CI_Model {
 
 	function get_curr_serial($s_type){
 
-		$this->db->select_max($s_type);
-		$query = $this->db->get('sp_records');
+		$this->db->select_max('serial');
+		$query = $this->db->get($s_type);
 		if($query->num_rows() > 0){
 			foreach ($query->result() as $row) {
-				$num = $row->$s_type;
+				$num = $row->serial;
 			}
 		if(!$this->session->userdata('sale_id') && !$this->session->userdata('purchase_id'))
 		{
@@ -294,12 +294,34 @@ class General_query extends CI_Model {
 		}
 	}
 
+	function get_work($id){
+		$this->db->where('id',$id);
+		$query = $this->db->get('workplace');
+		if($query->num_rows() > 0){
+			foreach ($query->result() as $row) {
+				$data = $row->w_name;
+			}
+			return $data;
+		}
+	}
+
 	function get_cn(){
 		$this->db->select('id,c_name');
 		$query = $this->db->get('company');
 		if($query->num_rows() > 0){
 			foreach ($query->result() as $row) {
 				$data[] = $row;
+			}
+			return $data;
+		}
+	}
+
+	function get_company($id){
+		$this->db->where('id',$id);
+		$query = $this->db->get('company');
+		if($query->num_rows() > 0){
+			foreach ($query->result() as $row) {
+				$data = $row->c_name;
 			}
 			return $data;
 		}

@@ -372,7 +372,7 @@
                                                     
                                                     ?>
                                                     <tr class="even">
-                                                        <td class="  sorting_1"><?php echo $row->p_serial;?></td>
+                                                        <td class="  sorting_1"><?php echo $row->serial;?></td>
                                                         <td class=" "><?php echo $row->ref_num;?></td>
                                                         <td class=" "><?php echo $row->bill_num;?></td>
                                                         <td class=" "><?php echo $row->date;?></td>

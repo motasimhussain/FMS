@@ -49,9 +49,13 @@ if(!empty($row2)):
 <table class="col-xs-12 invoice-table">
 		<tr>
 			<td class="col-xs-2">Serial #</td>
-			<td class="col-xs-2 border-bottom"><?php echo $row2->s_serial;?></td>
+			<td class="col-xs-2 border-bottom"><?php echo $row2->serial;?></td>
 			<td class="col-xs-6 text-right">Dated</td>
-			<td class="col-xs-2 border-bottom"><?php echo date('d-m-Y');?></td>
+			<?php 
+				$phpdate = strtotime( $row2->date );
+				$mysqldate = date( 'd-m-Y', $phpdate );
+			 ?>
+			<td class="col-xs-2 border-bottom"><?php echo $mysqldate;?></td>
 			
 		</tr>
 		<tr>

@@ -78,10 +78,14 @@ if(!empty($row2)):
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'>Dated:</p>
   </td>
+  <?php 
+        $phpdate = strtotime( $row2->date );
+        $mysqldate = date( 'd-m-Y', $phpdate );
+  ?>
   <td width=108 valign=top style='font-size:14px;width:80.95pt;border:none;border-bottom:solid windowtext 1.0pt;
   padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'><?php echo date('d-m-Y');?></p>
+  normal'><?php echo $mysqldate;?></p>
   </td>
  </tr>
  <tr>
