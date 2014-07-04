@@ -42,7 +42,7 @@ class Get_ledger extends CI_Model {
 	}
 
 	function get_opening_bal($date_1){
-		$query = "SELECT * FROM ledger WHERE inv_for =".$this->input->post('led_for')." AND cmp_name =".$this->input->post('coname')." AND date != '0000-00-00' AND `date` < '".$date_1."' ORDER BY `date` DESC LIMIT 1";
+		$query = "SELECT * FROM ledger WHERE inv_for =".$this->input->post('led_for')." AND cmp_name =".$this->input->post('coname')." AND `date` < '".$date_1."' ORDER BY `date` DESC LIMIT 1";
 		$result = $this->db->query($query);
 		if($result->num_rows() > 0){
 			foreach ($result->result() as $row) {

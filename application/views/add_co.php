@@ -81,7 +81,7 @@
                                             
                                           </div>
                                           <div class="col-md-2">
-                                            <select id="v_type" name="v_type" class="form-control">
+                                            <select id="op_bal_type" name="op_bal_type" class="form-control">
                                                 <option value="purchase">Credit</option>
                                                 <option value="sales">Debit</option>
                                             </select>

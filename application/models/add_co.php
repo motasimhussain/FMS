@@ -30,6 +30,10 @@ class Add_co extends CI_Model {
 			$id = $row->id;
 		}
 
+		$p_bal = 0;
+		$s_bal = 0;
+
+		
 		$count = $this->db->count_all('workplace');
 
 		for ($i=1; $i<=$count  ; $i++) { 
@@ -57,6 +61,38 @@ class Add_co extends CI_Model {
 			);
 
 			$this->db->insert('sp_records',$data);
+
+			if($this->input->post('op_bal_type') == 'sales' && ('op_bal' != "" || 'op_bal' != 0)){
+
+				$s_bal = $this->input->post('op_bal');
+				$data = array(
+					'type' => 'sales',
+					'inv_for' => $i,
+					'cmp_name' => $id,
+					's_serial' => 0,
+					'price' => 0,
+					'amnt' => 0,
+					'tot_amnt' => $s_bal
+				);
+				$this->db->insert('sp_records',$data);
+
+			}else if($this->input->post('op_bal_type') == 'purchase' && ('op_bal' != "" || 'op_bal' != 0)){
+
+				$p_bal = $this->input->post('op_bal');
+				$data = array(
+					'type' => 'purchase',
+					'inv_for' => $i,
+					'cmp_name' => $id,
+					'p_serial' => 0,
+					'price' => 0,
+					'amnt' => 0,
+					'tot_amnt' => $p_bal
+				);
+
+				$this->db->insert('sp_records',$data);
+
+			}
+			
 
 		}
 	}
