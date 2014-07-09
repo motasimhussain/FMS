@@ -93,15 +93,8 @@
                         </div><!-- /.box-header -->
                         <div class="box-body no-padding">
                             <div class="row">
-                                <div class="col-sm-7">
-                                    <!-- bar chart -->
-                                    <div class="chart" id="bar-chart" style="height: 250px;"></div>
-                                </div>
-                                <div class="col-sm-5">
-                                    <div class="pad">
-                                        <!-- ///////////////////////////////////////////////////////////////////////////////////////////// -->
-                                    </div><!-- /.pad -->
-                                </div><!-- /.col -->
+                                
+                                
                             </div><!-- /.row - inside box -->
                         </div><!-- /.box-body -->
                         <div class="box-footer">

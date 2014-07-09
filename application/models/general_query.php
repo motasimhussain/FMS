@@ -62,6 +62,44 @@ class General_query extends CI_Model {
 		}
 	}
 
+
+	/////// INVOICE LIST //////////////
+
+	function del_inv($id,$type){
+		$this->db->where('id', $id);
+		$this->db->where('type', $type);
+		if ($type=="sale") {
+			$this->db->delete('sales');
+		}else if($type=="purchase"){
+			$this->db->delete('purchase');
+		}
+		
+		return True;
+	}
+
+	function get_all_inv(){
+	
+		$query = $this->db->get('sp_merge');
+		if($query->num_rows() > 0){
+			foreach ($query->result() as $row) {
+				$data[] = $row;
+			}
+			return $data;
+		}
+	}
+
+	function get_inv_pro($id,$type){
+		$this->db->where('id', $id);
+		$this->db->where('type', $type);
+		$query = $this->db->get('sp_merge');
+		if($query->num_rows() > 0){
+			foreach ($query->result() as $row) {
+				$data[] = $row;
+			}
+			return $data;
+		}
+	}
+
 	/////// Company LIST //////////////
 
 	function del_co($id){
@@ -371,10 +409,11 @@ class General_query extends CI_Model {
 
 	function check_credit($cmp_name){
 		$this->db->where('cmp_name',$cmp_name);
-		$this->db->select_sum('credit','amnt');
-		$query = $this->db->get('ledger');
+		$this->db->where('type','purchase');
+		$this->db->select_sum('tot_amnt','crd_amnt');
+		$query = $this->db->get('sp_merge');
 
-		return $query->row()->amnt;
+		return $query->row()->crd_amnt;
 
 	}
 

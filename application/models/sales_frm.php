@@ -58,6 +58,8 @@ class Sales_frm extends CI_Model {
 
 	}
 
+	
+
 }
 
 /* End of file add_pro.php */

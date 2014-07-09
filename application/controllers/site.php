@@ -52,11 +52,13 @@ class Site extends CI_Controller {
 		// for ($i=0; $i < sizeof($array); $i++) { 
 		// 	echo $this->general_query->check_credit($array[$i]);
 		// }
-		$arr = $this->general_query->alert_credit();
-
+		if($this->general_query->alert_credit()){
+			$arr = $this->general_query->alert_credit();
+			$this->data['limit'] = $arr;
+		}
+		
 		$this->data['dashboard'] = ' active';
 		$this->data['main_content'] = 'index';
-		$this->data['limit'] = $arr;
 		$this->load->view('includes/template', $this->data);
 
 		if ($this->session->userdata('is_admin') == true) {
@@ -180,7 +182,7 @@ class Site extends CI_Controller {
 
 
 
-
+	////////// ADD PRODUCT ////////////
 	public function add_pro(){
 		if($this->general_query->get_wn()){
 			$this->data['select_workplace'] = $this->general_query->get_wn();
@@ -450,6 +452,41 @@ class Site extends CI_Controller {
 		$this->data['main_content'] = 'all_pro';
 		$this->load->view('includes/template2', $this->data);
 	}
+
+	///////////// Edit/Delete Invoices ////////////
+
+
+	public function inv_pro($id,$type,$action){
+		if ($action == "delete") {
+		$this->load->model('general_query');
+
+		if($this->general_query->del_inv($id,$type)){
+			redirect('site/all_inv');
+		}
+		}
+		if($this->general_query->get_inv_pro($id,$type)){
+			$this->data['inv_det'] = $this->general_query->get_inv_pro($id,$type);
+			$this->data['inv_id'] = $id;
+		}else{
+			$this->data['inv_det'] = 'no content';
+		}
+		$this->data['action'] = $action;
+		$this->data['forms'] = ' active';
+		$this->data['main_content'] = 'inv_pro';
+		$this->load->view('includes/template2', $this->data);
+	}
+
+	public function all_inv(){
+		if($this->general_query->get_all_inv()){
+			$this->data['all_inv'] = $this->general_query->get_all_inv();
+		}else{
+			$this->data['all_inv'] = 'no content';
+		}
+		$this->data['forms'] = ' active';
+		$this->data['main_content'] = 'all_inv';
+		$this->load->view('includes/template2', $this->data);
+	}
+
 }
 
 /* End of file site.php */

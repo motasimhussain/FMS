@@ -62,6 +62,12 @@ class Form_process extends CI_Controller {
 			redirect('site/all_items');
 		}
 	}
+	public function edit_inv(){
+		$this->load->model('edit_inv');
+		if($this->edit_inv->edit()){
+			redirect('site/all_inv');
+		}
+	}
 
 	public function sales_frm(){
 		$this->load->model('sales_frm');
