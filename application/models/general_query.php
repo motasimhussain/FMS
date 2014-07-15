@@ -104,7 +104,7 @@ class General_query extends CI_Model {
 
 	function del_co($id){
 		$this->db->where('id', $id);
-		$this->db->delete('items');
+		$this->db->delete('company');
 		return True;
 	}
 
@@ -122,6 +122,37 @@ class General_query extends CI_Model {
 	function get_co_pro($id){
 		$this->db->where('id', $id);
 		$query = $this->db->get('company');
+		if($query->num_rows() > 0){
+			foreach ($query->result() as $row) {
+				$data[] = $row;
+			}
+			return $data;
+		}
+	}
+
+
+	/////////// Bank List ////////////
+
+	function del_bank($id){
+		$this->db->where('id', $id);
+		$this->db->delete('banks');
+		return True;
+	}
+
+	function get_all_banks(){
+	
+		$query = $this->db->get('banks');
+		if($query->num_rows() > 0){
+			foreach ($query->result() as $row) {
+				$data[] = $row;
+			}
+			return $data;
+		}
+	}
+
+	function get_bank_pro($id){
+		$this->db->where('id', $id);
+		$query = $this->db->get('banks');
 		if($query->num_rows() > 0){
 			foreach ($query->result() as $row) {
 				$data[] = $row;

@@ -29,9 +29,15 @@ class Form_process extends CI_Controller {
 
 
 	public function add_bank(){
-		$this->load->model('add_co');
-		if($this->add_co->add()){
+		$this->load->model('add_bank');
+		if($this->add_bank->add()){
 			redirect('site/add_bank');
+		}
+	}
+	public function edit_bank(){
+		$this->load->model('add_bank');
+		if($this->add_bank->edit()){
+			redirect('site/all_bank');
 		}
 	}
 

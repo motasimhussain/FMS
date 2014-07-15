@@ -181,6 +181,39 @@ class Site extends CI_Controller {
 	}
 
 
+	//////////// EDIT/DELETE BANKS //////////
+
+	public function b_list($id,$action){
+		if ($action == "delete") {
+		$this->load->model('general_query');
+
+		if($this->general_query->del_bank($id)){
+			redirect('site/all_bank');
+		}
+		}
+		if($this->general_query->get_bank_pro($id)){
+			$this->data['bank_det'] = $this->general_query->get_bank_pro($id);
+			$this->data['bank_id'] = $id;
+		}else{
+			$this->data['bank_det'] = 'no content';
+		}
+		$this->data['action'] = $action;
+		$this->data['bank'] = ' active';
+		$this->data['main_content'] = 'bank_pro';
+		$this->load->view('includes/template2', $this->data);
+	}
+
+	public function all_bank(){
+		if($this->general_query->get_all_banks()){
+			$this->data['all_bank'] = $this->general_query->get_all_banks();
+		}else{
+			$this->data['all_bank'] = 'no content';
+		}
+		$this->data['bank'] = ' active';
+		$this->data['main_content'] = 'all_bank';
+		$this->load->view('includes/template2', $this->data);
+	}
+
 
 	////////// ADD PRODUCT ////////////
 	public function add_pro(){
@@ -471,7 +504,7 @@ class Site extends CI_Controller {
 			$this->data['inv_det'] = 'no content';
 		}
 		$this->data['action'] = $action;
-		$this->data['forms'] = ' active';
+		$this->data['invoice'] = ' active';
 		$this->data['main_content'] = 'inv_pro';
 		$this->load->view('includes/template2', $this->data);
 	}
@@ -482,7 +515,7 @@ class Site extends CI_Controller {
 		}else{
 			$this->data['all_inv'] = 'no content';
 		}
-		$this->data['forms'] = ' active';
+		$this->data['invoice'] = ' active';
 		$this->data['main_content'] = 'all_inv';
 		$this->load->view('includes/template2', $this->data);
 	}

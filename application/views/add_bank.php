@@ -3,7 +3,7 @@
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        Add Company
+                        Add Bank
                         <small>Preview</small>
                     </h1>
                     <ol class="breadcrumb">
@@ -23,7 +23,7 @@
                         <!-- general form elements disabled -->
                             <div class="box box-warning">
                                 <div class="box-header">
-                                    <h3 class="box-title">Add Company</h3>
+                                    <h3 class="box-title">Add Bank</h3>
                                 </div><!-- /.box-header -->
                                 <div class="box-body">
                                     <form action="<?php echo base_url(); ?>index.php/form_process/add_bank" method="post" class="form-horizontal">
@@ -31,46 +31,54 @@
                                         
                                         <!-- Text input-->
                                         <div class="form-group">
-                                          <label class="col-md-4 control-label" for="textinput">Bank Name</label>  
+                                          <label class="col-md-4 control-label" for="b_name">Bank Name</label>  
                                           <div class="col-md-4">
-                                          <input id="textinput" name="c_name" placeholder="Bank Name" class="form-control input-md" type="text" required>
+                                          <input id="b_name" name="b_name" placeholder="Bank Name" class="form-control input-md" type="text">
                                             
                                           </div>
                                         </div>
 
                                         <!-- Text input-->
                                         <div class="form-group">
-                                          <label class="col-md-4 control-label" for="textinput">Bank Address</label>  
+                                          <label class="col-md-4 control-label" for="b_address">Bank Address</label>  
                                           <div class="col-md-4">
-                                          <input id="textinput" name="c_address" placeholder="Address" class="form-control input-md" type="text" required>
+                                          <input id="b_address" name="b_address" placeholder="Address" class="form-control input-md" type="text">
                                             
                                           </div>
                                         </div>
 
                                         <!-- Text input-->
                                         <div class="form-group">
-                                          <label class="col-md-4 control-label" for="textinput">Tel/Fax #</label>  
+                                          <label class="col-md-4 control-label" for="b_tel">Tel/Fax #</label>  
                                           <div class="col-md-4">
-                                          <input id="textinput" name="c_tel" placeholder="Tel/Fax" class="form-control input-md" type="text" >
+                                          <input id="b_tel" name="b_tel" placeholder="Tel/Fax" class="form-control input-md" type="text" >
                                             
                                           </div>
                                         </div>
 
                                         <!-- Text input-->
                                         <div class="form-group">
-                                          <label class="col-md-4 control-label" for="textinput">GST #</label>  
+                                          <label class="col-md-4 control-label" for="acc_num">Account #</label>  
                                           <div class="col-md-4">
-                                          <input id="textinput" name="c_gst" placeholder="GST #" class="form-control input-md" type="text" >
+                                          <input id="acc_num" name="acc_num" placeholder="Account Number" class="form-control input-md" type="text" >
                                             
                                           </div>
                                         </div>
 
                                         <!-- Text input-->
                                         <div class="form-group">
-                                          <label class="col-md-4 control-label" for="textinput">NTN</label>  
+                                          <label class="col-md-4 control-label" for="owner">Account Holder</label>  
                                           <div class="col-md-4">
-                                          <input id="textinput" name="c_ntn" placeholder="NTN" class="form-control input-md" type="text" >
+                                          <input id="owner" name="owner" placeholder="Account Holder" class="form-control input-md" type="text" >
                                             
+                                          </div>
+                                        </div>
+
+                                        <!-- Text input-->
+                                        <div class="form-group">
+                                          <label class="col-md-4 control-label" for="op_bal">Opening Balance</label>  
+                                          <div class="col-md-4">
+                                          <input id="op_bal" name="op_bal" placeholder="Opening Balance" class="form-control input-md" type="text" >
                                           </div>
                                         </div>
 

@@ -41,8 +41,6 @@ class Voucher_frm extends CI_Model {
 
 			}
 
-		$query = $this->db->insert('sp_records',$data);
-
 		if($query){
 			return ture;
 		}else{

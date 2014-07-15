@@ -73,6 +73,7 @@
                             <ul class="treeview-menu">
                                 <li><a href="<?php echo base_url();?>index.php/site/voucher_frm"><i class="fa fa-angle-double-right"></i> Add Voucher</a></li>
                                 <li><a href="<?php echo base_url();?>index.php/site/add_bank"><i class="fa fa-angle-double-right"></i> Add Bank</a></li>
+                                <li><a href="<?php echo base_url();?>index.php/site/all_bank"><i class="fa fa-angle-double-right"></i> Edit/Delete Banks</a></li>
                             </ul>
                         </li>
                         <li class="treeview <?php echo $invoice ?>">
@@ -87,6 +88,7 @@
                                 <li><a href="<?php echo base_url();?>index.php/site/gen_purchase_inv"><i class="fa fa-angle-double-right"></i> Purchase Invoice</a></li>
                                 <li><a href="<?php echo base_url();?>index.php/site/gen_challan"><i class="fa fa-angle-double-right"></i> Delivery Challan</a></li>
                                 <li><a href="<?php echo base_url();?>index.php/site/gen_sales_tax_inv"><i class="fa fa-angle-double-right"></i> Sales Tax Invoice</a></li>
+                                <li><a href="<?php echo base_url();?>index.php/site/all_inv"><i class="fa fa-angle-double-right"></i> View/Edit Invoice</a></li>
                                 <!-- <li><a href="<?php echo base_url();?>index.php/site/inv_form"><i class="fa fa-angle-double-right"></i> Invoice Form</a></li> -->
                             </ul>
                         </li>

@@ -143,13 +143,26 @@ endif;
 
 
                   <!-- Text input disabled-->
-                  <div class="form-group">
+                  <!-- <div class="form-group">
                     <label class="col-md-4 control-label" for="sales_tax">Sales Tax</label>
                     <div class="col-md-7">
                     <input disabled id="sales_tax" name="sales_tax" value="<?php echo $row->sales_tax;?>" class="form-control input disabled-md" type="text">
                       
                     </div>
-                  </div>
+                  </div> -->
+
+                  <div class="form-group">
+                    <label class="col-md-4 control-label" for="sales_tax">Sales Tax:</label>
+                    <div class="col-md-7">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                            <input type="checkbox" id="sales_tax_check">
+                            </span>
+                            <input disabled id="sales_tax" name="sales_tax" class="form-control" value="<?php echo $row->sales_tax;?>" type="text">
+                            <span class="input-group-addon">%</span>
+                        </div> 
+                    </div>
+                </div>
 
                   <!-- Text input disabled-->
                   <div class="form-group">
@@ -219,3 +232,80 @@ endif;
 </section>
 </aside>
 <?php endforeach; ?>
+
+
+<script type="text/javascript">
+(function(){
+        var getNum = document.getElementById("tot_amnt");
+        function calc_tot(){
+        console.log("triggered");
+        var num = Math.floor(getNum.value);
+        var a = ['','one ','two ','three ','four ', 'five ','six ','seven ','eight ','nine ','ten ','eleven ','twelve ','thirteen ','fourteen ','fifteen ','sixteen ','seventeen ','eighteen ','nineteen '];
+        var b = ['', '', 'twenty','thirty','forty','fifty', 'sixty','seventy','eighty','ninety'];
+        function inWords (num) {
+        if ((num = num.toString()).length > 9) return 'overflow';
+        n = ('000000000' + num).substr(-9).match(/^(\d{2})(\d{2})(\d{2})(\d{1})(\d{2})$/);
+        if (!n) return; var str = '';
+        str += (n[1] != 0) ? (a[Number(n[1])] || b[n[1][0]] + ' ' + a[n[1][1]]) + 'crore ' : '';
+        str += (n[2] != 0) ? (a[Number(n[2])] || b[n[2][0]] + ' ' + a[n[2][1]]) + 'lakh ' : '';
+        str += (n[3] != 0) ? (a[Number(n[3])] || b[n[3][0]] + ' ' + a[n[3][1]]) + 'thousand ' : '';
+        str += (n[4] != 0) ? (a[Number(n[4])] || b[n[4][0]] + ' ' + a[n[4][1]]) + 'hundred ' : '';
+        str += (n[5] != 0) ? ((str != '') ? 'and ' : '') + (a[Number(n[5])] || b[n[5][0]] + ' ' + a[n[5][1]]) + 'only ' : '';
+        return str;
+        }
+        document.getElementById("amnt_in_wrd").value = inWords(num);
+        }
+
+        var quantity = document.getElementById('qunty');
+        var ppu = document.getElementById('price');
+        var tot_amnt = document.getElementById('tot_amnt');
+        var sales_tax_check = document.getElementById('sales_tax_check');
+        var sales_tax = document.getElementById('sales_tax');
+        var st_num = document.getElementById('sales_tax_tot');
+        var amnt = document.getElementById('amnt');
+        ppu.onkeyup = function(){
+            var total = quantity.value * ppu.value;
+            if(total>0){
+                amnt.value = total.toFixed(2);
+                if(sales_tax_check.checked){
+                    var tax = (total/100)*sales_tax.value;
+
+                    st_num.value = tax.toFixed(2);
+
+                    tot_amnt.value = total+tax;
+                }else{
+                    tot_amnt.value = quantity.value * ppu.value;
+                }
+                calc_tot();
+            }
+        }
+        quantity.onkeyup = function(){
+        var total = quantity.value * ppu.value;
+        if(total>0){
+            amnt.value = total.toFixed(2);
+        if(sales_tax_check.checked){
+        var tax = (total/100)*sales_tax.value;
+        st_num.value =  tax.toFixed(2);
+        tot_amnt.value = total+tax;
+        }else{
+        tot_amnt.value = quantity.value * ppu.value;
+        }
+        calc_tot();
+        }
+        }
+        sales_tax.onkeyup = function(){
+        var total = quantity.value * ppu.value;
+        if(total>0){
+            amnt.value = total.toFixed(2);
+        if(sales_tax_check.checked){
+        var tax = (total/100)*sales_tax.value;
+        st_num.value =  tax.toFixed(2);
+        tot_amnt.value = total+tax;
+        }else{
+        tot_amnt.value = quantity.value * ppu.value;
+        }
+        calc_tot();
+        }
+        }
+})();
+</script>

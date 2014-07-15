@@ -47,7 +47,7 @@
 
 
                                         <div class="form-group">
-                                        <label class="col-md-4 control-label" for="method">Method:</label>
+                                        <label class="col-md-4 control-label" for="method" onchange = "getVal(this);">Method:</label>
                                         <div class="col-md-4">
                                             <select id="v_type" name="method" class="form-control">
                                                 <option value="cheque">Cheque</option>
@@ -87,7 +87,7 @@
                                       <div class="form-group">
                                         <label class="col-md-4 control-label" for="chq_num">Cheque Number:</label>  
                                         <div class="col-md-4">
-                                        <input id="chq_num" name="chq_num" placeholder="Credit Limit" class="form-control input-md" type="text">
+                                        <input id="chq_num" name="chq_num" placeholder="Cheque Number" class="form-control input-md" type="text">
                                           
                                         </div>
                                       </div>
@@ -95,7 +95,7 @@
                                         <div class="form-group">
                                         <label class="col-md-4 control-label" for="tot_amnt">Amount:</label>  
                                         <div class="col-md-4">
-                                        <input id="tot_amnt" name="tot_amnt" placeholder="Credit Limit" class="form-control input-md" type="text" required>
+                                        <input id="tot_amnt" name="tot_amnt" placeholder="Amount" class="form-control input-md" type="text" required>
                                           
                                         </div>
                                       </div>
@@ -103,7 +103,7 @@
                                         <div class="form-group">
                                         <label class="col-md-4 control-label" for="dscr">Description:</label>  
                                         <div class="col-md-4">
-                                        <input id="dscr" name="dscr" placeholder="Credit Limit" class="form-control input-md" type="text" required>
+                                        <input id="dscr" name="dscr" placeholder="Description" class="form-control input-md" type="text" required>
                                           
                                         </div>
                                       </div>
