@@ -4,6 +4,30 @@
 		"selected_items":
 		[
 			[
+				"inv",
+				"inv_list"
+			],
+			[
+				"loa",
+				"load_model	CI - Load Model"
+			],
+			[
+				"margin",
+				"margin-bottom"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"pad",
+				"padding"
+			],
+			[
+				"sa",
+				"sale_list"
+			],
+			[
 				"opt",
 				"optionSelected"
 			],
@@ -30,14 +54,6 @@
 			[
 				"cl",
 				"clear"
-			],
-			[
-				"pad",
-				"padding-top"
-			],
-			[
-				"margin",
-				"margin-bottom"
 			],
 			[
 				"f",
@@ -162,10 +178,6 @@
 			[
 				"re",
 				"removeAttr	.removeAttr()"
-			],
-			[
-				"text",
-				"textarea	<textarea>"
 			],
 			[
 				"bre",
@@ -324,10 +336,6 @@
 				"load_model	CI - Load Model"
 			],
 			[
-				"sa",
-				"sale_table"
-			],
-			[
 				"ul",
 				"ul	Tag"
 			],
@@ -436,10 +444,6 @@
 				"function"
 			],
 			[
-				"loa",
-				"load_view	CI - Load View"
-			],
-			[
 				"fa",
 				"fadeOut	.fadeOut()"
 			],
@@ -510,23 +514,11 @@
 			[
 				"btl",
 				"btlLemon"
-			],
-			[
-				"total",
-				"totalBottles"
 			]
 		]
 	},
 	"buffers":
 	[
-		{
-			"file": "application/views/add_bank.php",
-			"settings":
-			{
-				"buffer_size": 5940,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -572,6 +564,22 @@
 	},
 	"file_history":
 	[
+		"/C/wamp/www/FMS/application/views/purchase_list.php",
+		"/C/wamp/www/FMS/application/views/sale_list.php",
+		"/C/wamp/www/FMS/application/views/includes/sidebar.php",
+		"/C/wamp/www/FMS/application/views/sales_tax_inv.php",
+		"/C/wamp/www/FMS/application/views/acc_ledger.php",
+		"/C/wamp/www/FMS/application/models/get_ledger.php",
+		"/C/wamp/www/FMS/application/models/get_sp_list.php",
+		"/C/wamp/www/FMS/application/controllers/site.php",
+		"/C/wamp/www/FMS/application/views/inv_pro.php",
+		"/C/wamp/www/FMS/application/views/includes/footer.php",
+		"/C/wamp/www/FMS/application/views/includes/header.php",
+		"/C/wamp/www/FMS/application/views/sales_frm.php",
+		"/C/wamp/www/FMS/views.sql",
+		"/C/wamp/www/FMS/application/views/includes/template2.php",
+		"/C/wamp/www/FMS/application/views/add_bank.php",
+		"/C/wamp/www/FMS/application/views/all_pro.php",
 		"/C/wamp/www/hma/application/views/includes/header.php",
 		"/C/Users/Motasim/Desktop/New folder/k.css",
 		"/C/Users/Motasim/Desktop/New folder/index.html",
@@ -580,10 +588,6 @@
 		"/C/Users/Motasim/Desktop/Centroid AI/css/loader.css",
 		"/C/Users/Motasim/Desktop/Centroid AI/css/system.css",
 		"/C/Users/Motasim/Desktop/Centroid AI/index.html",
-		"/C/wamp/www/FMS/application/views/sales_frm.php",
-		"/C/wamp/www/FMS/application/views/inv_pro.php",
-		"/C/wamp/www/FMS/application/views/includes/sidebar.php",
-		"/C/wamp/www/FMS/application/controllers/site.php",
 		"/C/Users/Motasim/Desktop/New folder/video.mp4",
 		"/C/Users/Motasim/Desktop/WumpusWorld/css/custom.css",
 		"/C/Users/Motasim/Downloads/Wompus World/Wompus World/Wompus World/js/my.js",
@@ -591,29 +595,24 @@
 		"/C/wamp/www/FMS/application/views/index.php",
 		"/C/wamp/www/FMS/application/models/index.html",
 		"/E/HTML5 Practice/1 (2).html",
-		"/C/wamp/www/FMS/application/models/get_ledger.php",
 		"/C/wamp/www/FMS/application/views/sales_inv.php",
 		"/C/wamp/www/FMS/application/models/general_query.php",
 		"/C/wamp/www/FMS/application/views/emp_pro.php",
-		"/C/wamp/www/FMS/application/views/acc_ledger.php",
 		"/C/wamp/www/FMS/application/views/all_emp.php",
 		"/C/wamp/www/FMS/application/views/p_p_inv.php",
 		"/C/wamp/www/FMS/application/models/purchase_frm.php",
 		"/C/wamp/www/FMS/application/models/voucher_frm.php",
 		"/C/wamp/www/FMS/application/views/voucher_frm.php",
 		"/C/wamp/www/FMS/application/views/p_s_inv.php",
-		"/C/wamp/www/FMS/application/views/sales_tax_inv.php",
 		"/C/wamp/www/FMS/application/views/d_chal.php",
 		"/C/wamp/www/FMS/application/views/purchase_frm.php",
 		"/C/wamp/www/FMS/application/views/add_co.php",
 		"/C/wamp/www/FMS/application/models/add_co.php",
-		"/C/wamp/www/FMS/views.sql",
 		"/C/wamp/www/FMS/application/models/add_pro.php",
 		"/C/wamp/www/FMS/application/controllers/form_process.php",
 		"/C/wamp/www/FMS/application/views/co_pro.php",
 		"/C/wamp/www/FMS/application/views/item_pro.php",
 		"/C/wamp/www/FMS/application/views/all_co.php",
-		"/C/wamp/www/FMS/application/views/all_pro.php",
 		"/C/Downloads/pj_web.sql",
 		"/C/Users/Motasim/Desktop/Wompus World/js/my.js",
 		"/C/Users/Motasim/Desktop/Wompus World/index.html",
@@ -632,18 +631,15 @@
 		"/C/Users/Motasim/Desktop/UMER/index.html",
 		"/C/wamp/www/FMS/application/models/auth.php",
 		"/C/Program Files (x86)/Origin/Origin.exe",
-		"/C/wamp/www/FMS/application/views/includes/header.php",
 		"/C/wamp/www/FMS/application/controllers/scan_upload.php",
 		"/C/wamp/www/FMS/application/controllers/c_auth.php",
 		"/C/wamp/www/FMS/application/controllers/logout.php",
 		"/C/Users/Motasim/Desktop/New folder/autoexec.cfg",
-		"/C/wamp/www/FMS/application/views/includes/footer.php",
 		"/C/wamp/www/AdminLTE-master/index.html",
 		"/C/wamp/www/FMS/css/ionicons.min.css",
 		"/C/wamp/www/FMS/css/AdminLTE.css",
 		"/C/wamp/www/hma/application/config/config.php",
 		"/C/wamp/www/FMS/application/views/includes/template.php",
-		"/C/wamp/www/FMS/application/views/add_bank.php",
 		"/C/wamp/www/FMS/application/views/add_usr.php",
 		"/C/wamp/www/FMS/application/views/scan_doc.php",
 		"/C/Downloads/UberGallery-v2.4.6/UberGallery-v2.4.6/resources/sample.galleryConfig.ini",
@@ -695,11 +691,7 @@
 		"/C/Users/Motasim/Desktop/config.php",
 		"/D/FMS/application/views/calendar.php",
 		"/C/wamp/www/AdminLTE-master/pages/examples/lockscreen.html",
-		"/C/wamp/www/FMS/application/config/routes.php",
-		"/C/wamp/www/FMS/application/views/includes/add_pro.php",
-		"/C/wamp/www/hma/application/controllers/site.php",
-		"/C/wamp/www/FMS/application/views/invoice.php",
-		"/C/wamp/www/FMS/application/views/includes/template2.php"
+		"/C/wamp/www/FMS/application/config/routes.php"
 	],
 	"find":
 	{
@@ -863,39 +855,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "application/views/add_bank.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5940,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3704,
-								3704
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1242.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],

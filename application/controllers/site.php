@@ -19,7 +19,7 @@ class Site extends CI_Controller {
 			$this->data['forms'] = '';
 			$this->data['bank'] = '';
 			$this->data['employee'] = '';
-
+			$this->data['inv_list'] = '';
 			$this->data['invoice'] = '';
 			$this->data['ledger'] = '';
 			$this->data['calendar'] = '';
@@ -74,6 +74,30 @@ class Site extends CI_Controller {
 		$this->data['forms'] = ' active';
 		$this->data['main_content'] = 'add_work';
 		$this->load->view('includes/template', $this->data);
+	}
+
+	public function sale_list(){
+		$this->load->model('get_sp_list');
+		if($this->get_sp_list->get_entries('sale_list')){
+			$this->data['sale_table'] = $this->get_sp_list->get_entries('sale_list');
+		}else{
+			$this->data['sale_table'] = false;
+		}
+		$this->data['inv_list'] = ' active';
+		$this->data['main_content'] = 'sale_list';
+		$this->load->view('includes/template2', $this->data);
+	}
+
+	public function purchase_list(){
+		$this->load->model('get_sp_list');
+		if($this->get_sp_list->get_entries('sale_list')){
+			$this->data['purchase_table'] = $this->get_sp_list->get_entries('purchase_list');
+		}else{
+			$this->data['purchase_table'] = false;
+		}
+		$this->data['inv_list'] = ' active';
+		$this->data['main_content'] = 'purchase_list';
+		$this->load->view('includes/template2', $this->data);
 	}
 
 	public function sales_frm(){
