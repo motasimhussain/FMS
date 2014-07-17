@@ -13,6 +13,7 @@ class Purchase_frm extends CI_Model {
 		$data = array(
 			'inv_for' => $this->input->post('inv_for'),
 			'cmp_name' => $this->input->post('cmp_name'),
+			'pay_type' => "credit",
 			'acc' => $this->input->post('acc'),
 			'serial' => $this->input->post('serial'),
 			'ref_num' => $this->input->post('ref_num'),

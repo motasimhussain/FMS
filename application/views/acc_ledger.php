@@ -225,7 +225,7 @@
               <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
               normal'><?php echo $row->dscr;?></p>
               </td>
-              <?php if($row->type == "sale"){ ?>
+              <?php if($row->pay_type == "debit"){ ?>
 
               <td width=85 valign=top style='width:63.4pt;border:none;border-right:solid windowtext 1.0pt;
               padding:0in 5.4pt 0in 5.4pt'>

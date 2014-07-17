@@ -63,6 +63,15 @@
                                             </select>
                                         </div>
                                     </div>
+                                     <div class="form-group">
+                                        <label class="col-md-4 control-label" for="pay_type">Voucher type:</label>
+                                        <div class="col-md-7">
+                                            <select id="pay_type" name="pay_type" class="form-control">
+                                                <option value="debit">Debit</option>
+                                                <option value="credit">Credit</option>
+                                            </select>
+                                        </div>
+                                    </div>
                                     <div class="form-group">
                                         <label class="col-md-4 control-label" for="acc">Account:</label>
                                         <div class="col-md-7">
@@ -83,7 +92,7 @@
                                         <div class="form-group">
                                             <label class="col-md-4 control-label" for="ref_num">Ref #:</label>
                                             <div class="col-md-7">
-                                                <input id="ref_num" name="ref_num" placeholder="" class="form-control input-md" required="" type="text" value="<?php if(isset($ref_num)){echo $ref_num;}?>">
+                                                <input id="ref_num" name="ref_num" placeholder="" class="form-control input-md" type="text" value="<?php if(isset($ref_num)){echo $ref_num;}?>">
                                                 
                                             </div>
                                         </div>
@@ -93,7 +102,7 @@
                                         <div class="form-group">
                                             <label class="col-md-4 control-label" for="bill_num">Bill #:</label>
                                             <div class="col-md-7">
-                                                <input id="bill_num" name="bill_num" placeholder="" class="form-control input-md" required="" type="text" value="<?php if(isset($bill_num)){echo $bill_num;}?>">
+                                                <input id="bill_num" name="bill_num" placeholder="" class="form-control input-md" type="text" value="<?php if(isset($bill_num)){echo $bill_num;}?>">
                                                 
                                             </div>
                                         </div>

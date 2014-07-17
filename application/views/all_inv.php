@@ -5,7 +5,7 @@
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        All Employees
+                        All Invoices
                         <small>advanced tables</small>
                     </h1>
                     <ol class="breadcrumb">
@@ -22,7 +22,7 @@
 
                             <div class="box">
                                 <div class="box-header">
-                                    <h3 class="box-title">List of all Employees</h3>                                    
+                                    <h3 class="box-title">List of all Invoices</h3>                                    
                                 </div><!-- /.box-header -->
                                 <div class="box-body table-responsive">
                                     <table id="example1" class="table table-bordered table-striped">
@@ -44,7 +44,7 @@
                                                 <td><?php echo $row->serial;?></td>
                                                 <td><?php echo $row->date;?></td>
                                                 <td><a href="<?php echo base_url(); ?>index.php/site/inv_pro/<?php echo $row->id?>/<?php echo $row->type ?>/view"><?php echo $row->dscr;?></a></td>
-                                                <td><?php echo abs($row->tot_amnt);?></td>
+                                                <td><?php echo $row->tot_amnt;?></td>
                                                 <td class="text-center"><a href="<?php echo base_url(); ?>index.php/site/inv_pro/<?php echo $row->id?>/<?php echo $row->type ?>/edit" class="glyphicon glyphicon-pencil"></a></td>
                                                 <td class="text-center"><a href="<?php echo base_url(); ?>index.php/site/inv_pro/<?php echo $row->id?>/<?php echo $row->type ?>/delete" class="glyphicon glyphicon-remove"></a></td>
                                             </tr>
