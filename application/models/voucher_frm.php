@@ -16,7 +16,8 @@ class Voucher_frm extends CI_Model {
 			if($this->input->post('v_type') == 'sales'){
 				$data = array(
 				'type' => $this->input->post('v_type'),
-				'serial' => $this->input->post('serial'),
+				'serial' => 0,
+				'ref_num' => $this->input->post('ref_num'),
 				'date' => $this->input->post('date'),
 				'inv_for' => $this->input->post('inv_for'),
 				'cmp_name' => $this->input->post('cmp_name'),
@@ -29,7 +30,8 @@ class Voucher_frm extends CI_Model {
 			} else{
 				$data = array(
 					'type' => $this->input->post('v_type'),
-					'serial' => $this->input->post('serial'),
+					'serial' => 0,
+					'ref_num' => $this->input->post('ref_num'),
 					'date' => $this->input->post('date'),
 					'inv_for' => $this->input->post('inv_for'),
 					'cmp_name' => $this->input->post('cmp_name'),

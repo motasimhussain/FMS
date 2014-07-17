@@ -128,6 +128,20 @@ class Form_process extends CI_Controller {
 		}
 	}
 
+	public function bank_trans(){
+		$this->load->model('bank_trans');
+		if ($this->bank_trans->add()){
+			redirect('site/bank_trans');
+		}
+	}
+
+	public function edit_bv(){
+		$this->load->model('bank_trans');
+		if($this->bank_trans->edit()){
+			redirect('site/all_bv');
+		}
+	}
+
 }
 
 /* End of file form_process.php */

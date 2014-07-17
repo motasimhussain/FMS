@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"functio",
+				"create_function"
+			],
+			[
 				"inv",
 				"inv_list"
 			],
@@ -440,10 +444,6 @@
 				"base_url"
 			],
 			[
-				"functio",
-				"function"
-			],
-			[
 				"fa",
 				"fadeOut	.fadeOut()"
 			],
@@ -519,6 +519,38 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "application/views/includes/sidebar.php",
+			"settings":
+			{
+				"buffer_size": 11653,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/views/voucher_frm.php",
+			"settings":
+			{
+				"buffer_size": 7781,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/models/voucher_frm.php",
+			"settings":
+			{
+				"buffer_size": 1352,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/controllers/site.php",
+			"settings":
+			{
+				"buffer_size": 18013,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -564,26 +596,41 @@
 	},
 	"file_history":
 	[
-		"/C/wamp/www/FMS/application/views/purchase_list.php",
+		"/C/wamp/www/FMS/application/views/all_bv.php",
+		"/C/wamp/www/FMS/application/views/bv_pro.php",
+		"/C/wamp/www/FMS/application/controllers/site.php",
+		"/C/wamp/www/FMS/application/models/general_query.php",
+		"/C/wamp/www/FMS/application/views/acc_ledger.php",
+		"/C/wamp/www/FMS/application/models/b_ledger.php",
+		"/C/wamp/www/FMS/application/views/b_ledger.php",
+		"/C/wamp/www/FMS/application/controllers/form_process.php",
+		"/C/wamp/www/FMS/application/views/bank_trans.php",
+		"/C/wamp/www/FMS/application/models/bank_trans.php",
+		"/C/wamp/www/FMS/application/views/includes/footer.php",
 		"/C/wamp/www/FMS/application/views/sale_list.php",
+		"/C/wamp/www/FMS/application/views/item_pro.php",
+		"/C/wamp/www/FMS/application/views/all_pro.php",
+		"/C/wamp/www/FMS/application/models/get_sp_list.php",
+		"/C/wamp/www/FMS/application/models/get_ledger.php",
+		"/C/wamp/www/FMS/application/models/voucher_frm.php",
+		"/C/wamp/www/FMS/application/models/add_bank.php",
+		"/C/wamp/www/FMS/application/views/voucher_frm.php",
+		"/C/wamp/www/FMS/application/models/purchase_frm.php",
+		"/C/wamp/www/FMS/application/views/purchase_frm.php",
+		"/C/wamp/www/FMS/application/views/sales_frm.php",
+		"/C/wamp/www/FMS/application/views/all_inv.php",
+		"/C/wamp/www/FMS/application/models/sales_frm.php",
+		"/C/wamp/www/FMS/application/views/inv_pro.php",
+		"/C/wamp/www/FMS/application/views/purchase_list.php",
 		"/C/wamp/www/FMS/application/views/includes/sidebar.php",
 		"/C/wamp/www/FMS/application/views/sales_tax_inv.php",
-		"/C/wamp/www/FMS/application/views/acc_ledger.php",
-		"/C/wamp/www/FMS/application/models/get_ledger.php",
-		"/C/wamp/www/FMS/application/models/get_sp_list.php",
-		"/C/wamp/www/FMS/application/controllers/site.php",
-		"/C/wamp/www/FMS/application/views/inv_pro.php",
-		"/C/wamp/www/FMS/application/views/includes/footer.php",
 		"/C/wamp/www/FMS/application/views/includes/header.php",
-		"/C/wamp/www/FMS/application/views/sales_frm.php",
 		"/C/wamp/www/FMS/views.sql",
 		"/C/wamp/www/FMS/application/views/includes/template2.php",
 		"/C/wamp/www/FMS/application/views/add_bank.php",
-		"/C/wamp/www/FMS/application/views/all_pro.php",
 		"/C/wamp/www/hma/application/views/includes/header.php",
 		"/C/Users/Motasim/Desktop/New folder/k.css",
 		"/C/Users/Motasim/Desktop/New folder/index.html",
-		"/C/wamp/www/FMS/application/models/sales_frm.php",
 		"/C/Users/Motasim/Desktop/Centroid AI/system.html",
 		"/C/Users/Motasim/Desktop/Centroid AI/css/loader.css",
 		"/C/Users/Motasim/Desktop/Centroid AI/css/system.css",
@@ -596,22 +643,15 @@
 		"/C/wamp/www/FMS/application/models/index.html",
 		"/E/HTML5 Practice/1 (2).html",
 		"/C/wamp/www/FMS/application/views/sales_inv.php",
-		"/C/wamp/www/FMS/application/models/general_query.php",
 		"/C/wamp/www/FMS/application/views/emp_pro.php",
 		"/C/wamp/www/FMS/application/views/all_emp.php",
 		"/C/wamp/www/FMS/application/views/p_p_inv.php",
-		"/C/wamp/www/FMS/application/models/purchase_frm.php",
-		"/C/wamp/www/FMS/application/models/voucher_frm.php",
-		"/C/wamp/www/FMS/application/views/voucher_frm.php",
 		"/C/wamp/www/FMS/application/views/p_s_inv.php",
 		"/C/wamp/www/FMS/application/views/d_chal.php",
-		"/C/wamp/www/FMS/application/views/purchase_frm.php",
 		"/C/wamp/www/FMS/application/views/add_co.php",
 		"/C/wamp/www/FMS/application/models/add_co.php",
 		"/C/wamp/www/FMS/application/models/add_pro.php",
-		"/C/wamp/www/FMS/application/controllers/form_process.php",
 		"/C/wamp/www/FMS/application/views/co_pro.php",
-		"/C/wamp/www/FMS/application/views/item_pro.php",
 		"/C/wamp/www/FMS/application/views/all_co.php",
 		"/C/Downloads/pj_web.sql",
 		"/C/Users/Motasim/Desktop/Wompus World/js/my.js",
@@ -683,19 +723,11 @@
 		"/C/wamp/www/FMS/application/controllers/index.html",
 		"/C/wamp/www/FMS/application/header.php",
 		"/C/wamp/www/FMS/ajax/dashboard-boxrefresh-demo.php",
-		"/C/wamp/www/FMS/application/config/config.php",
-		"/C/wamp/www/FMS/application/views/inv_form.php",
-		"/C/Downloads/mysql-master-master-1.2.6/mysql-master-master-1.2.6/INSTALL",
-		"/C/wamp/www/FMS/application/views/data.php",
-		"/D/FMS/application/config/config.php",
-		"/C/Users/Motasim/Desktop/config.php",
-		"/D/FMS/application/views/calendar.php",
-		"/C/wamp/www/AdminLTE-master/pages/examples/lockscreen.html",
-		"/C/wamp/www/FMS/application/config/routes.php"
+		"/C/wamp/www/FMS/application/config/config.php"
 	],
 	"find":
 	{
-		"height": 26.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
@@ -709,6 +741,37 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"ref_num",
+			"serial",
+			"invoice",
+			"led_for",
+			"acc_le",
+			"bv_list",
+			"ch_num",
+			"i_unit",
+			"i_s_price",
+			"i_p_price",
+			"i_cat",
+			"i_name",
+			"i_code",
+			"bank",
+			"inv",
+			"cmp_name",
+			"inv_for",
+			"ref_num",
+			"tot_amnt",
+			"inv_for",
+			"dscr",
+			"tot_amnt",
+			"chq_num",
+			"textinput",
+			"method",
+			"v_type",
+			"serial",
+			"Serial",
+			"serial",
+			"cmp_name",
+			"v_type",
 			"Wompus",
 			"height='120px' width='80px'",
 			"gr",
@@ -805,34 +868,7 @@
 			"Workplace",
 			"desc",
 			"style='font-size:18px;",
-			"tyle='font-size:0.2em;",
-			"tyle='font-size:1.2em;",
-			"style='font-size:18px;",
-			"style",
-			"unitPriceSell",
-			"p_price",
-			"Selling",
-			"img src",
-			"img",
-			"calendar",
-			"mailbox",
-			"data_table",
-			"data",
-			"terrview",
-			"wigets.html",
-			"main content",
-			"contentHandler",
-			"<?php foreach ($page_content as $row): ?>\n<?php  echo $row->content;?>\n<?php endforeach; ?>",
-			"	\n",
-			"{\n",
-			"<div id=\"my-map\"></div>",
-			"\">",
-			";\n",
-			");\n",
-			";\n",
-			"\">\n",
-			" \n",
-			">\n"
+			"tyle='font-size:0.2em;"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -855,8 +891,127 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "application/views/includes/sidebar.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11653,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6721,
+								6721
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 37.0,
+						"translation.y": 1535.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "application/views/voucher_frm.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7781,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1852,
+								1852
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 270.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "application/models/voucher_frm.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1352,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								912,
+								912
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": -0.0,
+						"translation.y": 54.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "application/controllers/site.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 18013,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								13545,
+								13545
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": -0.0,
+						"translation.y": 8568.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
 			]
 		}
 	],

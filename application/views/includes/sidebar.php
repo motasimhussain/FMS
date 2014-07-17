@@ -71,9 +71,12 @@
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="<?php echo base_url();?>index.php/site/voucher_frm"><i class="fa fa-angle-double-right"></i> Add Voucher</a></li>
+                                
                                 <li><a href="<?php echo base_url();?>index.php/site/add_bank"><i class="fa fa-angle-double-right"></i> Add Bank</a></li>
                                 <li><a href="<?php echo base_url();?>index.php/site/all_bank"><i class="fa fa-angle-double-right"></i> Edit/Delete Banks</a></li>
+                                <li><a href="<?php echo base_url();?>index.php/site/bank_trans"><i class="fa fa-angle-double-right"></i> Add Bank Transaction</a></li>
+                                <li><a href="<?php echo base_url();?>index.php/site/all_bv"><i class="fa fa-angle-double-right"></i> Edit/Delete Bank Vouchers</a></li>
+
                             </ul>
                         </li>
                         <li class="treeview <?php echo $invoice ?>">
@@ -84,6 +87,7 @@
                             <ul class="treeview-menu">
                                 <li><a href="<?php echo base_url();?>index.php/site/sales_frm"><i class="fa fa-angle-double-right"></i> Sales Form</a></li>
                                 <li><a href="<?php echo base_url();?>index.php/site/purchase_frm"><i class="fa fa-angle-double-right"></i> Purchase Form</a></li>
+                                <li><a href="<?php echo base_url();?>index.php/site/voucher_frm"><i class="fa fa-angle-double-right"></i> Journal Voucher</a></li>
                                 <li><a href="<?php echo base_url();?>index.php/site/gen_sales_inv"><i class="fa fa-angle-double-right"></i> Sales Invoice</a></li>
                                 <li><a href="<?php echo base_url();?>index.php/site/gen_purchase_inv"><i class="fa fa-angle-double-right"></i> Purchase Invoice</a></li>
                                 <li><a href="<?php echo base_url();?>index.php/site/gen_challan"><i class="fa fa-angle-double-right"></i> Delivery Challan</a></li>
@@ -99,6 +103,7 @@
                             </a>
                             <ul class="treeview-menu">
                                 <li><a href="<?php echo base_url();?>index.php/site/acc_ledger"><i class="fa fa-angle-double-right"></i> Accounts Ledger</a></li>
+                                <li><a href="<?php echo base_url();?>index.php/site/b_ledger"><i class="fa fa-angle-double-right"></i> Bank Ledger</a></li>
                                 <!-- <li><a href="<?php echo base_url();?>index.php/site/add_pro"><i class="fa fa-angle-double-right"></i> Add Product</a></li>
                                 <li><a href="<?php echo base_url();?>index.php/site/inv_form"><i class="fa fa-angle-double-right"></i> Invoice Form</a></li> -->
                             </ul>

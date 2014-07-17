@@ -363,6 +363,30 @@ class Site extends CI_Controller {
 		$this->load->view('includes/template', $this->data);
 	}
 
+	public function b_ledger(){
+		if($this->general_query->get_banks()){
+			$this->data['select_bank'] = $this->general_query->get_banks();
+		}else{
+			$this->data['select_bank'] = 'no content';
+		}
+
+		if($this->general_query->get_cn()){
+			$this->data['select_company'] = $this->general_query->get_cn();
+		}else{
+			$this->data['select_company'] = 'no content';
+		}
+
+		$this->load->model('b_ledger');
+		if($this->b_ledger->get_entries()){
+			$this->data['data'] = $this->b_ledger->get_entries();
+		}else{
+			$this->data['data'] = 'no entries';
+		}
+		$this->data['ledger'] = ' active';
+		$this->data['main_content'] = 'b_ledger';
+		$this->load->view('includes/template', $this->data);
+	}
+
 	//ledger end //
 
 	public function calendar(){
@@ -440,6 +464,23 @@ class Site extends CI_Controller {
 		$this->data['main_content'] = 'voucher_frm';
 		$this->load->view('includes/template', $this->data);
 	}
+
+	public function bank_trans(){
+		if($this->general_query->get_banks()){
+			$this->data['select_bank'] = $this->general_query->get_banks();
+		}else{
+			$this->data['select_bank'] = 'no content';
+		}
+		if($this->general_query->get_cn()){
+			$this->data['select_company'] = $this->general_query->get_cn();
+		}else{
+			$this->data['select_company'] = 'no content';
+		}
+		$this->data['bank'] = ' active';
+		$this->data['main_content'] = 'bank_trans';
+		$this->load->view('includes/template', $this->data);
+	}
+
 	public function add_bank(){
 		$this->data['bank'] = ' active';
 		$this->data['main_content'] = 'add_bank';
@@ -541,6 +582,39 @@ class Site extends CI_Controller {
 		}
 		$this->data['invoice'] = ' active';
 		$this->data['main_content'] = 'all_inv';
+		$this->load->view('includes/template2', $this->data);
+	}
+
+	///////////// Edit Delete Bank Vouchers ///////////////
+
+	public function bv_pro($id,$action){
+		if ($action == "delete") {
+		$this->load->model('general_query');
+
+		if($this->general_query->del_bv($id)){
+			redirect('site/all_bv');
+		}
+		}
+		if($this->general_query->get_bv_pro($id)){
+			$this->data['bv_det'] = $this->general_query->get_bv_pro($id);
+			$this->data['bv_id'] = $id;
+		}else{
+			$this->data['bv_det'] = 'no content';
+		}
+		$this->data['action'] = $action;
+		$this->data['bank'] = ' active';
+		$this->data['main_content'] = 'bv_pro';
+		$this->load->view('includes/template2', $this->data);
+	}
+
+	public function all_bv(){
+		if($this->general_query->get_all_bv()){
+			$this->data['all_bv'] = $this->general_query->get_all_bv();
+		}else{
+			$this->data['all_bv'] = 'no content';
+		}
+		$this->data['bank'] = ' active';
+		$this->data['main_content'] = 'all_bv';
 		$this->load->view('includes/template2', $this->data);
 	}
 

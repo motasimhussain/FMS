@@ -29,9 +29,9 @@
                                     <form class="form-horizontal" action="<?php echo base_url(); ?>index.php/form_process/voucher_frm" method="post">
                                       <fieldset>
                                         <div class="form-group">
-                                        <label class="col-md-4 control-label" for="serial">Serial:</label>  
+                                        <label class="col-md-4 control-label" for="ref_num">Ref #</label>  
                                         <div class="col-md-4">
-                                        <input id="serial" name="serial" placeholder="Credit Limit" class="form-control input-md" type="text" required>
+                                        <input id="ref_num" name="ref_num" placeholder="Credit Limit" class="form-control input-md" type="text" >
                                           
                                         </div>
                                       </div>

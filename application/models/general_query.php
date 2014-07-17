@@ -160,7 +160,34 @@ class General_query extends CI_Model {
 			return $data;
 		}
 	}
+	/////////////// BANK VOUCHER LIST ////////////////
+	function del_bv($id){
+		$this->db->where('id', $id);
+		$this->db->delete('bank_trans');
+		return True;
+	}
 
+	function get_all_bv(){
+	
+		$query = $this->db->get('bank_trans');
+		if($query->num_rows() > 0){
+			foreach ($query->result() as $row) {
+				$data[] = $row;
+			}
+			return $data;
+		}
+	}
+
+	function get_bv_pro($id){
+		$this->db->where('id', $id);
+		$query = $this->db->get('bank_trans');
+		if($query->num_rows() > 0){
+			foreach ($query->result() as $row) {
+				$data[] = $row;
+			}
+			return $data;
+		}
+	}
 
 /////////    SALES MODELS ////////
 	function gen_sales_serial(){
@@ -352,6 +379,17 @@ class General_query extends CI_Model {
 		}
 	}
 
+	function get_banks(){
+		$this->db->select('id,b_name');
+		$query = $this->db->get('banks');
+		if($query->num_rows() > 0){
+			foreach ($query->result() as $row) {
+				$data[] = $row;
+			}
+			return $data;
+		}
+	}
+
 	function get_wn(){
 		$this->db->select('id,w_name');
 		$query = $this->db->get('workplace');
@@ -369,6 +407,17 @@ class General_query extends CI_Model {
 		if($query->num_rows() > 0){
 			foreach ($query->result() as $row) {
 				$data = $row->w_name;
+			}
+			return $data;
+		}
+	}
+
+	function get_bank($id){
+		$this->db->where('id',$id);
+		$query = $this->db->get('banks');
+		if($query->num_rows() > 0){
+			foreach ($query->result() as $row) {
+				$data = $row->b_name;
 			}
 			return $data;
 		}

@@ -28,6 +28,8 @@
         <script>
             $(function() {
                 $( "#pickdate" ).datepicker({ dateFormat: "yy-mm-dd" });
+                $( "#pickdate1" ).datepicker({ dateFormat: "yy-mm-dd" });
+
             });
         </script>
 

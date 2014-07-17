@@ -15,6 +15,7 @@ class Get_sp_list extends CI_Model {
 			//$date_1 = $parse_date;
 
 			$this->db->where('date BETWEEN "' . $date_1. '" AND "' . $date_2.'"');
+			$this->db->where('serial !=',0);
 
 			$query = $this->db->get($type);
 			if($query->num_rows() > 0){
