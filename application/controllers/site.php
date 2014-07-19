@@ -476,6 +476,11 @@ class Site extends CI_Controller {
 		}else{
 			$this->data['select_company'] = 'no content';
 		}
+		if($this->general_query->get_voucher_serial()){
+			$this->data['v_serial'] = $this->general_query->get_voucher_serial();
+		}else{
+			$this->data['v_serial'] = 0;
+		}
 		$this->data['bank'] = ' active';
 		$this->data['main_content'] = 'bank_trans';
 		$this->load->view('includes/template', $this->data);

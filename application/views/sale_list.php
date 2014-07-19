@@ -7,7 +7,7 @@
 
 <style type="text/css" media="print">
     .table{
-        font-size: 9px;
+        font-size: 14px;
         text-align: center;
     }
     .table>thead>tr>th{
@@ -94,10 +94,10 @@
                                 <td><?php echo $row->c_name; ?></td>
                                 <td><?php echo $row->serial; ?></td>
                                 <td><?php echo $row->date; ?></td>
-                                <td><?php echo $row->amnt; $excl_val+= $row->amnt; ?></td>
+                                <td><?php echo abs($row->amnt); $excl_val+= abs($row->amnt); ?></td>
                                 <td><?php echo $row->sales_tax_tot; $stot += $row->sales_tax_tot; ?></td>
                                 <td><?php echo (($row->sales_tax_tot/100)*20); $wht += (($row->sales_tax_tot/100)*20);?></td>
-                                <td><?php echo $row->tot_amnt; $tot += $row->tot_amnt; ?></td>
+                                <td><?php echo abs($row->tot_amnt); $tot += abs($row->tot_amnt); ?></td>
                             </tr>
                         <?php
                                 $num++;
@@ -113,10 +113,10 @@
                                 <td><b>TOTAL SALE AMOUNT</b></td>
                                 <td></td>
                                 <td></td>
-                                <td><?php if(isset($excl_val)){echo $excl_val;} ?></td>
-                                <td><?php if(isset($excl_val)){echo $stot;} ?></td>
-                                <td><?php if(isset($excl_val)){echo $wht;} ?></td>
-                                <td><?php if(isset($excl_val)){echo $tot;} ?></td>
+                                <td><b><?php if(isset($excl_val)){echo $excl_val;} ?></b></td>
+                                <td><b><?php if(isset($excl_val)){echo $stot;} ?></b></td>
+                                <td><b><?php if(isset($excl_val)){echo $wht;} ?></b></td>
+                                <td><b><?php if(isset($excl_val)){echo $tot;} ?></b></td>
                             </tr>
                         </tfoot>
                     </table>

@@ -1,5 +1,11 @@
 
-
+<style type="text/css">
+@media print {
+  a[href]:after {
+    content: none !important;
+  }
+}
+</style>
             <!-- Right side column. Contains the navbar and content of the page -->
             <aside class="right-side">                
                 <!-- Content Header (Page header) -->
@@ -33,8 +39,8 @@
                                                 <th>Product Category</th>
                                                 <th>Purchase Price</th>
                                                 <th>Selling Price</th>
-                                                <th class="text-center">Edit</th>
-                                                <th class="text-center">Delete</th>
+                                                <th class="text-center no-print">Edit</th>
+                                                <th class="text-center no-print">Delete</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -45,8 +51,8 @@
                                                 <td><?php echo $row->i_cat;?></td>
                                                 <td><?php echo $row->i_p_price;?></td>
                                                 <td><?php echo $row->i_s_price;?></td>
-                                                <td class="text-center"><a href="<?php echo base_url(); ?>index.php/site/pro_list/<?php echo $row->id?>/edit" class="glyphicon glyphicon-pencil"></a></td>
-                                                <td class="text-center"><a href="<?php echo base_url(); ?>index.php/site/pro_list/<?php echo $row->id?>/delete" class="glyphicon glyphicon-remove"></a></td>
+                                                <td class="text-center no-print"><a href="<?php echo base_url(); ?>index.php/site/pro_list/<?php echo $row->id?>/edit" class="glyphicon glyphicon-pencil"></a></td>
+                                                <td class="text-center no-print"><a href="<?php echo base_url(); ?>index.php/site/pro_list/<?php echo $row->id?>/delete" class="glyphicon glyphicon-remove"></a></td>
                                             </tr>
                                             <?php endforeach; ?>
                                         </tbody>

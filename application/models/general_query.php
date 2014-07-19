@@ -9,6 +9,8 @@ class General_query extends CI_Model {
 		$this->db->delete('user');
 		return True;
 	}
+	
+	
 
 	function get_all_emp(){
 	
@@ -589,6 +591,21 @@ class General_query extends CI_Model {
 		$query = $this->db->get('company');
 		if($query->num_rows() > 0){
 			return $query->row()->crd_limit;
+		}
+	}
+	
+	function get_voucher_serial(){
+	
+		$this->db->select_max('id');
+		$query = $this->db->get('bank_trans');
+		if($query->num_rows() > 0){
+			foreach ($query->result() as $row) {
+				$num = $row->id;
+			}
+		
+			return $num + 1;
+		}else{
+			return 0;
 		}
 	}
 

@@ -7,7 +7,7 @@
 
 <style type="text/css" media="print">
     .table{
-        font-size: 9px;
+        font-size: 14px;
         text-align: center;
     }
     .table>thead>tr>th{
@@ -113,10 +113,10 @@
                                 <td><b>TOTAL SALE AMOUNT</b></td>
                                 <td></td>
                                 <td></td>
-                                <td><?php if(isset($excl_val)){echo $excl_val;} ?></td>
-                                <td><?php if(isset($excl_val)){echo $stot;} ?></td>
+                                <td><b><?php if(isset($excl_val)){echo $excl_val;} ?></b></td>
+                                <td><b><?php if(isset($excl_val)){echo $stot;} ?></b></td>
                                 <td></td>
-                                <td><?php if(isset($excl_val)){echo $tot;} ?></td>
+                                <td><b><?php if(isset($excl_val)){echo $tot;} ?></b></td>
                             </tr>
                         </tfoot>
                     </table>

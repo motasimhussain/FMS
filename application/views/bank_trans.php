@@ -50,10 +50,10 @@
                                         </div>
 
 
-                                        <div class="form-group">
+                                       <div class="form-group">
                                             <label class="col-md-4 control-label" for="ref_num">Reference #</label>  
                                             <div class="col-md-4">
-                                                <input id="ref_num" name="ref_num" placeholder="Reference #" class="form-control input-md" type="text">
+                                                <input disabled id="ref_num" name="ref_num" placeholder="Reference #" class="form-control input-md input-disabled" type="text" value="<?php echo $v_serial; ?>">
                                             </div>
                                         </div>
 
