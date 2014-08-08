@@ -156,7 +156,7 @@ if(!empty($row2)):
 			<td class="col-xs-1 text-center"><?php echo $row->sales_tax; ?>%</td>
 			<td class="col-xs-1 text-center totTax"><?php echo $row->sales_tax_tot; ?></td>
 			<td class="col-xs-1 text-center"><?php echo $row->fed_tax; ?></td>
-			<td class="col-xs-2 text-center totAmnt"><?php echo $row->tot_amnt;?></td>
+			<td class="col-xs-2 text-center totAmnt"><?php echo abs($row->tot_amnt);?></td>
 		</tr>
 
 		<?php $s_num++; endforeach; ?>

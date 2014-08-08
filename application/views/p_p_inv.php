@@ -316,7 +316,7 @@ if(!empty($row2)):
   <td  colspan=0 valign=top style='font-size:14px;width:150.35pt;border:solid windowtext 1.0pt;
   border-left:none;padding:0in 5.4pt 0in 5.4pt'>
   <p  style='font-size:14px;margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'><?php echo $row2->tot_amnt;?></p>
+  normal'><?php echo abs($row2->tot_amnt);?></p>
   </td>
  </tr>
  <tr>
